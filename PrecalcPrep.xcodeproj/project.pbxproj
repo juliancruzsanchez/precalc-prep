@@ -17,6 +17,7 @@
 		30489261C96C73F7B67873DB /* CourseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FF660BB2625201CCCC3CB3 /* CourseModels.swift */; };
 		34090F54B52431476AF9F3A4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF6838E66840E3B7FA11545 /* Theme.swift */; };
 		3D2C6EB9B6A0D8FB718D9ACB /* PrecalcPrepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3ED27C436464BD5A46A850 /* PrecalcPrepApp.swift */; };
+		6CA6BC28A51832C9A5751913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422FB03C120A67B5A6617220 /* Assets.xcassets */; };
 		A04FF919EE5AF18842BF5935 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588E4B606A851D15F0E112B /* HomeView.swift */; };
 		A376B62DE3E6C9E61F4C8867 /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF491BAF2136D2639796000F /* LessonView.swift */; };
 		AA2299C1D1634C4E91145625 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13B1E206C895C913E4754E5 /* GraphView.swift */; };
@@ -38,10 +39,11 @@
 		1FF6838E66840E3B7FA11545 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		22822A404122C5871912915B /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
 		40898361C247A7236319D4CA /* course.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = course.json; sourceTree = "<group>"; };
+		422FB03C120A67B5A6617220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		556ED245234393C4C2480025 /* TopicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsView.swift; sourceTree = "<group>"; };
 		616C08CC6DBA408C46BA72E1 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		72C24BBBCEE7FFC1DBD2FB1B /* GroqService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroqService.swift; sourceTree = "<group>"; };
-		8D27C9EB73943A488270E381 /* PrecalcPrep.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PrecalcPrep.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D27C9EB73943A488270E381 /* PrecalcPrep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrecalcPrep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BBF3158B0717C262723555 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		A79FE7177FBA9DB710E8BCF0 /* TutorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorView.swift; sourceTree = "<group>"; };
 		A9FF660BB2625201CCCC3CB3 /* CourseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModels.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		0E389427A6C682883C92AD2D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				422FB03C120A67B5A6617220 /* Assets.xcassets */,
 				3B39C805B0A6FDE281B91FC7 /* Content */,
 			);
 			path = Resources;
@@ -262,7 +265,6 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					E921DB5C0FDAD5678D9858B6 = {
-						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -291,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CA6BC28A51832C9A5751913 /* Assets.xcassets in Resources */,
 				143E0088E5CB6CDC54535899 /* course.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,11 +466,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4JBMBNGPK7;
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -486,11 +489,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4JBMBNGPK7;
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (

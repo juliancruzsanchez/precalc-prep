@@ -42,6 +42,13 @@
 				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
+			<key>youtube-nocookie.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
 		</dict>
 	</dict>
 	<key>UILaunchScreen</key>
