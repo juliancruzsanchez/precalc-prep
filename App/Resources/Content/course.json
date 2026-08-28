@@ -112,6 +112,159 @@
               "chapter": "Chapter 1 Prerequisites",
               "section": "1.1 Worked Example"
             }
+          },
+          {
+            "title": "Solve 7 \u2212 2(x + 3) = 3x + 1",
+            "prompt": "Solve for x.",
+            "steps": [
+              {
+                "label": "Distribute",
+                "math": "7 \u2212 2x \u2212 6 = 3x + 1",
+                "explanation": "Multiply \u22122 across the parentheses."
+              },
+              {
+                "label": "Combine constants",
+                "math": "1 \u2212 2x = 3x + 1",
+                "explanation": "7 \u2212 6 = 1."
+              },
+              {
+                "label": "Move x-terms right",
+                "math": "\u22122x \u2212 3x = 1 \u2212 1",
+                "explanation": "Subtract 3x from both sides; subtract 1 from both sides."
+              },
+              {
+                "label": "Combine and divide",
+                "math": "\u22125x = 0  \u2192  x = 0",
+                "explanation": "0 divided by any nonzero number is 0."
+              },
+              {
+                "label": "Check",
+                "math": "7 \u2212 2(0 + 3) = 7 \u2212 6 = 1 \u2713;  3(0) + 1 = 1 \u2713",
+                "explanation": "Both sides agree."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.1",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Solve for b:  3(b \u2212 2) + 4 = 2b + 1",
+            "prompt": "Find b.",
+            "steps": [
+              {
+                "label": "Distribute",
+                "math": "3b \u2212 6 + 4 = 2b + 1",
+                "explanation": "3 \u00b7 (\u22122) = \u22126."
+              },
+              {
+                "label": "Combine like terms",
+                "math": "3b \u2212 2 = 2b + 1",
+                "explanation": "\u22126 + 4 = \u22122."
+              },
+              {
+                "label": "Subtract 2b from both sides",
+                "math": "b \u2212 2 = 1",
+                "explanation": "Isolate the variable term."
+              },
+              {
+                "label": "Add 2",
+                "math": "b = 3",
+                "explanation": "Solve for b."
+              },
+              {
+                "label": "Check",
+                "math": "3(3 \u2212 2) + 4 = 3 + 4 = 7;  2(3) + 1 = 7 \u2713",
+                "explanation": "Both sides equal 7."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.1",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Solve:  2(x + 1) \u2212 3(x \u2212 2) = 4",
+            "prompt": "Solve for x.",
+            "steps": [
+              {
+                "label": "Distribute both",
+                "math": "2x + 2 \u2212 3x + 6 = 4",
+                "explanation": "Be careful with the second minus sign: \u22123(x \u2212 2) = \u22123x + 6."
+              },
+              {
+                "label": "Combine like terms",
+                "math": "(2x \u2212 3x) + (2 + 6) = 4  \u2192  \u2212x + 8 = 4",
+                "explanation": "x-terms: \u2212x. Constants: 8."
+              },
+              {
+                "label": "Subtract 8",
+                "math": "\u2212x = \u22124",
+                "explanation": "Move the constant to the right."
+              },
+              {
+                "label": "Multiply by \u22121",
+                "math": "x = 4",
+                "explanation": "Divide (or multiply) by \u22121 to flip the sign."
+              },
+              {
+                "label": "Check",
+                "math": "2(4 + 1) \u2212 3(4 \u2212 2) = 10 \u2212 6 = 4 \u2713",
+                "explanation": "Left side equals the right side."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.1",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Classify and solve:  5(2 \u2212 x) = 3(x + 4) \u2212 7",
+            "prompt": "Solve for x.",
+            "steps": [
+              {
+                "label": "Distribute both sides",
+                "math": "10 \u2212 5x = 3x + 12 \u2212 7",
+                "explanation": "Left: 5\u00b72 = 10, 5\u00b7(\u2212x) = \u22125x. Right: 3\u00b74 = 12."
+              },
+              {
+                "label": "Simplify right side",
+                "math": "10 \u2212 5x = 3x + 5",
+                "explanation": "12 \u2212 7 = 5."
+              },
+              {
+                "label": "Move x-terms to left",
+                "math": "\u22125x \u2212 3x = 5 \u2212 10",
+                "explanation": "Subtract 3x and 10 from both sides."
+              },
+              {
+                "label": "Combine",
+                "math": "\u22128x = \u22125",
+                "explanation": "\u22125x \u2212 3x = \u22128x; 5 \u2212 10 = \u22125."
+              },
+              {
+                "label": "Divide",
+                "math": "x = 5/8",
+                "explanation": "\u22125/\u22128 = 5/8."
+              },
+              {
+                "label": "Check",
+                "math": "5(2 \u2212 5/8) = 10 \u2212 25/8 = 80/8 \u2212 25/8 = 55/8;  3(5/8 + 4) \u2212 7 = 15/8 + 12 \u2212 7 = 55/8 \u2713",
+                "explanation": "Both sides equal 55/8."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.1",
+              "section": null,
+              "urlPath": null
+            }
           }
         ],
         "videos": [
@@ -122,6 +275,46 @@
             "source": {
               "source": "openstax_abramson",
               "chapter": "Chapter 1 Prerequisites"
+            },
+            "durationSeconds": 600
+          },
+          {
+            "youtubeId": "GmMX3-nTWbE",
+            "title": "Solving Linear Equations Made Easy",
+            "channel": "PatrickJMT",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.1"
+            },
+            "durationSeconds": 600
+          },
+          {
+            "youtubeId": "0MKafhRHolM",
+            "title": "Order of Operations \u2014 PEMDAS",
+            "channel": "Mario's Math Tutoring",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.1"
+            },
+            "durationSeconds": 540
+          },
+          {
+            "youtubeId": "FkUEsP9efFg",
+            "title": "Introduction to Functions",
+            "channel": "Professor Leonard",
+            "source": {
+              "source": "lippman_rasmussen",
+              "chapter": "Ch 1"
+            },
+            "durationSeconds": 720
+          },
+          {
+            "youtubeId": "ETkyLiVevKM",
+            "title": "Exponent Rules You Forgot",
+            "channel": "Brian McLogan",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.2"
             },
             "durationSeconds": 600
           }
@@ -461,6 +654,139 @@
               "source": "openstax_abramson",
               "chapter": "Ch 1.2"
             }
+          },
+          {
+            "title": "Simplify  x\u207b\u00b3 \u00b7 x\u2075",
+            "prompt": "Write with only positive exponents.",
+            "steps": [
+              {
+                "label": "Apply product rule",
+                "math": "x\u207b\u00b3 \u00b7 x\u2075 = x\u207b\u00b3\u207a\u2075",
+                "explanation": "When multiplying same-base powers, add exponents."
+              },
+              {
+                "label": "Add exponents",
+                "math": "x\u00b2",
+                "explanation": "\u22123 + 5 = 2."
+              },
+              {
+                "label": "Final answer",
+                "math": "x\u00b2",
+                "explanation": "Already positive \u2014 no reciprocal needed."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.2",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Simplify  (4x\u00b2y\u00b3)\u00b2 / (2xy\u00b2)",
+            "prompt": "Leave only positive exponents.",
+            "steps": [
+              {
+                "label": "Apply power rule to numerator",
+                "math": "(4x\u00b2y\u00b3)\u00b2 = 4\u00b2 \u00b7 x\u2074 \u00b7 y\u2076 = 16x\u2074y\u2076",
+                "explanation": "(xy)\u207f = x\u207fy\u207f. Double each exponent."
+              },
+              {
+                "label": "Set up division",
+                "math": "16x\u2074y\u2076 / (2xy\u00b2)",
+                "explanation": "Quotient rule: subtract exponents."
+              },
+              {
+                "label": "Divide coefficients",
+                "math": "16/2 = 8",
+                "explanation": "Simplify the numeric factor."
+              },
+              {
+                "label": "Subtract x exponents",
+                "math": "x\u2074\u207b\u00b9 = x\u00b3",
+                "explanation": "4 \u2212 1 = 3."
+              },
+              {
+                "label": "Subtract y exponents",
+                "math": "y\u2076\u207b\u00b2 = y\u2074",
+                "explanation": "6 \u2212 2 = 4."
+              },
+              {
+                "label": "Final answer",
+                "math": "8x\u00b3y\u2074",
+                "explanation": "All exponents positive."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.2",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Convert  8.4 \u00d7 10\u207b\u2076  to standard form",
+            "prompt": "Write as a decimal.",
+            "steps": [
+              {
+                "label": "Identify exponent",
+                "math": "n = \u22126",
+                "explanation": "The 10 is raised to the power \u22126."
+              },
+              {
+                "label": "Move decimal left (negative exponent)",
+                "math": "0.0000084",
+                "explanation": "Move decimal 6 places left. Add leading zeros."
+              },
+              {
+                "label": "Final answer",
+                "math": "0.0000084",
+                "explanation": "Confirmed."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.2",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Simplify  (2\u207b\u00b3 \u00b7 3\u00b2) / (2\u00b2 \u00b7 3\u207b\u00b9)",
+            "prompt": "Write with positive exponents only.",
+            "steps": [
+              {
+                "label": "Separate by base",
+                "math": "(2\u207b\u00b3/2\u00b2) \u00b7 (3\u00b2/3\u207b\u00b9)",
+                "explanation": "Group same-base terms together."
+              },
+              {
+                "label": "Subtract exponent for 2",
+                "math": "2\u207b\u00b3\u207b\u00b2 = 2\u207b\u2075",
+                "explanation": "\u22123 \u2212 2 = \u22125."
+              },
+              {
+                "label": "Subtract exponent for 3",
+                "math": "3\u00b2\u207b\u207d\u207b\u00b9\u207e = 3\u00b3",
+                "explanation": "2 \u2212 (\u22121) = 3."
+              },
+              {
+                "label": "Rewrite with positive exponents",
+                "math": "(1/2\u2075) \u00b7 27 = 27 / 32",
+                "explanation": "2\u207b\u2075 = 1/2\u2075; 3\u00b3 = 27."
+              },
+              {
+                "label": "Final answer",
+                "math": "27/32",
+                "explanation": "Cannot simplify further."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.2",
+              "section": null,
+              "urlPath": null
+            }
           }
         ],
         "videos": [
@@ -473,6 +799,46 @@
               "chapter": "Ch 1.2"
             },
             "durationSeconds": 600
+          },
+          {
+            "youtubeId": "ETkyLiVevKM",
+            "title": "Exponent Rules You Forgot",
+            "channel": "Brian McLogan",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.2"
+            },
+            "durationSeconds": 480
+          },
+          {
+            "youtubeId": "HV1AoqM04Pk",
+            "title": "Top 3 Simple Examples of Rules of Exponents",
+            "channel": "Brian McLogan",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.2"
+            },
+            "durationSeconds": 480
+          },
+          {
+            "youtubeId": "HAO4Yuk9wP0",
+            "title": "Factoring Polynomials \u2014 All Types",
+            "channel": "Mario's Math Tutoring",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.4"
+            },
+            "durationSeconds": 600
+          },
+          {
+            "youtubeId": "TreVSyf3THY",
+            "title": "Trigonometry Basics \u2014 SOHCAHTOA",
+            "channel": "Mario's Math Tutoring",
+            "source": {
+              "source": "yoshiwara",
+              "chapter": "Ch 2.1"
+            },
+            "durationSeconds": 540
           }
         ],
         "practice": [
@@ -796,6 +1162,124 @@
               "source": "openstax_abramson",
               "chapter": "Ch 1.3"
             }
+          },
+          {
+            "title": "Simplify  \u221a72",
+            "prompt": "Factor out the largest perfect square.",
+            "steps": [
+              {
+                "label": "Prime factor 72",
+                "math": "72 = 36 \u00b7 2",
+                "explanation": "36 = 6\u00b2 is the largest perfect square."
+              },
+              {
+                "label": "Apply \u221aab = \u221aa \u00b7 \u221ab",
+                "math": "\u221a72 = \u221a(36 \u00b7 2) = \u221a36 \u00b7 \u221a2 = 6\u221a2",
+                "explanation": "Separate the radical."
+              },
+              {
+                "label": "Final answer",
+                "math": "6\u221a2",
+                "explanation": "No factor of 2 remains under the radical."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.3",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Convert  27^(2/3)  to radical form and simplify",
+            "prompt": "Evaluate completely.",
+            "steps": [
+              {
+                "label": "Identify exponent parts",
+                "math": "a^(m/n) = (\u207f\u221aa)\u1d50 = \u207f\u221a(a\u1d50)",
+                "explanation": "m = 2 (power), n = 3 (root)."
+              },
+              {
+                "label": "Take the cube root",
+                "math": "\u221b27 = 3",
+                "explanation": "3\u00b3 = 27."
+              },
+              {
+                "label": "Raise to the power 2",
+                "math": "3\u00b2 = 9",
+                "explanation": "(\u221b27)\u00b2 = 9."
+              },
+              {
+                "label": "Final answer",
+                "math": "9",
+                "explanation": "Can also compute as (27\u00b2)^(1/3) = 729^(1/3) = 9."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.3",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Rationalize  4 / (\u221a5 + \u221a3)",
+            "prompt": "Write without radicals in the denominator.",
+            "steps": [
+              {
+                "label": "Multiply top and bottom by the conjugate",
+                "math": "(4(\u221a5 \u2212 \u221a3)) / ((\u221a5 + \u221a3)(\u221a5 \u2212 \u221a3))",
+                "explanation": "The conjugate of (a + b) is (a \u2212 b)."
+              },
+              {
+                "label": "Expand denominator",
+                "math": "(\u221a5)\u00b2 \u2212 (\u221a3)\u00b2 = 5 \u2212 3 = 2",
+                "explanation": "(a+b)(a\u2212b) = a\u00b2 \u2212 b\u00b2."
+              },
+              {
+                "label": "Simplify numerator",
+                "math": "4(\u221a5 \u2212 \u221a3) = 4\u221a5 \u2212 4\u221a3",
+                "explanation": "No further combination \u2014 unlike radicals."
+              },
+              {
+                "label": "Final answer",
+                "math": "(4\u221a5 \u2212 4\u221a3) / 2 = 2\u221a5 \u2212 2\u221a3",
+                "explanation": "Divide each term by 2."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.3",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Simplify  \u221a50 + \u221a8",
+            "prompt": "Combine into simplest radical form.",
+            "steps": [
+              {
+                "label": "Simplify each radical",
+                "math": "\u221a50 = \u221a(25\u00b72) = 5\u221a2;  \u221a8 = \u221a(4\u00b72) = 2\u221a2",
+                "explanation": "Factor out the largest perfect squares."
+              },
+              {
+                "label": "Combine like radicals",
+                "math": "5\u221a2 + 2\u221a2 = (5 + 2)\u221a2",
+                "explanation": "Only combine when the radicand is identical."
+              },
+              {
+                "label": "Final answer",
+                "math": "7\u221a2",
+                "explanation": "Cannot combine with a different radicand."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.3",
+              "section": null,
+              "urlPath": null
+            }
           }
         ],
         "videos": [
@@ -808,6 +1292,46 @@
               "chapter": "Ch 1.3"
             },
             "durationSeconds": 540
+          },
+          {
+            "youtubeId": "TreVSyf3THY",
+            "title": "Trigonometry Basics \u2014 SOHCAHTOA",
+            "channel": "Mario's Math Tutoring",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.4"
+            },
+            "durationSeconds": 540
+          },
+          {
+            "youtubeId": "iA0wluAsrNY",
+            "title": "Algebra Review \u2014 Trigonometry",
+            "channel": "Organic Chemistry Tutor",
+            "source": {
+              "source": "yoshiwara",
+              "chapter": "Ch 2.1"
+            },
+            "durationSeconds": 600
+          },
+          {
+            "youtubeId": "GmMX3-nTWbE",
+            "title": "Solving Linear Equations Made Easy",
+            "channel": "PatrickJMT",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.1"
+            },
+            "durationSeconds": 600
+          },
+          {
+            "youtubeId": "sci7XQa77_Q",
+            "title": "Simplifying Rational Expressions",
+            "channel": "Brian McLogan",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.5"
+            },
+            "durationSeconds": 600
           }
         ],
         "practice": [
@@ -1125,6 +1649,149 @@
               "source": "openstax_abramson",
               "chapter": "Ch 1.5"
             }
+          },
+          {
+            "title": "Factor  x\u00b2 \u2212 9",
+            "prompt": "Recognize the difference of squares pattern.",
+            "steps": [
+              {
+                "label": "Identify the pattern",
+                "math": "a\u00b2 \u2212 b\u00b2 = (a + b)(a \u2212 b)",
+                "explanation": "Check: both terms are perfect squares."
+              },
+              {
+                "label": "Find a and b",
+                "math": "a\u00b2 = x\u00b2 \u2192 a = x;  b\u00b2 = 9 \u2192 b = 3",
+                "explanation": "Square roots of each term."
+              },
+              {
+                "label": "Apply formula",
+                "math": "x\u00b2 \u2212 9 = (x + 3)(x \u2212 3)",
+                "explanation": "Substitute into the pattern."
+              },
+              {
+                "label": "Check",
+                "math": "(x + 3)(x \u2212 3) = x\u00b2 \u2212 3x + 3x \u2212 9 = x\u00b2 \u2212 9 \u2713",
+                "explanation": "FOIL confirms the result."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.5",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Factor  x\u00b2 + 5x + 6",
+            "prompt": "Find two numbers with product 6 and sum 5.",
+            "steps": [
+              {
+                "label": "Set up the target",
+                "math": "Find p and q such that p \u00b7 q = 6 and p + q = 5",
+                "explanation": "These are the constant and linear coefficients."
+              },
+              {
+                "label": "List factor pairs of 6",
+                "math": "(1, 6), (2, 3), (\u22121, \u22126), (\u22122, \u22123)",
+                "explanation": "Both positive since product and sum are positive."
+              },
+              {
+                "label": "Find the pair",
+                "math": "2 and 3:  2 + 3 = 5 \u2713,  2 \u00b7 3 = 6 \u2713",
+                "explanation": "These satisfy both conditions."
+              },
+              {
+                "label": "Write factors",
+                "math": "x\u00b2 + 5x + 6 = (x + 2)(x + 3)",
+                "explanation": "x\u00b2 + px + qx + pq = (x + p)(x + q)."
+              },
+              {
+                "label": "Check",
+                "math": "(x + 2)(x + 3) = x\u00b2 + 5x + 6 \u2713",
+                "explanation": "FOIL confirms."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.5",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Factor  2x\u00b2 + 7x + 3",
+            "prompt": "Use the AC-method or trial factors.",
+            "steps": [
+              {
+                "label": "Multiply a and c",
+                "math": "2 \u00b7 3 = 6",
+                "explanation": "Find two numbers whose product = ac and sum = b."
+              },
+              {
+                "label": "Find numbers",
+                "math": "6 and 1:  6 + 1 = 7 \u2713",
+                "explanation": "6 \u00b7 1 = 6, sum = 7 matches the middle coefficient."
+              },
+              {
+                "label": "Split the middle term",
+                "math": "2x\u00b2 + 6x + x + 3",
+                "explanation": "Replace 7x with 6x + x."
+              },
+              {
+                "label": "Factor by grouping",
+                "math": "(2x\u00b2 + 6x) + (x + 3) = 2x(x + 3) + 1(x + 3)",
+                "explanation": "Factor out the GCF from each group."
+              },
+              {
+                "label": "Factor the binomial",
+                "math": "(x + 3)(2x + 1)",
+                "explanation": "Common factor (x + 3) is factored out."
+              },
+              {
+                "label": "Check",
+                "math": "(x + 3)(2x + 1) = 2x\u00b2 + x + 6x + 3 = 2x\u00b2 + 7x + 3 \u2713",
+                "explanation": "FOIL confirms."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.5",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Factor  4x\u00b2 \u2212 25",
+            "prompt": "Identify and apply the difference of squares.",
+            "steps": [
+              {
+                "label": "Recognize the pattern",
+                "math": "a\u00b2 \u2212 b\u00b2 = (a + b)(a \u2212 b)",
+                "explanation": "Both terms are perfect squares."
+              },
+              {
+                "label": "Find a and b",
+                "math": "a\u00b2 = 4x\u00b2 \u2192 a = 2x;  b\u00b2 = 25 \u2192 b = 5",
+                "explanation": "Take the square root of each term."
+              },
+              {
+                "label": "Apply formula",
+                "math": "4x\u00b2 \u2212 25 = (2x + 5)(2x \u2212 5)",
+                "explanation": "Substitute into the pattern."
+              },
+              {
+                "label": "Check",
+                "math": "(2x + 5)(2x \u2212 5) = 4x\u00b2 \u2212 10x + 10x \u2212 25 = 4x\u00b2 \u2212 25 \u2713",
+                "explanation": "FOIL confirms."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.5",
+              "section": null,
+              "urlPath": null
+            }
           }
         ],
         "videos": [
@@ -1137,6 +1804,46 @@
               "chapter": "Ch 1.5"
             },
             "durationSeconds": 600
+          },
+          {
+            "youtubeId": "HAO4Yuk9wP0",
+            "title": "Factoring Polynomials \u2014 All Types",
+            "channel": "Mario's Math Tutoring",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.4"
+            },
+            "durationSeconds": 600
+          },
+          {
+            "youtubeId": "8qezAG2r0sk",
+            "title": "Factoring Polynomials and Solving by Factoring",
+            "channel": "Organic Chemistry Tutor",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 2.1"
+            },
+            "durationSeconds": 720
+          },
+          {
+            "youtubeId": "GmMX3-nTWbE",
+            "title": "Solving Linear Equations Made Easy",
+            "channel": "PatrickJMT",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.1"
+            },
+            "durationSeconds": 600
+          },
+          {
+            "youtubeId": "TreVSyf3THY",
+            "title": "Trigonometry Basics \u2014 SOHCAHTOA",
+            "channel": "Mario's Math Tutoring",
+            "source": {
+              "source": "yoshiwara",
+              "chapter": "Ch 2.1"
+            },
+            "durationSeconds": 540
           }
         ],
         "practice": [
@@ -1463,6 +2170,149 @@
               "source": "openstax_abramson",
               "chapter": "Ch 1.6"
             }
+          },
+          {
+            "title": "Simplify  (x\u00b2 \u2212 4) / (x \u2212 2)",
+            "prompt": "Cancel common factors.",
+            "steps": [
+              {
+                "label": "Factor the numerator",
+                "math": "x\u00b2 \u2212 4 = (x + 2)(x \u2212 2)",
+                "explanation": "Difference of squares."
+              },
+              {
+                "label": "Cancel the common factor",
+                "math": "(x + 2)(x \u2212 2) / (x \u2212 2) = x + 2",
+                "explanation": "Cancel (x \u2212 2) top and bottom."
+              },
+              {
+                "label": "State the restriction",
+                "math": "x \u2260 2",
+                "explanation": "The original denominator cannot be zero."
+              },
+              {
+                "label": "Final answer",
+                "math": "x + 2  (for x \u2260 2)",
+                "explanation": "The simplified form is only valid when x \u2260 2."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.6",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Multiply  (x + 3) / (x \u2212 1)  \u00b7  (x\u00b2 \u2212 1) / (x + 3)",
+            "prompt": "Simplify the product.",
+            "steps": [
+              {
+                "label": "Factor where possible",
+                "math": "(x + 3)/(x \u2212 1) \u00b7 ((x+1)(x\u22121))/(x+3)",
+                "explanation": "x\u00b2 \u2212 1 = (x+1)(x\u22121)."
+              },
+              {
+                "label": "Cancel (x + 3)",
+                "math": "= 1/(x \u2212 1) \u00b7 (x+1)(x\u22121)/1",
+                "explanation": "(x+3)/(x+3) = 1."
+              },
+              {
+                "label": "Cancel (x \u2212 1)",
+                "math": "= (x + 1)",
+                "explanation": "(x\u22121)/(x\u22121) = 1."
+              },
+              {
+                "label": "State restrictions",
+                "math": "x \u2260 \u22123, x \u2260 1",
+                "explanation": "Original denominators cannot be zero."
+              },
+              {
+                "label": "Final answer",
+                "math": "x + 1  (for x \u2260 \u22123, x \u2260 1)",
+                "explanation": "Domain restriction from original expression."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.6",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Subtract  2/(x+1) \u2212 1/(x\u22121)",
+            "prompt": "Combine into a single fraction.",
+            "steps": [
+              {
+                "label": "Find the LCD",
+                "math": "(x + 1)(x \u2212 1)",
+                "explanation": "The factors are x+1 and x\u22121 \u2014 no overlap."
+              },
+              {
+                "label": "Rewrite first fraction",
+                "math": "2(x \u2212 1) / [(x+1)(x\u22121)] = (2x \u2212 2)/(x\u00b2 \u2212 1)",
+                "explanation": "Multiply top and bottom by (x\u22121)."
+              },
+              {
+                "label": "Rewrite second fraction",
+                "math": "1(x + 1) / [(x\u22121)(x+1)] = (x + 1)/(x\u00b2 \u2212 1)",
+                "explanation": "Multiply top and bottom by (x+1)."
+              },
+              {
+                "label": "Subtract numerators",
+                "math": "(2x \u2212 2) \u2212 (x + 1) = 2x \u2212 2 \u2212 x \u2212 1 = x \u2212 3",
+                "explanation": "Watch the sign on the second numerator."
+              },
+              {
+                "label": "Final answer",
+                "math": "(x \u2212 3) / (x\u00b2 \u2212 1)  (for x \u2260 \u00b11)",
+                "explanation": "Keep the denominator factored to show the domain."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.6",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Simplify  (x\u00b2 + x \u2212 6) / (x\u00b2 \u2212 4)",
+            "prompt": "Cancel fully.",
+            "steps": [
+              {
+                "label": "Factor numerator",
+                "math": "x\u00b2 + x \u2212 6 = (x + 3)(x \u2212 2)",
+                "explanation": "Find two numbers that multiply to \u22126 and add to 1: 3 and \u22122."
+              },
+              {
+                "label": "Factor denominator",
+                "math": "x\u00b2 \u2212 4 = (x + 2)(x \u2212 2)",
+                "explanation": "Difference of squares."
+              },
+              {
+                "label": "Cancel (x \u2212 2)",
+                "math": "= (x + 3)/(x + 2)",
+                "explanation": "Cancel the common binomial factor."
+              },
+              {
+                "label": "Restrictions",
+                "math": "x \u2260 2, x \u2260 \u22122",
+                "explanation": "Original denominator zero at these values."
+              },
+              {
+                "label": "Final answer",
+                "math": "(x + 3)/(x + 2)  (for x \u2260 2, x \u2260 \u22122)",
+                "explanation": "Simplified form with domain preserved."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.6",
+              "section": null,
+              "urlPath": null
+            }
           }
         ],
         "videos": [
@@ -1475,6 +2325,46 @@
               "chapter": "Ch 1.6"
             },
             "durationSeconds": 480
+          },
+          {
+            "youtubeId": "sci7XQa77_Q",
+            "title": "Simplifying Rational Expressions",
+            "channel": "Brian McLogan",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.5"
+            },
+            "durationSeconds": 600
+          },
+          {
+            "youtubeId": "iA0wluAsrNY",
+            "title": "Algebra Review \u2014 Trigonometry",
+            "channel": "Organic Chemistry Tutor",
+            "source": {
+              "source": "yoshiwara",
+              "chapter": "Ch 2.1"
+            },
+            "durationSeconds": 600
+          },
+          {
+            "youtubeId": "HAO4Yuk9wP0",
+            "title": "Factoring Polynomials \u2014 All Types",
+            "channel": "Mario's Math Tutoring",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.4"
+            },
+            "durationSeconds": 600
+          },
+          {
+            "youtubeId": "GmMX3-nTWbE",
+            "title": "Solving Linear Equations Made Easy",
+            "channel": "PatrickJMT",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.1"
+            },
+            "durationSeconds": 600
           }
         ],
         "practice": [
@@ -1805,6 +2695,139 @@
               "source": "openstax_abramson",
               "chapter": "Ch 2.2"
             }
+          },
+          {
+            "title": "Find the equation of the line through (2, \u22121) with slope 3.",
+            "prompt": "Write in slope-intercept form.",
+            "steps": [
+              {
+                "label": "Start with point-slope form",
+                "math": "y \u2212 y\u2081 = m(x \u2212 x\u2081)",
+                "explanation": "Plug in m = 3, (x\u2081, y\u2081) = (2, \u22121)."
+              },
+              {
+                "label": "Substitute",
+                "math": "y \u2212 (\u22121) = 3(x \u2212 2)",
+                "explanation": "y + 1 = 3(x \u2212 2)."
+              },
+              {
+                "label": "Distribute",
+                "math": "y + 1 = 3x \u2212 6",
+                "explanation": "Multiply 3 across the parentheses."
+              },
+              {
+                "label": "Solve for y",
+                "math": "y = 3x \u2212 7",
+                "explanation": "Subtract 1 from both sides."
+              },
+              {
+                "label": "Final answer",
+                "math": "y = 3x \u2212 7",
+                "explanation": "Slope m = 3, y-intercept b = \u22127."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 2.2",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Are the lines 2x + 3y = 6 and 4x + 6y = 12 parallel, perpendicular, or the same?",
+            "prompt": "Analyze the slopes.",
+            "steps": [
+              {
+                "label": "Rewrite first line in slope-intercept form",
+                "math": "3y = \u22122x + 6  \u2192  y = (\u22122/3)x + 2",
+                "explanation": "Solve for y to read the slope."
+              },
+              {
+                "label": "Rewrite second line",
+                "math": "6y = \u22124x + 12  \u2192  y = (\u22124/6)x + 2  \u2192  y = (\u22122/3)x + 2",
+                "explanation": "Both simplify to the same equation!"
+              },
+              {
+                "label": "Compare slopes and intercepts",
+                "math": "Both: slope = \u22122/3, y-intercept = 2",
+                "explanation": "They are the same line (coincident)."
+              },
+              {
+                "label": "Final answer",
+                "math": "Same line \u2014 they are coincident (every point on one is on the other).",
+                "explanation": "Multiply the first equation by 2 to get the second."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 2.2",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Find the distance between P(1, 5) and Q(4, 9).",
+            "prompt": "Apply the distance formula.",
+            "steps": [
+              {
+                "label": "Recall distance formula",
+                "math": "d = \u221a[(x\u2082\u2212x\u2081)\u00b2 + (y\u2082\u2212y\u2081)\u00b2]",
+                "explanation": "Derived from the Pythagorean theorem."
+              },
+              {
+                "label": "Substitute coordinates",
+                "math": "d = \u221a[(4\u22121)\u00b2 + (9\u22125)\u00b2] = \u221a[3\u00b2 + 4\u00b2]",
+                "explanation": "x\u2082\u2212x\u2081 = 3, y\u2082\u2212y\u2081 = 4."
+              },
+              {
+                "label": "Compute squares",
+                "math": "3\u00b2 + 4\u00b2 = 9 + 16 = 25",
+                "explanation": "9 + 16 = 25."
+              },
+              {
+                "label": "Take the square root",
+                "math": "\u221a25 = 5",
+                "explanation": "The distance is 5 units."
+              },
+              {
+                "label": "Final answer",
+                "math": "d = 5",
+                "explanation": "A 3-4-5 right triangle confirms the result."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 2.2",
+              "section": null,
+              "urlPath": null
+            }
+          },
+          {
+            "title": "Find the x- and y-intercepts of 3x \u2212 4y = 12.",
+            "prompt": "Set each variable to 0 in turn.",
+            "steps": [
+              {
+                "label": "y-intercept: set x = 0",
+                "math": "3(0) \u2212 4y = 12  \u2192  \u22124y = 12  \u2192  y = \u22123",
+                "explanation": "The y-intercept is (0, \u22123)."
+              },
+              {
+                "label": "x-intercept: set y = 0",
+                "math": "3x \u2212 4(0) = 12  \u2192  3x = 12  \u2192  x = 4",
+                "explanation": "The x-intercept is (4, 0)."
+              },
+              {
+                "label": "Final answer",
+                "math": "x-intercept: (4, 0);  y-intercept: (0, \u22123)",
+                "explanation": "Plot both points and draw the line through them."
+              }
+            ],
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 2.2",
+              "section": null,
+              "urlPath": null
+            }
           }
         ],
         "videos": [
@@ -1817,6 +2840,46 @@
               "chapter": "Ch 2.2"
             },
             "durationSeconds": 540
+          },
+          {
+            "youtubeId": "ldYGiXSHa_Q",
+            "title": "Solving Linear Equations",
+            "channel": "PatrickJMT",
+            "source": {
+              "source": "openstax_abramson",
+              "chapter": "Ch 1.1"
+            },
+            "durationSeconds": 600
+          },
+          {
+            "youtubeId": "XFkmEW6myeU",
+            "title": "Slope Intercept Form of a Line",
+            "channel": "Mario's Math Tutoring",
+            "source": {
+              "source": "lippman_rasmussen",
+              "chapter": "Ch 2.1"
+            },
+            "durationSeconds": 540
+          },
+          {
+            "youtubeId": "FkUEsP9efFg",
+            "title": "Introduction to Functions",
+            "channel": "Professor Leonard",
+            "source": {
+              "source": "lippman_rasmussen",
+              "chapter": "Ch 1"
+            },
+            "durationSeconds": 720
+          },
+          {
+            "youtubeId": "CRlep6rzy-U",
+            "title": "Domain and Range \u2014 Best Explanation",
+            "channel": "Brian McLogan",
+            "source": {
+              "source": "lippman_rasmussen",
+              "chapter": "Ch 1.2"
+            },
+            "durationSeconds": 600
           }
         ],
         "practice": [
@@ -2169,8 +3232,56 @@
                 "title": "What is a function?",
                 "channel": "Khan Academy",
                 "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 540
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
                   "source": "lippman_rasmussen",
                   "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "CRlep6rzy-U",
+                "title": "Domain and Range \u2014 Best Explanation",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "hOf2UFyL_QE",
+                "title": "Functions \u2014 Full Lecture",
+                "channel": "OpenStax",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 540
+              },
+              {
+                "youtubeId": "TreVSyf3THY",
+                "title": "Trigonometry Basics \u2014 SOHCAHTOA",
+                "channel": "Mario's Math Tutoring",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
                   "section": null,
                   "urlPath": null
                 },
@@ -2523,6 +3634,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 660
+              },
+              {
+                "youtubeId": "CRlep6rzy-U",
+                "title": "Domain and Range \u2014 Best Explanation",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "mL9eBKaKXAI",
+                "title": "Finding Domain and Range of a Function",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 540
+              },
+              {
+                "youtubeId": "hOf2UFyL_QE",
+                "title": "Functions \u2014 Full Lecture",
+                "channel": "OpenStax",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 540
               }
             ],
             "practice": [
@@ -2852,6 +4011,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 480
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "fNk_zzaMoSs",
+                "title": "Vectors \u2014 Essence of Linear Algebra Ch 1",
+                "channel": "3Blue1Brown",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.4",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "CRlep6rzy-U",
+                "title": "Domain and Range \u2014 Best Explanation",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -3181,6 +4388,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 480
+              },
+              {
+                "youtubeId": "EsgHKdLSPVc",
+                "title": "Composition of Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.4",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "CRlep6rzy-U",
+                "title": "Domain and Range \u2014 Best Explanation",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -3520,6 +4775,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 600
+              },
+              {
+                "youtubeId": "sCRB6hMsC4",
+                "title": "Introduction to Graph Transformations",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.5",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "CRlep6rzy-U",
+                "title": "Domain and Range \u2014 Best Explanation",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
               }
             ],
             "practice": [
@@ -3901,6 +5204,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 540
+              },
+              {
+                "youtubeId": "ldYGiXSHa_Q",
+                "title": "Solving Linear Equations",
+                "channel": "PatrickJMT",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "XFkmEW6myeU",
+                "title": "Slope Intercept Form of a Line",
+                "channel": "Mario's Math Tutoring",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 540
+              },
+              {
+                "youtubeId": "TreVSyf3THY",
+                "title": "Trigonometry Basics \u2014 SOHCAHTOA",
+                "channel": "Mario's Math Tutoring",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 540
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
               }
             ],
             "practice": [
@@ -4266,6 +5617,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 600
+              },
+              {
+                "youtubeId": "8qezAG2r0sk",
+                "title": "Factoring Polynomials and Solving by Factoring",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "GmMX3-nTWbE",
+                "title": "Solving Linear Equations Made Easy",
+                "channel": "PatrickJMT",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "HAO4Yuk9wP0",
+                "title": "Factoring Polynomials \u2014 All Types",
+                "channel": "Mario's Math Tutoring",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.4",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "iA0wluAsrNY",
+                "title": "Algebra Review \u2014 Trigonometry",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -4615,6 +6014,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 480
+              },
+              {
+                "youtubeId": "l6hSY2Pcch0",
+                "title": "Radians and Degrees",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 1.0",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "TreVSyf3THY",
+                "title": "Trigonometry Basics \u2014 SOHCAHTOA",
+                "channel": "Mario's Math Tutoring",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 540
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "bSM7RNSbWhM",
+                "title": "Basic Trigonometry: Sin Cos Tan",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -4963,6 +6410,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 540
+              },
+              {
+                "youtubeId": "bSM7RNSbWhM",
+                "title": "Basic Trigonometry: Sin Cos Tan",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "a5WQlcFTXyk",
+                "title": "Trigonometry: Solving Right Triangles",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "iA0wluAsrNY",
+                "title": "Algebra Review \u2014 Trigonometry",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -5314,6 +6809,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 480
+              },
+              {
+                "youtubeId": "c819bGfH8FA",
+                "title": "How to Remember the Unit Circle",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 7.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "bSM7RNSbWhM",
+                "title": "Basic Trigonometry: Sin Cos Tan",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "l6hSY2Pcch0",
+                "title": "Radians and Degrees",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 1.0",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -5707,6 +7250,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 600
+              },
+              {
+                "youtubeId": "Q8BbbZxkZSA",
+                "title": "Rational Functions and Conic Sections",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 5.5",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "5BL37ieZ2tw",
+                "title": "Rational Expressions and Equations",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.5",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "sCRB6hMsC4",
+                "title": "Introduction to Graph Transformations",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.5",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "sci7XQa77_Q",
+                "title": "Simplifying Rational Expressions",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.5",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -6068,6 +7659,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 480
+              },
+              {
+                "youtubeId": "EsgHKdLSPVc",
+                "title": "Composition of Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.4",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "CRlep6rzy-U",
+                "title": "Domain and Range \u2014 Best Explanation",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -6404,6 +8043,54 @@
                 "source": {
                   "source": "openstax_abramson",
                   "chapter": "Ch 6.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 540
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "ETkyLiVevKM",
+                "title": "Exponent Rules You Forgot",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "TreVSyf3THY",
+                "title": "Trigonometry Basics \u2014 SOHCAHTOA",
+                "channel": "Mario's Math Tutoring",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
                   "section": null,
                   "urlPath": null
                 },
@@ -6762,6 +8449,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 480
+              },
+              {
+                "youtubeId": "Zw5t6BTQYRU",
+                "title": "Logarithms \u2014 How? (NancyPi)",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 4.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "ETkyLiVevKM",
+                "title": "Exponent Rules You Forgot",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
               }
             ],
             "practice": [
@@ -7162,6 +8897,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 540
+              },
+              {
+                "youtubeId": "Zw5t6BTQYRU",
+                "title": "Logarithms \u2014 How? (NancyPi)",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 4.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "LRbi_pMX1DM",
+                "title": "Logarithms Explained \u2014 Rules & Properties",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 4.3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "sCRB6hMsC4",
+                "title": "Introduction to Graph Transformations",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.5",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
               }
             ],
             "practice": [
@@ -7504,6 +9287,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 540
+              },
+              {
+                "youtubeId": "fo_q9mEAFp4",
+                "title": "Graphs of Trigonometric Functions",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 6.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "bSM7RNSbWhM",
+                "title": "Basic Trigonometry: Sin Cos Tan",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "sCRB6hMsC4",
+                "title": "Introduction to Graph Transformations",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.5",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -7888,6 +9719,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 360
+              },
+              {
+                "youtubeId": "bSM7RNSbWhM",
+                "title": "Basic Trigonometry: Sin Cos Tan",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "c819bGfH8FA",
+                "title": "How to Remember the Unit Circle",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 7.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "iA0wluAsrNY",
+                "title": "Algebra Review \u2014 Trigonometry",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -8232,6 +10111,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 540
+              },
+              {
+                "youtubeId": "iA0wluAsrNY",
+                "title": "Algebra Review \u2014 Trigonometry",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "bSM7RNSbWhM",
+                "title": "Basic Trigonometry: Sin Cos Tan",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "fo_q9mEAFp4",
+                "title": "Graphs of Trigonometric Functions",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 6.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "c819bGfH8FA",
+                "title": "How to Remember the Unit Circle",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 7.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -8597,15 +10524,63 @@
             "videos": [
               {
                 "youtubeId": "Z7C5g7S3dPw",
-                "title": "Polynomial equations",
+                "title": "Quadratic equations",
                 "channel": "Khan Academy",
                 "source": {
-                  "source": "openstax_abramson",
-                  "chapter": "Ch 2.6",
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 3.2",
                   "section": null,
                   "urlPath": null
                 },
-                "durationSeconds": 540
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "8qezAG2r0sk",
+                "title": "Factoring Polynomials and Solving by Factoring",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "HAO4Yuk9wP0",
+                "title": "Factoring Polynomials \u2014 All Types",
+                "channel": "Mario's Math Tutoring",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.4",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "GmMX3-nTWbE",
+                "title": "Solving Linear Equations Made Easy",
+                "channel": "PatrickJMT",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "sCRB6hMsC4",
+                "title": "Introduction to Graph Transformations",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.5",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
               }
             ],
             "practice": [
@@ -8946,6 +10921,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 540
+              },
+              {
+                "youtubeId": "sci7XQa77_Q",
+                "title": "Simplifying Rational Expressions",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.5",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "5BL37ieZ2tw",
+                "title": "Rational Expressions and Equations",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.5",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "HAO4Yuk9wP0",
+                "title": "Factoring Polynomials \u2014 All Types",
+                "channel": "Mario's Math Tutoring",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.4",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "8qezAG2r0sk",
+                "title": "Factoring Polynomials and Solving by Factoring",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
               }
             ],
             "practice": [
@@ -9279,6 +11302,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 540
+              },
+              {
+                "youtubeId": "8qezAG2r0sk",
+                "title": "Factoring Polynomials and Solving by Factoring",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "Zw5t6BTQYRU",
+                "title": "Logarithms \u2014 How? (NancyPi)",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 4.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "LRbi_pMX1DM",
+                "title": "Logarithms Explained \u2014 Rules & Properties",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 4.3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -9619,6 +11690,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 540
+              },
+              {
+                "youtubeId": "fo_q9mEAFp4",
+                "title": "Graphs of Trigonometric Functions",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 6.2",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "bSM7RNSbWhM",
+                "title": "Basic Trigonometry: Sin Cos Tan",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "iA0wluAsrNY",
+                "title": "Algebra Review \u2014 Trigonometry",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -9958,6 +12077,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 480
+              },
+              {
+                "youtubeId": "8qezAG2r0sk",
+                "title": "Factoring Polynomials and Solving by Factoring",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "GmMX3-nTWbE",
+                "title": "Solving Linear Equations Made Easy",
+                "channel": "PatrickJMT",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -10311,6 +12478,30 @@
               {
                 "youtubeId": "9fS0uA4iLxI",
                 "title": "Law of Sines",
+                "channel": "Khan Academy",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 480
+              },
+              {
+                "youtubeId": "i6kIjZA2UAI",
+                "title": "Law of Sines \u2014 How? When?",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "8qezAG2r0sk",
+                "title": "Law of Sines and Law of Cosines",
                 "channel": "Organic Chemistry Tutor",
                 "source": {
                   "source": "openstax_abramson",
@@ -10319,6 +12510,30 @@
                   "urlPath": null
                 },
                 "durationSeconds": 720
+              },
+              {
+                "youtubeId": "bSM7RNSbWhM",
+                "title": "Basic Trigonometry: Sin Cos Tan",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -10650,14 +12865,62 @@
               {
                 "youtubeId": "9CGY0s-uCUE",
                 "title": "Law of Cosines",
-                "channel": "Organic Chemistry Tutor",
+                "channel": "Khan Academy",
                 "source": {
                   "source": "openstax_abramson",
                   "chapter": "Ch 10.2",
                   "section": null,
                   "urlPath": null
                 },
+                "durationSeconds": 480
+              },
+              {
+                "youtubeId": "8qezAG2r0sk",
+                "title": "Law of Sines and Law of Cosines",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.1",
+                  "section": null,
+                  "urlPath": null
+                },
                 "durationSeconds": 720
+              },
+              {
+                "youtubeId": "i6kIjZA2UAI",
+                "title": "Law of Sines \u2014 How? When?",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "bSM7RNSbWhM",
+                "title": "Basic Trigonometry: Sin Cos Tan",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -10964,6 +13227,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 420
+              },
+              {
+                "youtubeId": "bSM7RNSbWhM",
+                "title": "Basic Trigonometry: Sin Cos Tan",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "i6kIjZA2UAI",
+                "title": "Law of Sines \u2014 How? When?",
+                "channel": "NancyPi",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "8qezAG2r0sk",
+                "title": "Law of Sines and Law of Cosines",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -11365,6 +13676,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 480
+              },
+              {
+                "youtubeId": "fNk_zzaMoSs",
+                "title": "Vectors \u2014 Essence of Linear Algebra Ch 1",
+                "channel": "3Blue1Brown",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.4",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "k7RM-ot2NWY",
+                "title": "Linear combinations, span & basis vectors",
+                "channel": "3Blue1Brown",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.4",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "TreVSyf3THY",
+                "title": "Trigonometry Basics \u2014 SOHCAHTOA",
+                "channel": "Mario's Math Tutoring",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 540
               }
             ],
             "practice": [
@@ -11705,6 +14064,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 600
+              },
+              {
+                "youtubeId": "fNk_zzaMoSs",
+                "title": "Vectors \u2014 Essence of Linear Algebra Ch 1",
+                "channel": "3Blue1Brown",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.4",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "8qezAG2r0sk",
+                "title": "Factoring Polynomials and Solving by Factoring",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "GmMX3-nTWbE",
+                "title": "Solving Linear Equations Made Easy",
+                "channel": "PatrickJMT",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
               }
             ],
             "practice": [
@@ -12041,6 +14448,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 540
+              },
+              {
+                "youtubeId": "97pe-QlSGqA",
+                "title": "Parametric Equations Introduction",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.4",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "fNk_zzaMoSs",
+                "title": "Vectors \u2014 Essence of Linear Algebra Ch 1",
+                "channel": "3Blue1Brown",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.4",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "sCRB6hMsC4",
+                "title": "Introduction to Graph Transformations",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.5",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
               }
             ],
             "practice": [
@@ -12364,6 +14819,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 480
+              },
+              {
+                "youtubeId": "97pe-QlSGqA",
+                "title": "Parametric Equations Introduction",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.4",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "fNk_zzaMoSs",
+                "title": "Vectors \u2014 Essence of Linear Algebra Ch 1",
+                "channel": "3Blue1Brown",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.4",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "sCRB6hMsC4",
+                "title": "Introduction to Graph Transformations",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.5",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
               }
             ],
             "practice": [
@@ -12757,6 +15260,54 @@
                   "urlPath": null
                 },
                 "durationSeconds": 600
+              },
+              {
+                "youtubeId": "Q8BbbZxkZSA",
+                "title": "Rational Functions and Conic Sections",
+                "channel": "Organic Chemistry Tutor",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 12.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "fNk_zzaMoSs",
+                "title": "Vectors \u2014 Essence of Linear Algebra Ch 1",
+                "channel": "3Blue1Brown",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.4",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 600
+              },
+              {
+                "youtubeId": "sCRB6hMsC4",
+                "title": "Introduction to Graph Transformations",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.5",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
               }
             ],
             "practice": [
@@ -13164,15 +15715,63 @@
               },
               {
                 "youtubeId": "D1Q3RquaO-4",
-                "title": "Geometric series",
+                "title": "D1Q3RquaO-4",
                 "channel": "Khan Academy",
                 "source": {
                   "source": "openstax_abramson",
-                  "chapter": "Ch 13.2",
+                  "chapter": "Ch 1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 540
+              },
+              {
+                "youtubeId": "9SOQS5jb4f4",
+                "title": "Precalculus in One Day",
+                "channel": "Brian McLogan",
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3",
                   "section": null,
                   "urlPath": null
                 },
                 "durationSeconds": 600
+              },
+              {
+                "youtubeId": "FkUEsP9efFg",
+                "title": "Introduction to Functions",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "sCRB6hMsC4",
+                "title": "Introduction to Graph Transformations",
+                "channel": "Professor Leonard",
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.5",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 720
+              },
+              {
+                "youtubeId": "TreVSyf3THY",
+                "title": "Trigonometry Basics \u2014 SOHCAHTOA",
+                "channel": "Mario's Math Tutoring",
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null,
+                  "urlPath": null
+                },
+                "durationSeconds": 540
               }
             ],
             "practice": [
