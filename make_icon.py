@@ -4,21 +4,25 @@
 Design:
 - Deep indigo → vibrant blue → soft purple gradient
 - Soft sine curves in the background
-- Large math-italic "f(x)" centered, using STIX Two Math
-- Letter-spaced "PREP" label below
+- Centered composition: math-italic f(x) above letter-spaced PREP
+- The whole composition is centered as one block in the middle of the canvas
+- f(x) uses true math Unicode glyphs (U+1D453, U+1D465) from STIX Two Math
 """
 import math
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 SIZE = 1024
 
-# Font paths on macOS
+# True math italic characters (U+1D453, U+1D465) from STIX Two Math
+MATH_ITALIC_F = "\U0001D453"   # 𝑓
+MATH_ITALIC_X = "\U0001D465"   # 𝑥
+
 MATH_FONT = "/System/Library/Fonts/Supplemental/STIXTwoMath.otf"
 TEXT_FONT = "/System/Library/Fonts/Supplemental/STIXTwoText.ttf"
 FALLBACK = "/System/Library/Fonts/Supplemental/Georgia.ttf"
 
 
-def make_gradient(size: int, top_color, bottom_color) -> Image.Image:
+def make_gradient(size, top_color, bottom_color):
     base = Image.new("RGB", (1, size), top_color)
     top = Image.new("RGB", (1, size))
     for y in range(size):
@@ -30,13 +34,13 @@ def make_gradient(size: int, top_color, bottom_color) -> Image.Image:
     return top.resize((size, size), Image.BILINEAR)
 
 
-def add_curves(img: Image.Image, color, width: int = 22, opacity: int = 70) -> Image.Image:
+def add_curves(img, color, width=22, opacity=55):
     overlay = Image.new("RGBA", img.size, (0, 0, 0, 0))
     draw = ImageDraw.Draw(overlay)
     w, h = img.size
     for phase, amp, freq, op in [
-        (0.0, 0.18, 1.5, opacity),
-        (math.pi / 2, 0.10, 1.2, max(40, opacity - 40)),
+        (0.0, 0.20, 1.5, opacity),
+        (math.pi / 2, 0.11, 1.2, max(35, opacity - 35)),
     ]:
         prev = None
         for x in range(0, w, 4):
@@ -49,80 +53,116 @@ def add_curves(img: Image.Image, color, width: int = 22, opacity: int = 70) -> I
     return Image.alpha_composite(img.convert("RGBA"), overlay)
 
 
-def load_font(path: str, size: int) -> ImageFont.FreeTypeFont:
+def load_font(path, size):
     try:
         return ImageFont.truetype(path, size)
     except (OSError, IOError):
         return ImageFont.truetype(FALLBACK, size)
 
 
-def make_icon() -> Image.Image:
-    # Background gradient
+def measure(draw, text, font):
+    bbox = draw.textbbox((0, 0), text, font=font)
+    return bbox[0], bbox[1], bbox[2] - bbox[0], bbox[3] - bbox[1]
+
+
+def make_icon():
     base = make_gradient(
         SIZE,
         top_color=(28, 34, 92),
         bottom_color=(96, 70, 200),
     ).convert("RGBA")
 
-    # Soft curves in the background
-    base = add_curves(base, color=(255, 255, 255), width=24, opacity=65)
+    # Subtle background curves
+    base = add_curves(base, color=(255, 255, 255), width=22, opacity=55)
 
-    # Horizontal highlight band
+    # Subtle highlight band
     band = Image.new("RGBA", (SIZE, SIZE), (0, 0, 0, 0))
     bd = ImageDraw.Draw(band)
-    for y in range(SIZE // 2 - 120, SIZE // 2 + 120):
-        t = abs(y - SIZE // 2) / 120
-        alpha = int(40 * (1 - t))
+    for y in range(SIZE // 2 - 140, SIZE // 2 + 140):
+        t = abs(y - SIZE // 2) / 140
+        alpha = int(35 * (1 - t))
         bd.line([(0, y), (SIZE, y)], fill=(255, 255, 255, alpha), width=1)
     base = Image.alpha_composite(base, band)
 
-    # The main "f(x)" — large, math-italic, centered
     text_layer = Image.new("RGBA", (SIZE, SIZE), (0, 0, 0, 0))
     td = ImageDraw.Draw(text_layer)
 
-    # Big math-italic "f(x)" — fill most of the canvas
-    main_font = load_font(MATH_FONT, 540)
-    main_text = "f(x)"
+    # ─── Render f(x) with math italic glyphs, tight spacing ───
+    main_font = load_font(MATH_FONT, 460)
 
-    # Measure
-    main_bbox = td.textbbox((0, 0), main_text, font=main_font)
-    main_w = main_bbox[2] - main_bbox[0]
-    main_h = main_bbox[3] - main_bbox[1]
+    f_char = MATH_ITALIC_F
+    x_char = MATH_ITALIC_X
 
-    # Center the math glyph in the upper-mid area of the canvas
-    main_x = (SIZE - main_w) // 2 - main_bbox[0]
-    main_y = int(SIZE * 0.10) - main_bbox[1]  # ~10% from top
+    fx_off, fy_off, fw, fh = measure(td, f_char, main_font)
+    lpar_off, lpar_y, lpar_w, lpar_h = measure(td, "(", main_font)
+    xx_off, xy_off, xw, xh = measure(td, x_char, main_font)
+    rpar_off, rpar_y, rpar_w, rpar_h = measure(td, ")", main_font)
 
-    # "PREP" — letter-spaced, near the bottom
-    sub_font = load_font(TEXT_FONT, 110)
+    # Tight inner gaps: f( x ) — minimal whitespace, no excess
+    gap = 10             # between f and (
+    inner_gap = 30       # between ( and x, x and )
+    f_x_w = fw + gap
+    parens_w = lpar_w + inner_gap + xw + inner_gap + rpar_w
+    f_x_w_total = f_x_w + parens_w
+    start_x = (SIZE - f_x_w_total) // 2
+
+    f_x = start_x
+    lpar_x = f_x + fw + gap
+    x_x = lpar_x + lpar_w + inner_gap
+    rpar_x = x_x + xw + inner_gap
+
+    # Vertical: put f(x) in the middle-upper area
+    glyph_h = max(fh, lpar_h, xh, rpar_h)
+    f_x_y_top = int(SIZE * 0.18)
+
+    # ─── Render PREP, letter-spaced, below f(x) ───
+    sub_font = load_font(TEXT_FONT, 120)
     sub_text = "PREP"
     sub_bbox = td.textbbox((0, 0), sub_text, font=sub_font)
-    sub_w = sub_bbox[2] - sub_bbox[0]
     sub_h = sub_bbox[3] - sub_bbox[1]
-    sub_y = SIZE - 180 - sub_bbox[1]
 
-    # Drop shadow (subtle, since the math glyph is the focus)
-    shadow = Image.new("RGBA", (SIZE, SIZE), (0, 0, 0, 0))
-    sd = ImageDraw.Draw(shadow)
-    sd.text((main_x + 6, main_y + 14), main_text, fill=(0, 0, 0, 110), font=main_font)
-    shadow = shadow.filter(ImageFilter.GaussianBlur(radius=10))
-    base = Image.alpha_composite(base, shadow)
+    # Gap between f(x) and PREP
+    gap_between = 90
+    f_x_bottom = f_x_y_top + glyph_h
+    prep_y_top = f_x_bottom + gap_between
 
-    # Render the math glyph
-    td.text((main_x, main_y), main_text, fill=(255, 255, 255, 255), font=main_font)
-
-    # Render "PREP" with letter spacing, semi-transparent
+    # Letter-spaced PREP width
     letters = list(sub_text)
     spacing = 22
-    total_w = sum(
+    prep_total_w = sum(
         (td.textbbox((0, 0), L, font=sub_font)[2] - td.textbbox((0, 0), L, font=sub_font)[0]) + spacing
         for L in letters
     ) - spacing
-    cur_x = (SIZE - total_w) // 2
+    prep_start_x = (SIZE - prep_total_w) // 2
+
+    # ─── Drop shadow for the whole composition ───
+    shadow = Image.new("RGBA", (SIZE, SIZE), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(shadow)
+    sd.text((f_x - fx_off + 6, f_x_y_top - fy_off + 12), f_char, fill=(0, 0, 0, 110), font=main_font)
+    sd.text((lpar_x - lpar_off + 6, f_x_y_top - lpar_y + 12), "(", fill=(0, 0, 0, 110), font=main_font)
+    sd.text((x_x - xx_off + 6, f_x_y_top - xy_off + 12), x_char, fill=(0, 0, 0, 110), font=main_font)
+    sd.text((rpar_x - rpar_off + 6, f_x_y_top - rpar_y + 12), ")", fill=(0, 0, 0, 110), font=main_font)
+    cur_x = prep_start_x
+    for L in letters:
+        lbbox = sd.textbbox((0, 0), L, font=sub_font)
+        lw = lbbox[2] - lbbox[0]
+        sd.text((cur_x - lbbox[0] + 3, prep_y_top - lbbox[1] + 4), L, fill=(0, 0, 0, 90), font=sub_font)
+        cur_x += lw + spacing
+    shadow = shadow.filter(ImageFilter.GaussianBlur(radius=11))
+    base = Image.alpha_composite(base, shadow)
+
+    # ─── Render the math glyph (f ( x ) in proper math italic) ───
+    td.text((f_x - fx_off, f_x_y_top - fy_off), f_char, fill=(255, 255, 255, 255), font=main_font)
+    td.text((lpar_x - lpar_off, f_x_y_top - lpar_y), "(", fill=(255, 255, 255, 255), font=main_font)
+    td.text((x_x - xx_off, f_x_y_top - xy_off), x_char, fill=(255, 255, 255, 255), font=main_font)
+    td.text((rpar_x - rpar_off, f_x_y_top - rpar_y), ")", fill=(255, 255, 255, 255), font=main_font)
+
+    # ─── Render PREP ───
+    cur_x = prep_start_x
     for L in letters:
         lbbox = td.textbbox((0, 0), L, font=sub_font)
         lw = lbbox[2] - lbbox[0]
-        td.text((cur_x - lbbox[0], sub_y - lbbox[1]), L, fill=(255, 255, 255, 220), font=sub_font)
+        td.text((cur_x - lbbox[0], prep_y_top - lbbox[1]), L, fill=(255, 255, 255, 230), font=sub_font)
         cur_x += lw + spacing
 
     return Image.alpha_composite(base, text_layer).convert("RGB")
