@@ -1,11 +1,59 @@
 import SwiftUI
 
+/// Context the AI tutor uses to keep answers relevant to the current unit.
+/// Pass this in from any lesson / unit / topic so the tutor knows what the
+/// user is studying and can pull the right definitions, examples, and pitfalls.
+struct TutorContext: Hashable {
+    let title: String
+    let summary: String
+    let objectives: [String]
+    let topicSlug: String?
+    let weekTitle: String?
+
+    init(topic: Topic, weekTitle: String? = nil) {
+        self.title = topic.title
+        self.summary = topic.summary
+        self.objectives = topic.lesson.objectives
+        self.topicSlug = topic.slug
+        self.weekTitle = weekTitle
+    }
+
+    /// System-prompt section that grounds the tutor in the current unit.
+    var systemContextBlock: String {
+        var lines: [String] = ["Current unit the student is studying: \"\(title)\"." ]
+        if let weekTitle { lines.append("Course position: \(weekTitle).") }
+        if !summary.isEmpty { lines.append("Unit summary: \(summary)") }
+        if !objectives.isEmpty {
+            lines.append("Learning objectives:")
+            for obj in objectives { lines.append("- \(obj)") }
+        }
+        lines.append("Keep every answer tightly relevant to this unit. If the student asks something off-topic, briefly answer but steer them back to \"\(title)\".")
+        return lines.joined(separator: "\n")
+    }
+
+    /// First few suggested prompts tailored to the current unit.
+    var suggestedPrompts: [String] {
+        var prompts: [String] = [
+            "Explain \(title) like I'm seeing it for the first time.",
+            "Walk me through a worked example for \(title).",
+            "What's the most common mistake students make in \(title)?"
+        ]
+        if let first = objectives.first {
+            prompts.append("Help me master this objective: \(first)")
+        }
+        return prompts
+    }
+}
+
 struct TutorView: View {
+    /// Optional unit context. When present, the tutor shows a context banner
+    /// and grounds its answers in the current lesson.
+    var context: TutorContext? = nil
+
     @State private var messages: [ChatMessage] = []
     @State private var input: String = ""
     @State private var isSending = false
     @State private var error: String?
-    @State private var lastLessonContext: String? = nil
     @State private var keyPresent: Bool = KeychainService.loadGroqKey() != nil
 
     @FocusState private var inputFocused: Bool
@@ -15,6 +63,9 @@ struct TutorView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
+                if let context {
+                    contextBanner(context)
+                }
                 if !keyPresent {
                     missingKeyBanner
                 }
@@ -48,7 +99,7 @@ struct TutorView: View {
                 Divider()
                 inputBar
             }
-            .navigationTitle("AI Tutor")
+            .navigationTitle(context?.title ?? "AI Tutor")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -65,17 +116,90 @@ struct TutorView: View {
         }
     }
 
+    // MARK: - Context banner
+
+    private func contextBanner(_ ctx: TutorContext) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack(alignment: .top, spacing: 8) {
+                Image(systemName: "graduationcap.fill")
+                    .foregroundStyle(.white)
+                    .padding(8)
+                    .background(Theme.accent, in: Circle())
+                VStack(alignment: .leading, spacing: 2) {
+                    HStack(spacing: 6) {
+                        Text("Asking about")
+                            .font(.caption2.weight(.bold))
+                            .tracking(0.6)
+                            .foregroundStyle(.secondary)
+                        if let weekTitle = ctx.weekTitle {
+                            Text("·")
+                                .foregroundStyle(.tertiary)
+                            Text(weekTitle)
+                                .font(.caption2.weight(.semibold))
+                                .foregroundStyle(Theme.accent)
+                        }
+                    }
+                    Text(ctx.title)
+                        .font(.subheadline.weight(.semibold))
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
+                    if !ctx.summary.isEmpty {
+                        Text(ctx.summary)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(3)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
+                Spacer(minLength: 0)
+            }
+            if !ctx.objectives.isEmpty {
+                DisclosureGroup {
+                    VStack(alignment: .leading, spacing: 4) {
+                        ForEach(ctx.objectives, id: \.self) { obj in
+                            HStack(alignment: .top, spacing: 6) {
+                                Text("•").foregroundStyle(.secondary)
+                                Text(obj)
+                                    .font(.caption)
+                                    .foregroundStyle(.primary)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
+                        }
+                    }
+                    .padding(.top, 4)
+                } label: {
+                    Text("Unit objectives (\(ctx.objectives.count))")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(Theme.accent)
+                }
+            }
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.accentSoft, in: RoundedRectangle(cornerRadius: 12))
+        .padding(.horizontal)
+        .padding(.top, 8)
+    }
+
+    // MARK: - Empty / missing key
+
     private var emptyState: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Ask anything about precalculus.")
+            Text(context == nil
+                 ? "Ask anything about precalculus."
+                 : "Ask anything about \(context!.title).")
                 .font(.headline)
-            Text("I can walk you through a step-by-step solution, give you another worked example, or quiz you on a topic. Add your Groq API key in Settings to start chatting.")
+                .fixedSize(horizontal: false, vertical: true)
+            Text(context == nil
+                 ? "I can walk you through a step-by-step solution, give you another worked example, or quiz you on a topic. Add your Groq API key in Settings to start chatting."
+                 : "I'll keep every answer grounded in this unit's objectives. Add your Groq API key in Settings if you haven't yet.")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
             Text("Suggested prompts:")
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(.secondary)
-            ForEach(suggestedPrompts, id: \.self) { p in
+            ForEach(currentSuggestedPrompts, id: \.self) { p in
                 Button {
                     input = p
                     send()
@@ -84,6 +208,7 @@ struct TutorView: View {
                         Image(systemName: "sparkles")
                         Text(p)
                             .multilineTextAlignment(.leading)
+                            .fixedSize(horizontal: false, vertical: true)
                         Spacer()
                     }
                     .font(.subheadline)
@@ -96,6 +221,17 @@ struct TutorView: View {
         }
     }
 
+    private var currentSuggestedPrompts: [String] {
+        context?.suggestedPrompts ?? defaultSuggestedPrompts
+    }
+
+    private let defaultSuggestedPrompts = [
+        "Explain how to use the Law of Sines step by step.",
+        "What's the difference between sin⁻¹ and csc?",
+        "Give me a practice problem on rational expressions and walk me through it.",
+        "How do I find the asymptotes of a rational function?",
+    ]
+
     private var missingKeyBanner: some View {
         HStack(alignment: .top, spacing: 8) {
             Image(systemName: "exclamationmark.triangle.fill")
@@ -106,6 +242,7 @@ struct TutorView: View {
                 Text("In Settings → AI Tutor, paste a key from console.groq.com. It's stored securely in the iOS Keychain.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
             }
         }
         .padding(10)
@@ -139,13 +276,6 @@ struct TutorView: View {
 
     private var canSend: Bool { !isSending && !input.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && keyPresent }
 
-    private let suggestedPrompts = [
-        "Explain how to use the Law of Sines step by step.",
-        "What's the difference between sin⁻¹ and csc?",
-        "Give me a practice problem on rational expressions and walk me through it.",
-        "How do I find the asymptotes of a rational function?",
-    ]
-
     private func send() {
         let prompt = input.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !prompt.isEmpty, keyPresent else { return }
@@ -156,7 +286,7 @@ struct TutorView: View {
         isSending = true
         Task {
             do {
-                let systemPrompt = """
+                var systemPrompt = """
                 You are a patient, accurate precalculus tutor. Follow these rules:
                 - Solve step by step. Show every algebraic step.
                 - Use proper mathematical notation.
@@ -166,6 +296,9 @@ struct TutorView: View {
                 - Encourage the user; remind them they're rebuilding a strong foundation.
                 - Keep answers focused and not too long. Use LaTeX-style notation like \\(x^2 + 1\\).
                 """
+                if let context {
+                    systemPrompt += "\n\n" + context.systemContextBlock
+                }
                 var history: [ChatMessage] = [ChatMessage(role: .system, content: systemPrompt)]
                 history.append(contentsOf: messages)
                 let reply = try await groq.send(messages: history)

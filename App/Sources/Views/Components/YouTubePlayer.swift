@@ -28,18 +28,15 @@ struct YouTubePlayer: UIViewRepresentable {
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <style>
-                html, body { margin: 0; padding: 0; background: #000; height: 100%; }
-                .wrap { position: relative; padding-top: 56.25%; height: 0; overflow: hidden; }
-                iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+                html, body { margin: 0; padding: 0; background: #000; height: 100%; width: 100%; }
+                iframe { display: block; width: 100%; height: 100%; border: 0; }
             </style>
         </head>
         <body>
-            <div class="wrap">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/\(videoID)?playsinline=1&rel=0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/\(videoID)?playsinline=1&rel=0&modestbranding=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
         </body>
         </html>
         """
@@ -48,20 +45,15 @@ struct YouTubePlayer: UIViewRepresentable {
 }
 
 /// Lightweight wrapper so the player only loads when the cell is on screen.
+/// Renders full-width, edge-to-edge, with a 16:9 aspect ratio and no on-video
+/// overlays (no position indicator, no debug text).
 struct YouTubeEmbed: View {
     let videoID: String
     @State private var isPlaying = false
 
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            YouTubePlayer(videoID: videoID, isPlaying: $isPlaying)
-                .aspectRatio(16/9, contentMode: .fit)
-                .background(Color.black)
-            Text(videoID)
-                .font(.caption2.monospaced())
-                .foregroundStyle(.white.opacity(0.6))
-                .padding(6)
-        }
-        .clipShape(RoundedRectangle(cornerRadius: 12))
+        YouTubePlayer(videoID: videoID, isPlaying: $isPlaying)
+            .aspectRatio(16/9, contentMode: .fill)
+            .background(Color.black)
     }
 }

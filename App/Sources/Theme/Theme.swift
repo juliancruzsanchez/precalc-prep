@@ -8,6 +8,17 @@ enum Theme {
     static let danger = Color(red: 0.86, green: 0.21, blue: 0.27)
     static let card = Color(.secondarySystemGroupedBackground)
     static let background = Color(.systemGroupedBackground)
+
+    /// Math-style serif font. Uses New York (the iOS system serif), which is
+    /// optimized for reading at body sizes. Use `compact: true` for inline /
+    /// step-by-step lines; the default for full equations.
+    static func mathFont(compact: Bool) -> Font {
+        if compact {
+            return .system(.callout, design: .serif)
+        } else {
+            return .system(.body, design: .serif)
+        }
+    }
 }
 
 struct CardStyle: ViewModifier {
