@@ -8,6 +8,7 @@ struct LessonView: View {
 
     @State private var showingQuiz = false
     @State private var walkthroughPage = 0
+    @State private var videoPage = 0
 
     var body: some View {
         ScrollView {
@@ -63,9 +64,24 @@ struct LessonView: View {
                 }
 
                 if !topic.lesson.videos.isEmpty {
-                    SectionHeader(title: "Videos", systemImage: "play.rectangle")
-                    ForEach(topic.lesson.videos) { v in
-                        VideoCard(video: v, topicSlug: topic.slug)
+                    VStack(alignment: .leading, spacing: 12) {
+                        HStack {
+                            SectionHeader(title: "Videos", systemImage: "play.rectangle")
+                            Spacer()
+                            if topic.lesson.videos.count > 1 {
+                                Text("\(videoPage + 1) of \(topic.lesson.videos.count)")
+                                    .font(.caption.monospacedDigit())
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                        TabView(selection: $videoPage) {
+                            ForEach(Array(topic.lesson.videos.enumerated()), id: \.element.youtubeId) { idx, v in
+                                VideoCard(video: v, topicSlug: topic.slug)
+                                    .tag(idx)
+                            }
+                        }
+                        .tabViewStyle(.page(indexDisplayMode: .automatic))
+                        .frame(minHeight: 300)
                     }
                 }
 
