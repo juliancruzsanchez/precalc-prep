@@ -88,8 +88,10 @@ struct LessonView: View {
                                     .foregroundStyle(.secondary)
                             }
                         }
-                        // Pager. The TabView height grows with the tallest page so
-                        // content is never clipped.
+                        // Pager. Explicit height so each page (and the video inside)
+                        // gets the room it needs — without this the paged TabView
+                        // collapses the card to its content's natural size, which
+                        // is too small to show the video.
                         TabView(selection: $videoPage) {
                             ForEach(Array(topic.lesson.videos.enumerated()), id: \.element.youtubeId) { idx, v in
                                 VideoCard(video: v, topicSlug: topic.slug)
@@ -97,6 +99,7 @@ struct LessonView: View {
                             }
                         }
                         .tabViewStyle(.page(indexDisplayMode: .always))
+                        .frame(height: VideoCard.cardHeight)
                     }
                 }
 
@@ -213,12 +216,19 @@ struct VideoCard: View {
     @EnvironmentObject private var progress: ProgressService
     @State private var didCount = false
 
-    /// Explicit video height. At ~390pt wide (iPhone portrait) × 9/16 this
-    /// is ~220pt — a clean 16:9. We hard-code the height instead of using
-    /// `.aspectRatio` because SwiftUI kept collapsing the player to zero
-    /// height inside the paged TabView.
-    private let videoHeight: CGFloat = 220
-    private let textHeight: CGFloat = 110
+    /// Minimum video height. At ~390pt wide (iPhone portrait) the natural
+    /// 16:9 height is ~219pt; we round up to 240 so the video is clearly
+    /// visible and not squeezed. Hard-coded instead of `.aspectRatio` /
+    /// GeometryReader because both kept collapsing inside the paged TabView.
+    static let videoHeight: CGFloat = 240
+    static let textHeight: CGFloat = 110
+    /// Space reserved at the bottom of the card for the TabView page dots.
+    static let pageIndicatorPadding: CGFloat = 36
+    /// Total card height. Exposed so the parent TabView can size each page
+    /// to fit — without an explicit TabView frame, the paged TabView
+    /// collapses the card down to its content's intrinsic size, which is
+    /// too small to actually show the video.
+    static let cardHeight: CGFloat = videoHeight + textHeight + pageIndicatorPadding
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -227,7 +237,7 @@ struct VideoCard: View {
             // always has a real, non-zero size to fill.
             YouTubeEmbed(videoID: video.youtubeId)
                 .frame(maxWidth: .infinity)
-                .frame(height: videoHeight)
+                .frame(height: Self.videoHeight)
                 .clipped()
 
             VStack(alignment: .leading, spacing: 6) {
@@ -250,15 +260,10 @@ struct VideoCard: View {
             .padding(14)
             // Fixed text-section height so every card in the pager is the
             // same total height, regardless of how long the title is.
-            .frame(height: textHeight, alignment: .topLeading)
+            .frame(height: Self.textHeight, alignment: .topLeading)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        // Total card height = video + text + bottom padding for the page
-        // indicator. We set it explicitly with `.frame(height:)` so the
-        // paged TabView can size each page to fit the card — the
-        // TabView's own height comes from the tallest page, so this is
-        // what gives the card its real, non-zero height.
-        .frame(height: videoHeight + textHeight + 36)
+        .frame(height: Self.cardHeight)
         .background(Theme.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: 16, style: .continuous)
