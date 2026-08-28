@@ -36,14 +36,14 @@ struct YouTubePlayer: UIViewRepresentable {
         <body>
             <div class="wrap">
                 <iframe
-                    src="https://www.youtube.com/embed/\(videoID)?playsinline=1&rel=0"
+                    src="https://www.youtube-nocookie.com/embed/\(videoID)?playsinline=1&rel=0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
         </body>
         </html>
         """
-        view.loadHTMLString(html, baseURL: URL(string: "https://www.youtube.com"))
+        view.loadHTMLString(html, baseURL: URL(string: "https://www.youtube-nocookie.com"))
     }
 }
 

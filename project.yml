@@ -53,6 +53,9 @@ targets:
             youtube.com:
               NSIncludesSubdomains: true
               NSExceptionAllowsInsecureHTTPLoads: false
+            youtube-nocookie.com:
+              NSIncludesSubdomains: true
+              NSExceptionAllowsInsecureHTTPLoads: false
             youtu.be:
               NSIncludesSubdomains: true
               NSExceptionAllowsInsecureHTTPLoads: false

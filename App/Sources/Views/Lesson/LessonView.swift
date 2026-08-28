@@ -7,6 +7,7 @@ struct LessonView: View {
     @EnvironmentObject private var settings: SettingsService
 
     @State private var showingQuiz = false
+    @State private var walkthroughPage = 0
 
     var body: some View {
         ScrollView {
@@ -40,9 +41,24 @@ struct LessonView: View {
                 }
 
                 if !topic.lesson.stepByStep.isEmpty {
-                    SectionHeader(title: "Step-by-step", systemImage: "list.number")
-                    ForEach(topic.lesson.stepByStep, id: \.title) { prob in
-                        StepByStepView(problem: prob)
+                    VStack(alignment: .leading, spacing: 12) {
+                        HStack {
+                            SectionHeader(title: "Step-by-step walkthroughs", systemImage: "list.number")
+                            Spacer()
+                            if topic.lesson.stepByStep.count > 1 {
+                                Text("\(walkthroughPage + 1) of \(topic.lesson.stepByStep.count)")
+                                    .font(.caption.monospacedDigit())
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                        TabView(selection: $walkthroughPage) {
+                            ForEach(Array(topic.lesson.stepByStep.enumerated()), id: \.element.title) { idx, prob in
+                                StepByStepView(problem: prob)
+                                    .tag(idx)
+                            }
+                        }
+                        .tabViewStyle(.page(indexDisplayMode: .automatic))
+                        .frame(minHeight: 340)
                     }
                 }
 
