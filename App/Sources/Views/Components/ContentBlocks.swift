@@ -225,6 +225,10 @@ struct StepByStepView: View {
 
             SourceCitationView(citation: problem.source, compact: true)
         }
+        // Bottom padding reserves space for the TabView page indicator so it
+        // never overlaps the last step. Reported in the height preference so
+        // the parent TabView grows to fit content + indicator.
+        .padding(.bottom, 36)
         // Allow the card to grow with its content (no fixed height clipping).
         .fixedSize(horizontal: false, vertical: true)
         // Report our natural height to the parent so the paged TabView can size to fit.

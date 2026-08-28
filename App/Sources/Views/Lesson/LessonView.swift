@@ -68,9 +68,11 @@ struct LessonView: View {
                         .tabViewStyle(.page(indexDisplayMode: .always))
                         .frame(height: walkthroughHeight)
                         .onPreferenceChange(PageContentHeightKey.self) { height in
-                            // Add a little breathing room so the page indicator
-                            // and bottom padding don't crowd the last step.
-                            walkthroughHeight = max(height + 8, 320)
+                            // `height` already includes the bottom padding
+                            // StepByStepView reserves for the page indicator,
+                            // so the TabView grows to fit content + indicator
+                            // without overlap.
+                            walkthroughHeight = max(height, 320)
                         }
                     }
                 }
@@ -107,16 +109,25 @@ struct LessonView: View {
         .navigationTitle(topic.title)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            // AI chat button on the right of the navigation bar.
+            // AI chat button on the right of the navigation bar. Translucent
+            // tinted capsule — visible but quiet, doesn't compete with the
+            // page content for attention.
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     showingTutor = true
                 } label: {
                     Label("Ask AI", systemImage: "bubble.left.and.bubble.right.fill")
                         .labelStyle(.titleAndIcon)
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(Theme.accent)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 5)
+                        .background(
+                            Capsule()
+                                .fill(Theme.accent.opacity(0.12))
+                        )
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(Theme.accent)
+                .buttonStyle(.plain)
                 .controlSize(.small)
             }
         }
@@ -202,26 +213,52 @@ struct VideoCard: View {
     @EnvironmentObject private var progress: ProgressService
     @State private var didCount = false
 
+    /// Explicit video height. At ~390pt wide (iPhone portrait) × 9/16 this
+    /// is ~220pt — a clean 16:9. We hard-code the height instead of using
+    /// `.aspectRatio` because SwiftUI kept collapsing the player to zero
+    /// height inside the paged TabView.
+    private let videoHeight: CGFloat = 220
+    private let textHeight: CGFloat = 110
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // Full-width video, no padding, no on-video overlay.
+            // Full-width video, explicit height. No aspect-ratio modifier,
+            // no GeometryReader — just a fixed frame so the AVPlayerLayer
+            // always has a real, non-zero size to fill.
             YouTubeEmbed(videoID: video.youtubeId)
                 .frame(maxWidth: .infinity)
+                .frame(height: videoHeight)
+                .clipped()
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 6) {
                 Text(video.title)
                     .font(.subheadline.weight(.semibold))
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
                 Text(video.channel)
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                    .lineLimit(1)
                 if let source = video.source {
+                    // Attribution lives inside the card so it scrolls with
+                    // the video and never gets hidden behind the page dots.
                     SourceCitationView(citation: source, compact: true)
                 }
+                Spacer(minLength: 0)
             }
             .padding(14)
+            // Fixed text-section height so every card in the pager is the
+            // same total height, regardless of how long the title is.
+            .frame(height: textHeight, alignment: .topLeading)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
+        // Total card height = video + text + bottom padding for the page
+        // indicator. We set it explicitly with `.frame(height:)` so the
+        // paged TabView can size each page to fit the card — the
+        // TabView's own height comes from the tallest page, so this is
+        // what gives the card its real, non-zero height.
+        .frame(height: videoHeight + textHeight + 36)
         .background(Theme.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: 16, style: .continuous)

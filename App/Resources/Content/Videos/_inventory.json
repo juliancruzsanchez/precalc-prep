@@ -1,0 +1,378 @@
+[
+  {
+    "id": "NybHckSEQBI",
+    "title": "Solving linear equations \u2014 basic introduction",
+    "channel": "Khan Academy"
+  },
+  {
+    "id": "GmMX3-nTWbE",
+    "title": "Solving Linear Equations Made Easy",
+    "channel": "PatrickJMT"
+  },
+  {
+    "id": "0MKafhRHolM",
+    "title": "Order of Operations \u2014 PEMDAS",
+    "channel": "Mario's Math Tutoring"
+  },
+  {
+    "id": "FkUEsP9efFg",
+    "title": "Introduction to Functions",
+    "channel": "Professor Leonard"
+  },
+  {
+    "id": "ETkyLiVevKM",
+    "title": "Exponent Rules You Forgot",
+    "channel": "Brian McLogan"
+  },
+  {
+    "id": "kITJ6qH7jS0",
+    "title": "Exponent rules",
+    "channel": "Khan Academy",
+    "replaces": "bDok7fXFed0"
+  },
+  {
+    "id": "HV1AoqM04Pk",
+    "title": "Top 3 Simple Examples of Rules of Exponents",
+    "channel": "Brian McLogan"
+  },
+  {
+    "id": "HAO4Yuk9wP0",
+    "title": "Factoring Polynomials \u2014 All Types",
+    "channel": "Mario's Math Tutoring"
+  },
+  {
+    "id": "TreVSyf3THY",
+    "title": "Trigonometry Basics \u2014 SOHCAHTOA",
+    "channel": "Mario's Math Tutoring"
+  },
+  {
+    "id": "cw3mp8oNASk",
+    "title": "Simplifying radicals",
+    "channel": "Khan Academy",
+    "replaces": "cw3G3H5ARos"
+  },
+  {
+    "id": "iA0wluAsrNY",
+    "title": "Algebra Review \u2014 Trigonometry",
+    "channel": "Organic Chemistry Tutor"
+  },
+  {
+    "id": "sci7XQa77_Q",
+    "title": "Simplifying Rational Expressions",
+    "channel": "Brian McLogan"
+  },
+  {
+    "id": "2ZzuZvz33X0",
+    "title": "Factoring polynomials \u2014 quadratic",
+    "channel": "Khan Academy",
+    "replaces": "Z7C5g7S3dPw"
+  },
+  {
+    "id": "8qezAG2r0sk",
+    "title": "Factoring Polynomials and Solving by Factoring",
+    "channel": "Organic Chemistry Tutor"
+  },
+  {
+    "id": "7Uos1ED3KHI",
+    "title": "Simplifying rational expressions",
+    "channel": "Khan Academy",
+    "replaces": "PKd5_r3Wu0E"
+  },
+  {
+    "id": "R948Tsyq4vA",
+    "title": "Slope and the equation of a line",
+    "channel": "Khan Academy",
+    "replaces": "RhMk6B2EibQ"
+  },
+  {
+    "id": "ldYGiXSHa_Q",
+    "title": "Solving Linear Equations",
+    "channel": "PatrickJMT"
+  },
+  {
+    "id": "XFkmEW6myeU",
+    "title": "Slope Intercept Form of a Line",
+    "channel": "Mario's Math Tutoring"
+  },
+  {
+    "id": "CRlep6rzy-U",
+    "title": "Domain and Range \u2014 Best Explanation",
+    "channel": "Brian McLogan"
+  },
+  {
+    "id": "F8dq2QdqDv0",
+    "title": "What is a function?",
+    "channel": "Khan Academy"
+  },
+  {
+    "id": "hOf2UFyL_QE",
+    "title": "Functions \u2014 Full Lecture",
+    "channel": "OpenStax"
+  },
+  {
+    "id": "O0uUVH8dRiU",
+    "title": "Domain and range",
+    "channel": "Khan Academy"
+  },
+  {
+    "id": "mL9eBKaKXAI",
+    "title": "Finding Domain and Range of a Function",
+    "channel": "Brian McLogan"
+  },
+  {
+    "id": "oT6LclcJ-I8",
+    "title": "Average rate of change",
+    "channel": "Khan Academy",
+    "replaces": "fG-yjRfGMRQ"
+  },
+  {
+    "id": "9SOQS5jb4f4",
+    "title": "Precalculus in One Day",
+    "channel": "Brian McLogan"
+  },
+  {
+    "id": "fNk_zzaMoSs",
+    "title": "Vectors \u2014 Essence of Linear Algebra Ch 1",
+    "channel": "3Blue1Brown"
+  },
+  {
+    "id": "q9JGGVXdl9I",
+    "title": "Composing functions",
+    "channel": "Khan Academy",
+    "replaces": "DbSyWAfIq8g"
+  },
+  {
+    "id": "EsgHKmLSPVc",
+    "title": "Composition of Functions",
+    "channel": "Professor Leonard",
+    "replaces": "EsgHKdLSPVc"
+  },
+  {
+    "id": "RttvubuBhAE",
+    "title": "Transformations of functions",
+    "channel": "Khan Academy",
+    "replaces": "AEK4DbIBK8w"
+  },
+  {
+    "id": "sTCRB6hMsC4",
+    "title": "Introduction to Graph Transformations",
+    "channel": "Professor Leonard",
+    "replaces": "sCRB6hMsC4"
+  },
+  {
+    "id": "O3jvUZ8wvZs",
+    "title": "Radians and degrees",
+    "channel": "Khan Academy",
+    "replaces": "Czuqc1tDshQ"
+  },
+  {
+    "id": "l6hSY2Pcch0",
+    "title": "Radians and Degrees",
+    "channel": "NancyPi"
+  },
+  {
+    "id": "bSM7RNSbWhM",
+    "title": "Basic Trigonometry: Sin Cos Tan",
+    "channel": "NancyPi"
+  },
+  {
+    "id": "Jsiy4TxgIME",
+    "title": "Basic trigonometry",
+    "channel": "Khan Academy",
+    "replaces": "B7yL9YuJWXc"
+  },
+  {
+    "id": "a5WQlcFTXyk",
+    "title": "Trigonometry: Solving Right Triangles",
+    "channel": "NancyPi"
+  },
+  {
+    "id": "1m9p9iubMLU",
+    "title": "Introduction to the unit circle",
+    "channel": "Khan Academy"
+  },
+  {
+    "id": "c819bGfH8FA",
+    "title": "How to Remember the Unit Circle",
+    "channel": "NancyPi"
+  },
+  {
+    "id": "2N62v_63SBo",
+    "title": "Rational functions",
+    "channel": "Khan Academy",
+    "replaces": "V6vBdqRBJWY"
+  },
+  {
+    "id": "PLrgwD9TleU",
+    "title": "Rational Functions and Conic Sections",
+    "channel": "Organic Chemistry Tutor",
+    "replaces": "Q8BbbZxkZSA"
+  },
+  {
+    "id": "5BL37ieZ2tw",
+    "title": "Rational Expressions and Equations",
+    "channel": "Brian McLogan"
+  },
+  {
+    "id": "UTUuyCXFAs4",
+    "title": "Verifying inverse functions",
+    "channel": "Khan Academy"
+  },
+  {
+    "id": "3-BIGCWr8Ow",
+    "title": "Exponential functions",
+    "channel": "Khan Academy"
+  },
+  {
+    "id": "Z5myJ8dg_rM",
+    "title": "Intro to logarithms",
+    "channel": "Khan Academy"
+  },
+  {
+    "id": "Zw5t6BTQYRU",
+    "title": "Logarithms \u2014 How? (NancyPi)",
+    "channel": "NancyPi"
+  },
+  {
+    "id": "PupNgv49_WY",
+    "title": "Logarithm properties",
+    "channel": "Khan Academy",
+    "replaces": "S9WneR0gTY4"
+  },
+  {
+    "id": "LRbi_pMX1DM",
+    "title": "Logarithms Explained \u2014 Rules & Properties",
+    "channel": "Organic Chemistry Tutor"
+  },
+  {
+    "id": "SdHwokUU8xI",
+    "title": "Graphs of sine and cosine",
+    "channel": "Khan Academy",
+    "replaces": "F6tGoP3YJ94"
+  },
+  {
+    "id": "fo_q9mEAFp4",
+    "title": "Graphs of Trigonometric Functions",
+    "channel": "Organic Chemistry Tutor"
+  },
+  {
+    "id": "HnDvUaVjQ1I",
+    "title": "Pythagorean trig identity",
+    "channel": "Khan Academy",
+    "replaces": "ZTjP1nw9JYY"
+  },
+  {
+    "id": "yV4Xa8Xtmrc",
+    "title": "Angle addition identities",
+    "channel": "Khan Academy",
+    "replaces": "0hD5MStmcpI"
+  },
+  {
+    "id": "6eqgIZyXgK8",
+    "title": "Rational equations",
+    "channel": "Khan Academy",
+    "replaces": "G_yhZ8X5SVg"
+  },
+  {
+    "id": "etl9KKf6se0",
+    "title": "Exponential equations",
+    "channel": "Khan Academy",
+    "replaces": "1V7n2wqOX7Q"
+  },
+  {
+    "id": "rufFQZDDXCE",
+    "title": "Solving trig equations",
+    "channel": "Khan Academy",
+    "replaces": "4Xf7UfelF9Q"
+  },
+  {
+    "id": "vA-55wZtLeE",
+    "title": "Systems of equations",
+    "channel": "Khan Academy",
+    "replaces": "0VPGNEoQcCA"
+  },
+  {
+    "id": "9fS0uA4iLxI",
+    "title": "Law of Sines",
+    "channel": "Khan Academy"
+  },
+  {
+    "id": "i6kIjZA2UAI",
+    "title": "Law of Sines \u2014 How? When?",
+    "channel": "NancyPi"
+  },
+  {
+    "id": "9CGY0s-uCUE",
+    "title": "Law of Cosines",
+    "channel": "Khan Academy"
+  },
+  {
+    "id": "7N5orPxUoGo",
+    "title": "Area of a triangle",
+    "channel": "Khan Academy",
+    "replaces": "T4LAAQ6S_SE"
+  },
+  {
+    "id": "hJkKADcQWj0",
+    "title": "Vectors introduction",
+    "channel": "Khan Academy",
+    "replaces": "oX2T6KE1u6U"
+  },
+  {
+    "id": "KDHuWxy53uM",
+    "title": "Dot product and angle",
+    "channel": "Khan Academy",
+    "replaces": "sEPAHVOeicA"
+  },
+  {
+    "id": "k7RM-ot2NWY",
+    "title": "Linear combinations, span & basis vectors",
+    "channel": "3Blue1Brown"
+  },
+  {
+    "id": "xOa-l_tXgWA",
+    "title": "Complex numbers in polar form",
+    "channel": "Khan Academy",
+    "replaces": "TjYH0Fz5RMc"
+  },
+  {
+    "id": "jexMSlSDubM",
+    "title": "Polar coordinates",
+    "channel": "Khan Academy",
+    "replaces": "J9LmF2NLweY"
+  },
+  {
+    "id": "97pe-QlSGqA",
+    "title": "Parametric Equations Introduction",
+    "channel": "Organic Chemistry Tutor"
+  },
+  {
+    "id": "m6c6dlmUT1c",
+    "title": "Parametric equations intro",
+    "channel": "Khan Academy",
+    "replaces": "f3QtV2TTxk"
+  },
+  {
+    "id": "0A7RR0oy2ho",
+    "title": "Conic sections overview",
+    "channel": "Khan Academy",
+    "replaces": "Dru6Fs9Acz4"
+  },
+  {
+    "id": "pzSyOTkAsY4",
+    "title": "Conic sections \u2014 circles, ellipses, hyperbolas",
+    "channel": "Khan Academy",
+    "replaces": "XO8i8AjhcL8"
+  },
+  {
+    "id": "_cooC3yG_p0",
+    "title": "Arithmetic sequences",
+    "channel": "Khan Academy",
+    "replaces": "cIEoP-IVNyk"
+  },
+  {
+    "id": "D1Q3RquaO-4",
+    "title": "D1Q3RquaO-4",
+    "channel": "Khan Academy"
+  }
+]
