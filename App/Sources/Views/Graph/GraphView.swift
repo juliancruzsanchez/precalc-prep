@@ -324,12 +324,7 @@ struct CoordinateLabel: View {
     }
 
     private func formatCoord(_ value: Double) -> String {
-        if abs(value) < 0.01 || abs(value) > 1000 {
-            return String(format: "%.2e", value)
-        }
-        if value == value.rounded() {
-            return String(format: "%.0f", value)
-        }
+        // Cap at 2 decimal places, no scientific notation.
         return String(format: "%.2f", value)
     }
 }
