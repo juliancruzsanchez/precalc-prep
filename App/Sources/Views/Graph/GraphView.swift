@@ -6,6 +6,11 @@ struct GraphView: View {
     let domainX: ClosedRange<Double>
     let domainY: ClosedRange<Double>
     let note: String?
+    var customPoints: [(x: Double, y: Double)] = []
+
+    @State private var touchLocation: CGPoint? = nil
+    @State private var touchValue: (x: Double, y: Double)? = nil
+    @State private var isTouching: Bool = false
 
     private var parsed: (expr: Expr?, error: String?) {
         do {
@@ -49,7 +54,40 @@ struct GraphView: View {
                                     .foregroundStyle(.red),
                                  at: CGPoint(x: 12, y: 24))
                     }
+                    // Draw custom points
+                    for point in customPoints {
+                        drawPoint(ctx: ctx, size: size, x: point.x, y: point.y)
+                    }
                     drawAxes(ctx: ctx, size: size)
+                }
+                .gesture(
+                    DragGesture(minimumDistance: 0)
+                        .onChanged { value in
+                            isTouching = true
+                            touchLocation = value.location
+                            let x = xFromPoint(value.location, size: 260)
+                            var y: Double = 0
+                            if let expr = parsed.expr {
+                                y = (try? expr.evaluate(at: x)) ?? 0
+                            }
+                            touchValue = (x: x, y: y)
+                        }
+                        .onEnded { _ in
+                            isTouching = false
+                            touchLocation = nil
+                            touchValue = nil
+                        }
+                )
+                // Touch indicator
+                if isTouching, let location = touchLocation, let value = touchValue {
+                    // Crosshair at touch point
+                    Circle()
+                        .fill(Theme.accent)
+                        .frame(width: 10, height: 10)
+                        .position(location)
+                    // Coordinate label
+                    CoordinateLabel(x: value.x, y: value.y)
+                        .position(x: min(max(location.x, 50), 260 - 50), y: max(location.y - 40, 30))
                 }
             }
             .frame(height: 260)
@@ -64,6 +102,43 @@ struct GraphView: View {
         }
         .cardStyle()
     }
+
+    private func xFromPoint(_ point: CGPoint, size: CGFloat) -> Double {
+        xMin + (Double(point.x) / Double(size)) * (xMax - xMin)
+    }
+
+    private func yFromPoint(_ point: CGPoint, size: CGFloat) -> Double {
+        yMax - (Double(point.y) / Double(size)) * (yMax - yMin)
+    }
+}
+
+struct CoordinateLabel: View {
+    let x: Double
+    let y: Double
+
+    var body: some View {
+        VStack(spacing: 2) {
+            Text("x = \(formatCoord(x))")
+            Text("y = \(formatCoord(y))")
+        }
+        .font(.caption.monospacedDigit().weight(.medium))
+        .foregroundStyle(.white)
+        .padding(.horizontal, 8)
+        .padding(.vertical, 4)
+        .background(Theme.accent.opacity(0.9), in: RoundedRectangle(cornerRadius: 6))
+        .shadow(color: .black.opacity(0.2), radius: 2, y: 1)
+    }
+
+    private func formatCoord(_ value: Double) -> String {
+        if abs(value) < 0.01 || abs(value) > 1000 {
+            return String(format: "%.2e", value)
+        }
+        if value == value.rounded() {
+            return String(format: "%.0f", value)
+        }
+        return String(format: "%.2f", value)
+    }
+}
 
     // MARK: - Drawing
 
@@ -149,6 +224,18 @@ struct GraphView: View {
             }
         }
         ctx.stroke(path, with: .color(Theme.accent), lineWidth: 2.2)
+    }
+
+    private func drawPoint(ctx: GraphicsContext, size: CGSize, x: Double, y: Double) {
+        let p = pointFor(x: x, y: y, size: size)
+        // Only draw if point is within visible range
+        guard p.x >= 0 && p.x <= size.width && p.y >= 0 && p.y <= size.height else { return }
+        
+        // Draw point marker
+        var pointPath = Path()
+        pointPath.addEllipse(in: CGRect(x: p.x - 5, y: p.y - 5, width: 10, height: 10))
+        ctx.fill(pointPath, with: .color(Theme.warning))
+        ctx.stroke(pointPath, with: .color(.white), lineWidth: 1.5)
     }
 
     // MARK: - Mapping

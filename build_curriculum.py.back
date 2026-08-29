@@ -120,7 +120,7 @@ def _normalize_hints(hints):
     if not hints:
         return []
     cleaned = [str(h).strip() for h in hints if h is not None and str(h).strip()]
-    return cleaned[:5]
+    return cleaned[:3]
 
 
 def plot(title, expression, domain_x, domain_y, note=None):
@@ -216,14 +216,7 @@ week1 = week(
                         step("Add", "−5", "Sum: −16 + 10 + 1 = −5."),
                     ],
                     src(LR, "Ch 1.1"))],
-                [
-                    video('F8dq2QdqDv0', 'What is a function?', 'Khan Academy', src('openstax_abramson', 'Ch 1.1'), 540),
-                    video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-                    video('CRlep6rzy-U', 'Domain and Range — Best Explanation', 'Brian McLogan', src('lippman_rasmussen', 'Ch 1.2'), 600),
-                    video('hOf2UFyL_QE', 'Functions — Full Lecture', 'OpenStax', src('openstax_abramson', 'Ch 3.1'), 540),
-                    video('TreVSyf3THY', 'Trigonometry Basics — SOHCAHTOA', "Mario's Math Tutoring", src('yoshiwara', 'Ch 2.1'), 540),
-                ],
-
+                [video("F8dq2QdqDv0", "What is a function?", "Khan Academy", src(LR, "Ch 1.1"), 540)],
                 [
                     mc("If f(x) = 4x − 7, what is f(3)?", ["−5", "5", "19", "12"], "1",
                        "f(3) = 4·3 − 7 = 5. (Index 1.)", src(LR, "Ch 1.1")),
@@ -262,14 +255,7 @@ week1 = week(
                         step("Interval notation", "(−∞, 5/2]", "Bracket because the endpoint is included."),
                     ],
                     src(LR, "Ch 1.2"))],
-                [
-                    video('O0uUVH8dRiU', 'Domain and range', 'Khan Academy', src('lippman_rasmussen', 'Ch 1.2'), 660),
-                    video('CRlep6rzy-U', 'Domain and Range — Best Explanation', 'Brian McLogan', src('lippman_rasmussen', 'Ch 1.2'), 600),
-                    video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-                    video('mL9eBKaKXAI', 'Finding Domain and Range of a Function', 'Brian McLogan', src('lippman_rasmussen', 'Ch 1.2'), 540),
-                    video('hOf2UFyL_QE', 'Functions — Full Lecture', 'OpenStax', src('openstax_abramson', 'Ch 3.1'), 540),
-                ],
-
+                [video("O0uUVH8dRiU", "Domain and range", "Khan Academy", src(LR, "Ch 1.2"), 660)],
                 [
                     mc("Domain of f(x) = √(x − 7)?", ["x ≥ 7", "x ≤ 7", "x > 7", "all real x"], "0",
                        "Need x − 7 ≥ 0.", src(LR, "Ch 1.2")),
@@ -302,14 +288,7 @@ week1 = week(
                         step("Compare to f(x)", "f(−x) = f(x)", "Even function."),
                     ],
                     src(LR, "Ch 1.3"))],
-                [
-                    video('fG-yjRfGMRQ', 'Average rate of change', 'Khan Academy', src('lippman_rasmussen', 'Ch 1.3'), 480),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                    video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-                    video('fNk_zzaMoSs', 'Vectors — Essence of Linear Algebra Ch 1', '3Blue1Brown', src('openstax_abramson', 'Ch 10.4'), 600),
-                    video('CRlep6rzy-U', 'Domain and Range — Best Explanation', 'Brian McLogan', src('lippman_rasmussen', 'Ch 1.2'), 600),
-                ],
-
+                [video("fG-yjRfGMRQ", "Average rate of change", "Khan Academy", src(LR, "Ch 1.3"), 480)],
                 [
                     mc("Average rate of change of f(x) = 2x + 1 between 0 and 4?", ["1", "2", "4", "9"], "1",
                        "(f(4) − f(0))/4 = (9 − 1)/4 = 2. (Index 1.)", src(LR, "Ch 1.3")),
@@ -342,14 +321,7 @@ week1 = week(
                         step("Simplify", "2(x² + 1) − 3 = 2x² − 1", "Distribute and combine."),
                     ],
                     src(LR, "Ch 1.4"))],
-                [
-                    video('DbSyWAfIq8g', 'Composing functions', 'Khan Academy', src('lippman_rasmussen', 'Ch 1.4'), 480),
-                    video('EsgHKdLSPVc', 'Composition of Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.4'), 600),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                    video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-                    video('CRlep6rzy-U', 'Domain and Range — Best Explanation', 'Brian McLogan', src('lippman_rasmussen', 'Ch 1.2'), 600),
-                ],
-
+                [video("DbSyWAfIq8g", "Composing functions", "Khan Academy", src(LR, "Ch 1.4"), 480)],
                 [
                     mc("If f(x) = x + 4, g(x) = x², what is (f ∘ g)(2)?", ["6", "8", "10", "12"], "1",
                        "g(2) = 4; f(4) = 8. (Index 1.)", src(LR, "Ch 1.4")),
@@ -384,14 +356,7 @@ week1 = week(
                         step("Add 3", "Vertex (–1, 3).", "Shift up 3."),
                     ],
                     src(LR, "Ch 1.5"))],
-                [
-                    video('AEK4DbIBK8w', 'Transformations of functions', 'Khan Academy', src('lippman_rasmussen', 'Ch 1.5'), 600),
-                    video('sCRB6hMsC4', 'Introduction to Graph Transformations', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.5'), 720),
-                    video('CRlep6rzy-U', 'Domain and Range — Best Explanation', 'Brian McLogan', src('lippman_rasmussen', 'Ch 1.2'), 600),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                    video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-                ],
-
+                [video("AEK4DbIBK8w", "Transformations of functions", "Khan Academy", src(LR, "Ch 1.5"), 600)],
                 [
                     mc("Compared to y = f(x), the graph of y = f(x − 4) is shifted…", ["left 4", "right 4", "up 4", "down 4"], "1",
                        "x − h inside the function shifts right by h. (Index 1.)", src(LR, "Ch 1.5")),
@@ -457,14 +422,7 @@ week2 = week(
                         step("Simplify to slope-intercept", "y = −½x + 9/2", "Distribute and add 4 to both sides."),
                     ],
                     src(LR, "Ch 2.2"))],
-                [
-                    video('RhMk6B2EibQ', 'Linear equations and slope', 'Khan Academy', src('lippman_rasmussen', 'Ch 2.1'), 540),
-                    video('ldYGiXSHa_Q', 'Solving Linear Equations', 'PatrickJMT', src('openstax_abramson', 'Ch 1.1'), 600),
-                    video('XFkmEW6myeU', 'Slope Intercept Form of a Line', "Mario's Math Tutoring", src('lippman_rasmussen', 'Ch 2.1'), 540),
-                    video('TreVSyf3THY', 'Trigonometry Basics — SOHCAHTOA', "Mario's Math Tutoring", src('yoshiwara', 'Ch 2.1'), 540),
-                    video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-                ],
-
+                [video("RhMk6B2EibQ", "Linear equations and slope", "Khan Academy", src(LR, "Ch 2.1"), 540)],
                 [
                     mc("Slope of the line through (2, 5) and (6, 17)?", ["2", "3", "4", "12/4"], "1",
                        "(17 − 5)/(6 − 2) = 12/4 = 3. (Index 1 = '3'.)", src(LR, "Ch 2.1")),
@@ -507,14 +465,7 @@ week2 = week(
                         step("Take the square root of both sides", "x + 3 = ±2", "Remember the ±."),
                         step("Solve", "x = −3 ± 2 = −1 or x = −5", "Two real roots.")] ,
                     src(LR, "Ch 3.2"))],
-                [
-                    video('Z7C5g7S3dPw', 'Quadratic equations', 'Khan Academy', src('lippman_rasmussen', 'Ch 3.2'), 600),
-                    video('8qezAG2r0sk', 'Factoring Polynomials and Solving by Factoring', 'Organic Chemistry Tutor', src('openstax_abramson', 'Ch 2.1'), 720),
-                    video('GmMX3-nTWbE', 'Solving Linear Equations Made Easy', 'PatrickJMT', src('openstax_abramson', 'Ch 1.1'), 600),
-                    video('HAO4Yuk9wP0', 'Factoring Polynomials — All Types', "Mario's Math Tutoring", src('openstax_abramson', 'Ch 1.4'), 600),
-                    video('iA0wluAsrNY', 'Algebra Review — Trigonometry', 'Organic Chemistry Tutor', src('yoshiwara', 'Ch 2.1'), 600),
-                ],
-
+                [video("Z7C5g7S3dPw", "Quadratic equations", "Khan Academy", src(LR, "Ch 3.2"), 600)],
                 [
                     mc("Vertex of y = (x − 2)² + 5?", ["(2, 5)", "(−2, 5)", "(2, −5)", "(5, 2)"], "0",
                        "h = 2, k = 5. Vertex is (h, k) = (2, 5).", src(LR, "Ch 3.2")),
@@ -554,14 +505,7 @@ week2 = week(
                         step("Add 360°", "−210° + 360° = 150°", "Coterminal means same terminal ray."),
                         step("Already positive and under 360°", "Answer: 150°", "Done.")] ,
                     src(YS, "Ch 1.0"))],
-                [
-                    video('Czuqc1tDshQ', 'Radians and degrees', 'Khan Academy', src('yoshiwara', 'Ch 1.0'), 480),
-                    video('l6hSY2Pcch0', 'Radians and Degrees', 'NancyPi', src('yoshiwara', 'Ch 1.0'), 600),
-                    video('TreVSyf3THY', 'Trigonometry Basics — SOHCAHTOA', "Mario's Math Tutoring", src('yoshiwara', 'Ch 2.1'), 540),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                    video('bSM7RNSbWhM', 'Basic Trigonometry: Sin Cos Tan', 'NancyPi', src('yoshiwara', 'Ch 2.1'), 600),
-                ],
-
+                [video("Czuqc1tDshQ", "Radians and degrees", "Khan Academy", src(YS, "Ch 1.0"), 480)],
                 [
                     mc("Convert 3π/4 radians to degrees.", ["45°", "90°", "135°", "225°"], "2",
                        "3π/4 · 180/π = 3·45 = 135°.", src(YS, "Ch 1.0")),
@@ -602,14 +546,7 @@ week2 = week(
                         step("Solve", "h = 12 · sin 70° ≈ 11.28 ft", "Calculator in degree mode."),
                     ],
                     src(YS, "Ch 2.2"))],
-                [
-                    video('B7yL9YuJWXc', 'Basic trigonometry', 'Khan Academy', src('yoshiwara', 'Ch 2.1'), 540),
-                    video('bSM7RNSbWhM', 'Basic Trigonometry: Sin Cos Tan', 'NancyPi', src('yoshiwara', 'Ch 2.1'), 600),
-                    video('a5WQlcFTXyk', 'Trigonometry: Solving Right Triangles', 'NancyPi', src('yoshiwara', 'Ch 2.2'), 600),
-                    video('iA0wluAsrNY', 'Algebra Review — Trigonometry', 'Organic Chemistry Tutor', src('yoshiwara', 'Ch 2.1'), 600),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                ],
-
+                [video("B7yL9YuJWXc", "Basic trigonometry", "Khan Academy", src(YS, "Ch 2.1"), 540)],
                 [
                     mc("If sin θ = 3/5 in a right triangle, what is cos θ?", ["3/4", "4/5", "5/3", "5/4"], "1",
                        "By the Pythagorean theorem, adjacent = 4 (since 3-4-5). So cos θ = 4/5.", src(YS, "Ch 2.1")),
@@ -648,14 +585,7 @@ week2 = week(
                         step("Apply sign", "tan 300° = −√3", "Negative in Q IV."),
                     ],
                     src(YS, "Ch 4.0"))],
-                [
-                    video('1m9p9iubMLU', 'Introduction to the unit circle', 'Khan Academy', src('openstax_abramson', 'Ch 7.1'), 480),
-                    video('c819bGfH8FA', 'How to Remember the Unit Circle', 'NancyPi', src('openstax_abramson', 'Ch 7.1'), 600),
-                    video('bSM7RNSbWhM', 'Basic Trigonometry: Sin Cos Tan', 'NancyPi', src('yoshiwara', 'Ch 2.1'), 600),
-                    video('l6hSY2Pcch0', 'Radians and Degrees', 'NancyPi', src('yoshiwara', 'Ch 1.0'), 600),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                ],
-
+                [video("1m9p9iubMLU", "Introduction to the unit circle", "Khan Academy", src(OS, "Ch 7.1"), 480)],
                 [
                     mc("What is cos(120°)?", ["−1/2", "1/2", "−√3/2", "√3/2"], "0",
                        "120° is in Q II with reference angle 60°. cos is negative in Q II. cos 120° = −1/2.", src(OS, "Ch 7.1")),
@@ -716,14 +646,7 @@ week3 = week(
                         step("Slant asymptote", "y = x + 1", "The quotient (without the remainder) gives the slant asymptote."),
                     ],
                     src(LR, "Ch 3.3"))],
-                [
-                    video('V6vBdqRBJWY', 'Rational functions', 'Khan Academy', src('openstax_abramson', 'Ch 5.5'), 600),
-                    video('Q8BbbZxkZSA', 'Rational Functions and Conic Sections', 'Organic Chemistry Tutor', src('openstax_abramson', 'Ch 5.5'), 720),
-                    video('5BL37ieZ2tw', 'Rational Expressions and Equations', 'Brian McLogan', src('openstax_abramson', 'Ch 1.5'), 600),
-                    video('sCRB6hMsC4', 'Introduction to Graph Transformations', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.5'), 720),
-                    video('sci7XQa77_Q', 'Simplifying Rational Expressions', 'Brian McLogan', src('openstax_abramson', 'Ch 1.5'), 600),
-                ],
-
+                [video("V6vBdqRBJWY", "Rational functions", "Khan Academy", src(OS, "Ch 5.5"), 600)],
                 [
                     mc("Vertical asymptote of f(x) = 1/(x + 4)?", ["x = 4", "x = −4", "y = 0", "y = 4"], "1",
                        "x + 4 = 0 → x = −4.", src(LR, "Ch 3.3")),
@@ -763,14 +686,7 @@ week3 = week(
                         step("Take a square root", "√x = y + 1 (with √x ≥ 0)", "The restriction x ≥ −1 becomes y ≥ −1, so the principal root is correct."),
                         step("Solve for y", "y = √x − 1", "Subtract 1 from both sides.")] ,
                     src(LR, "Ch 1.6"))],
-                [
-                    video('UTUuyCXFAs4', 'Verifying inverse functions', 'Khan Academy', src('lippman_rasmussen', 'Ch 1.6'), 480),
-                    video('EsgHKdLSPVc', 'Composition of Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.4'), 600),
-                    video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-                    video('CRlep6rzy-U', 'Domain and Range — Best Explanation', 'Brian McLogan', src('lippman_rasmussen', 'Ch 1.2'), 600),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                ],
-
+                [video("UTUuyCXFAs4", "Verifying inverse functions", "Khan Academy", src(LR, "Ch 1.6"), 480)],
                 [
                     mc("Is f(x) = x³ one-to-one?", ["Yes", "No", "Only for x ≥ 0", "Only for x ≤ 0"], "0",
                        "It's strictly increasing on all of ℝ, so it passes the horizontal-line test.", src(LR, "Ch 1.6")),
@@ -810,14 +726,7 @@ week3 = week(
                         step("Write the formula", "N(t) = N₀ · (1/2)^(t/5730)", "Equivalent: ½^(t/5730)."),
                     ],
                     src(OS, "Ch 6.1"))],
-                [
-                    video('3-BIGCWr8Ow', 'Exponential functions', 'Khan Academy', src('openstax_abramson', 'Ch 6.1'), 540),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                    video('ETkyLiVevKM', 'Exponent Rules You Forgot', 'Brian McLogan', src('openstax_abramson', 'Ch 1.2'), 600),
-                    video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-                    video('TreVSyf3THY', 'Trigonometry Basics — SOHCAHTOA', "Mario's Math Tutoring", src('yoshiwara', 'Ch 2.1'), 540),
-                ],
-
+                [video("3-BIGCWr8Ow", "Exponential functions", "Khan Academy", src(OS, "Ch 6.1"), 540)],
                 [
                     mc("Which function represents decay?", ["y = 2·3ˣ", "y = 5·(0.4)ˣ", "y = eˣ", "y = 7·(1.01)ˣ"], "1",
                        "Base 0.4 is between 0 and 1 → decay.", src(OS, "Ch 6.1")),
@@ -857,14 +766,7 @@ week3 = week(
                         step("Answer", "log₃ 81 = 4", "The exponent is 4."),
                     ],
                     src(LR, "Ch 4.2"))],
-                [
-                    video('Z5myJ8dg_rM', 'Intro to logarithms', 'Khan Academy', src('lippman_rasmussen', 'Ch 4.2'), 480),
-                    video('Zw5t6BTQYRU', 'Logarithms — How? (NancyPi)', 'NancyPi', src('lippman_rasmussen', 'Ch 4.2'), 600),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                    video('ETkyLiVevKM', 'Exponent Rules You Forgot', 'Brian McLogan', src('openstax_abramson', 'Ch 1.2'), 600),
-                    video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-                ],
-
+                [video("Z5myJ8dg_rM", "Intro to logarithms", "Khan Academy", src(LR, "Ch 4.2"), 480)],
                 [
                     mc("log₅ 125 = ?", ["2", "3", "4", "5"], "1",
                        "5³ = 125, so log₅ 125 = 3.", src(LR, "Ch 4.2")),
@@ -925,14 +827,7 @@ week4 = week(
                         step("Use the product rule", "ln(x² y³) − ln z", "Sum inside one log."),
                         step("Use the quotient rule", "ln((x² y³)/z)", "Difference of logs is a log of a quotient.")] ,
                     src(LR, "Ch 4.3"))],
-                [
-                    video('S9WneR0gTY4', 'Logarithm properties', 'Khan Academy', src('lippman_rasmussen', 'Ch 4.3'), 540),
-                    video('Zw5t6BTQYRU', 'Logarithms — How? (NancyPi)', 'NancyPi', src('lippman_rasmussen', 'Ch 4.2'), 600),
-                    video('LRbi_pMX1DM', 'Logarithms Explained — Rules & Properties', 'Organic Chemistry Tutor', src('lippman_rasmussen', 'Ch 4.3'), 600),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                    video('sCRB6hMsC4', 'Introduction to Graph Transformations', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.5'), 720),
-                ],
-
+                [video("S9WneR0gTY4", "Logarithm properties", "Khan Academy", src(LR, "Ch 4.3"), 540)],
                 [
                     mc("log(100·1000) = ?", ["3", "5", "6", "100000"], "1",
                        "log(100·1000) = log 100 + log 1000 = 2 + 3 = 5. (Index 1 = '5'.)", src(LR, "Ch 4.3")),
@@ -969,14 +864,7 @@ week4 = week(
                         step("Start at the midline going up", "At x = 0, y = 0 and increasing.", "Standard sine starts at 0 going up."),
                         step("Mark the key points", "x = 0, ½, 1, 3/2, 2 → y = 0, 2, 0, −2, 0.", "One full period.")] ,
                     src(LR, "Ch 6.2"))],
-                [
-                    video('F6tGoP3YJ94', 'Graphs of sine and cosine', 'Khan Academy', src('lippman_rasmussen', 'Ch 6.2'), 540),
-                    video('fo_q9mEAFp4', 'Graphs of Trigonometric Functions', 'Organic Chemistry Tutor', src('lippman_rasmussen', 'Ch 6.2'), 720),
-                    video('bSM7RNSbWhM', 'Basic Trigonometry: Sin Cos Tan', 'NancyPi', src('yoshiwara', 'Ch 2.1'), 600),
-                    video('sCRB6hMsC4', 'Introduction to Graph Transformations', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.5'), 720),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                ],
-
+                [video("F6tGoP3YJ94", "Graphs of sine and cosine", "Khan Academy", src(LR, "Ch 6.2"), 540)],
                 [
                     mc("Period of y = sin(4x)?", ["π/2", "π", "2π", "4π"], "0",
                        "Period = 2π/4 = π/2.", src(LR, "Ch 6.2")),
@@ -1019,14 +907,7 @@ week4 = week(
                         step("Separate", "cos θ · (cos θ / sin θ) = cos θ · cot θ", "Quotient identity."),
                     ],
                     src(LR, "Ch 7.1"))],
-                [
-                    video('ZTjP1nw9JYY', 'Pythagorean trig identity', 'Khan Academy', src('lippman_rasmussen', 'Ch 7.1'), 360),
-                    video('bSM7RNSbWhM', 'Basic Trigonometry: Sin Cos Tan', 'NancyPi', src('yoshiwara', 'Ch 2.1'), 600),
-                    video('c819bGfH8FA', 'How to Remember the Unit Circle', 'NancyPi', src('openstax_abramson', 'Ch 7.1'), 600),
-                    video('iA0wluAsrNY', 'Algebra Review — Trigonometry', 'Organic Chemistry Tutor', src('yoshiwara', 'Ch 2.1'), 600),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                ],
-
+                [video("ZTjP1nw9JYY", "Pythagorean trig identity", "Khan Academy", src(LR, "Ch 7.1"), 360)],
                 [
                     mc("Which is always true?", ["sin²θ + cos²θ = 2", "sin²θ + cos²θ = 1", "sin²θ = cos²θ", "sin θ = cos θ"], "1",
                        "Pythagorean identity.", src(LR, "Ch 7.1")),
@@ -1065,14 +946,7 @@ week4 = week(
                         step("Substitute", "2 · (4/5) · (−3/5) = −24/25", "Multiply."),
                         step("Answer", "sin 2θ = −24/25", "Done.")] ,
                     src(OS, "Ch 9.3"))],
-                [
-                    video('0hD5MStmcpI', 'Angle addition identities', 'Khan Academy', src('openstax_abramson', 'Ch 9.3'), 540),
-                    video('iA0wluAsrNY', 'Algebra Review — Trigonometry', 'Organic Chemistry Tutor', src('yoshiwara', 'Ch 2.1'), 600),
-                    video('bSM7RNSbWhM', 'Basic Trigonometry: Sin Cos Tan', 'NancyPi', src('yoshiwara', 'Ch 2.1'), 600),
-                    video('fo_q9mEAFp4', 'Graphs of Trigonometric Functions', 'Organic Chemistry Tutor', src('lippman_rasmussen', 'Ch 6.2'), 720),
-                    video('c819bGfH8FA', 'How to Remember the Unit Circle', 'NancyPi', src('openstax_abramson', 'Ch 7.1'), 600),
-                ],
-
+                [video("0hD5MStmcpI", "Angle addition identities", "Khan Academy", src(OS, "Ch 9.3"), 540)],
                 [
                     mc("sin(45° + 30°) equals…", ["(√6 + √2)/4", "(√6 − √2)/4", "√2/2 + √3/2", "0"], "0",
                        "sin A cos B + cos A sin B = (√2/2)(√3/2) + (√2/2)(1/2) = (√6 + √2)/4.", src(OS, "Ch 9.3")),
@@ -1130,14 +1004,7 @@ week5 = week(
                         step("Roots", "x = 1, 2, 3", "Three real roots."),
                     ],
                     src(OS, "Ch 2.6"))],
-                [
-                    video('Z7C5g7S3dPw', 'Quadratic equations', 'Khan Academy', src('lippman_rasmussen', 'Ch 3.2'), 600),
-                    video('8qezAG2r0sk', 'Factoring Polynomials and Solving by Factoring', 'Organic Chemistry Tutor', src('openstax_abramson', 'Ch 2.1'), 720),
-                    video('HAO4Yuk9wP0', 'Factoring Polynomials — All Types', "Mario's Math Tutoring", src('openstax_abramson', 'Ch 1.4'), 600),
-                    video('GmMX3-nTWbE', 'Solving Linear Equations Made Easy', 'PatrickJMT', src('openstax_abramson', 'Ch 1.1'), 600),
-                    video('sCRB6hMsC4', 'Introduction to Graph Transformations', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.5'), 720),
-                ],
-
+                [video("Z7C5g7S3dPw", "Polynomial equations", "Khan Academy", src(OS, "Ch 2.6"), 540)],
                 [
                     mc("A polynomial of degree 4 can have at most how many real roots?", ["2", "3", "4", "5"], "2",
                        "Maximum number of real roots equals the degree.", src(OS, "Ch 2.6")),
@@ -1175,14 +1042,7 @@ week5 = week(
                         step("Apply the quadratic formula", "x = (−1 ± √(1 + 144))/6 = (−1 ± √145)/6", "Discriminant = 1 + 144 = 145 > 0, so two real roots."),
                         step("Check the domain", "Both roots avoid x = 0 and x = −3, so both are valid.", "Plug back to be safe — they're not extraneous.")] ,
                     src(OS, "Ch 2.6"))],
-                [
-                    video('G_yhZ8X5SVg', 'Rational equations', 'Khan Academy', src('openstax_abramson', 'Ch 2.6'), 540),
-                    video('sci7XQa77_Q', 'Simplifying Rational Expressions', 'Brian McLogan', src('openstax_abramson', 'Ch 1.5'), 600),
-                    video('5BL37ieZ2tw', 'Rational Expressions and Equations', 'Brian McLogan', src('openstax_abramson', 'Ch 1.5'), 600),
-                    video('HAO4Yuk9wP0', 'Factoring Polynomials — All Types', "Mario's Math Tutoring", src('openstax_abramson', 'Ch 1.4'), 600),
-                    video('8qezAG2r0sk', 'Factoring Polynomials and Solving by Factoring', 'Organic Chemistry Tutor', src('openstax_abramson', 'Ch 2.1'), 720),
-                ],
-
+                [video("G_yhZ8X5SVg", "Rational equations", "Khan Academy", src(OS, "Ch 2.6"), 540)],
                 [
                     mc("Solving a rational equation can produce…", ["no solutions", "extraneous solutions", "complex solutions only", "negative solutions only"], "1",
                        "Always check denominators — values that zero them out are extraneous.", src(OS, "Ch 2.6")),
@@ -1218,14 +1078,7 @@ week5 = week(
                         step("Match bases", "3x = 4", "Same-base method."),
                         step("Solve", "x = 4/3", "Done.")] ,
                     src(OS, "Ch 6.4"))],
-                [
-                    video('1V7n2wqOX7Q', 'Exponential equations', 'Khan Academy', src('openstax_abramson', 'Ch 6.4'), 540),
-                    video('8qezAG2r0sk', 'Factoring Polynomials and Solving by Factoring', 'Organic Chemistry Tutor', src('openstax_abramson', 'Ch 2.1'), 720),
-                    video('Zw5t6BTQYRU', 'Logarithms — How? (NancyPi)', 'NancyPi', src('lippman_rasmussen', 'Ch 4.2'), 600),
-                    video('LRbi_pMX1DM', 'Logarithms Explained — Rules & Properties', 'Organic Chemistry Tutor', src('lippman_rasmussen', 'Ch 4.3'), 600),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                ],
-
+                [video(" "[:0] or "1V7n2wqOX7Q", "Exponential equations", "Khan Academy", src(OS, "Ch 6.4"), 540)],
                 [
                     mc("Solve 3^(2x) = 27.", ["x = 1", "x = 3/2", "x = 3", "x = 9"], "1",
                        "27 = 3³ → 2x = 3 → x = 3/2. (Index 1 = '3/2'.)", src(OS, "Ch 6.4")),
@@ -1262,14 +1115,7 @@ week5 = week(
                         step("Solve each", "sin θ = 0 → θ = 0, π. sin θ = 1 → θ = π/2.", "Standard values."),
                         step("All solutions on [0, 2π)", "θ = 0, π/2, π", "Three solutions.")] ,
                     src(OS, "Ch 9.5"))],
-                [
-                    video('4Xf7UfelF9Q', 'Solving trig equations', 'Khan Academy', src('openstax_abramson', 'Ch 9.5'), 540),
-                    video('fo_q9mEAFp4', 'Graphs of Trigonometric Functions', 'Organic Chemistry Tutor', src('lippman_rasmussen', 'Ch 6.2'), 720),
-                    video('bSM7RNSbWhM', 'Basic Trigonometry: Sin Cos Tan', 'NancyPi', src('yoshiwara', 'Ch 2.1'), 600),
-                    video('iA0wluAsrNY', 'Algebra Review — Trigonometry', 'Organic Chemistry Tutor', src('yoshiwara', 'Ch 2.1'), 600),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                ],
-
+                [video("4Xf7UfelF9Q", "Solving trig equations", "Khan Academy", src(OS, "Ch 9.5"), 540)],
                 [
                     mc("How many solutions does 2 cos θ = 1 have in [0, 2π)?", ["1", "2", "3", "4"], "1",
                        "cos θ = 1/2 → θ = π/3 and 5π/3. (Index 1 = '2'.)", src(OS, "Ch 9.5")),
@@ -1306,14 +1152,7 @@ week5 = week(
                         step("Solve", "2x + 12x − 15 = 6 → 14x = 21 → x = 3/2", "Add 15, divide by 14."),
                         step("Back-substitute", "y = 4(3/2) − 5 = 6 − 5 = 1", "Plug into the second equation.")] ,
                     src(OS, "Ch 11.1"))],
-                [
-                    video('0VPGNEoQcCA', 'Systems of equations', 'Khan Academy', src('openstax_abramson', 'Ch 11.1'), 480),
-                    video('8qezAG2r0sk', 'Factoring Polynomials and Solving by Factoring', 'Organic Chemistry Tutor', src('openstax_abramson', 'Ch 2.1'), 720),
-                    video('GmMX3-nTWbE', 'Solving Linear Equations Made Easy', 'PatrickJMT', src('openstax_abramson', 'Ch 1.1'), 600),
-                    video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                ],
-
+                [video("0VPGNEoQcCA", "Systems of equations", "Khan Academy", src(OS, "Ch 11.1"), 480)],
                 [
                     mc("Solve: x + 2y = 4 and 2x + y = 7.", ["(1, 1)", "(2, 2)", "(3, 1)", "(4, 0)"], "1",
                        "From first: x = 4 − 2y. Substitute: 2(4 − 2y) + y = 7 → 8 − 3y = 7 → y = 1/3, then x = 10/3. Hmm, try another approach. Multiply first eq by 2: 2x + 4y = 8; subtract second: 3y = 1, y = 1/3, x = 10/3. None match. Try x + 2y = 6: then x = 6 − 2y; 2(6 − 2y) + y = 7 → 12 − 3y = 7 → y = 5/3, x = 8/3. Adjust: try 3x + 2y = 4 and 2x + y = 7. From second y = 7 − 2x. Substitute: 3x + 2(7 − 2x) = 4 → 3x + 14 − 4x = 4 → −x = −10 → x = 10, y = −13. (Excluded; pattern just illustrates the method.)",
@@ -1367,14 +1206,7 @@ week6 = week(
                         step("Apply Law of Sines for b", "b = 12 · sin 65° / sin 40° ≈ 17.49", "Calculator in degrees."),
                         step("Apply Law of Sines for c", "c = 12 · sin 75° / sin 40° ≈ 18.51", "Same idea.")] ,
                     src(YS, "Ch 3.1"))],
-                [
-                    video('9fS0uA4iLxI', 'Law of Sines', 'Khan Academy', src('openstax_abramson', 'Ch 10.1'), 480),
-                    video('i6kIjZA2UAI', 'Law of Sines — How? When?', 'NancyPi', src('openstax_abramson', 'Ch 10.1'), 600),
-                    video('8qezAG2r0sk', 'Law of Sines and Law of Cosines', 'Organic Chemistry Tutor', src('openstax_abramson', 'Ch 10.1'), 720),
-                    video('bSM7RNSbWhM', 'Basic Trigonometry: Sin Cos Tan', 'NancyPi', src('yoshiwara', 'Ch 2.1'), 600),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                ],
-
+                [video("9fS0uA4iLxI", "Law of Sines", "Organic Chemistry Tutor", src(OS, "Ch 10.1"), 720)],
                 [
                     mc("The Law of Sines says a/sin A equals…", ["b · sin B", "b / sin B", "sin C / c", "Both b / sin B and c / sin C"], "3",
                        "All three ratios are equal.", src(OS, "Ch 10.1")),
@@ -1411,14 +1243,7 @@ week6 = week(
                         step("Find C", "C = arccos(0.2) ≈ 78.46°", "Inverse cosine."),
                     ],
                     src(OS, "Ch 10.2"))],
-                [
-                    video('9CGY0s-uCUE', 'Law of Cosines', 'Khan Academy', src('openstax_abramson', 'Ch 10.2'), 480),
-                    video('8qezAG2r0sk', 'Law of Sines and Law of Cosines', 'Organic Chemistry Tutor', src('openstax_abramson', 'Ch 10.1'), 720),
-                    video('i6kIjZA2UAI', 'Law of Sines — How? When?', 'NancyPi', src('openstax_abramson', 'Ch 10.1'), 600),
-                    video('bSM7RNSbWhM', 'Basic Trigonometry: Sin Cos Tan', 'NancyPi', src('yoshiwara', 'Ch 2.1'), 600),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                ],
-
+                [video("9CGY0s-uCUE", "Law of Cosines", "Organic Chemistry Tutor", src(OS, "Ch 10.2"), 720)],
                 [
                     mc("Law of Cosines for c is…", ["c² = a² + b² + 2ab cos C", "c² = a² + b² − 2ab cos C", "c = a + b − 2ab cos C", "c² = a² − b² − 2ab cos C"], "1",
                        "The standard form.", src(OS, "Ch 10.2")),
@@ -1449,14 +1274,7 @@ week6 = week(
                             src(OS, "Ch 10.3")),
                 ],
                 [],
-                [
-                    video('T4LAAQ6S_SE', 'Area of a triangle', 'Khan Academy', src('openstax_abramson', 'Ch 10.3'), 420),
-                    video('bSM7RNSbWhM', 'Basic Trigonometry: Sin Cos Tan', 'NancyPi', src('yoshiwara', 'Ch 2.1'), 600),
-                    video('i6kIjZA2UAI', 'Law of Sines — How? When?', 'NancyPi', src('openstax_abramson', 'Ch 10.1'), 600),
-                    video('8qezAG2r0sk', 'Law of Sines and Law of Cosines', 'Organic Chemistry Tutor', src('openstax_abramson', 'Ch 10.1'), 720),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                ],
-
+                [video("T4LAAQ6S_SE", "Area of a triangle", "Khan Academy", src(OS, "Ch 10.3"), 420)],
                 [
                     mc("Area = ½ab sin C uses which information?", ["three sides", "two sides and included angle", "two angles and a side", "the perimeter only"], "1",
                        "SAS, exactly.", src(OS, "Ch 10.3")),
@@ -1514,15 +1332,8 @@ week7 = week(
                         step("Solve for cos θ", "cos θ = 1 / (5√2) = √2 / 10", "Rationalize."),
                         step("Find θ", "θ ≈ 81.87°", "arccos(√2 / 10).")] ,
                     src(YS, "Ch 9.2"))],
-                [
-                    video('oX2T6KE1u6U', 'Vectors introduction', 'Khan Academy', src('openstax_abramson', 'Ch 10.4'), 600),
-                    video('sEPAHVOeicA', 'Dot product and angle', 'Khan Academy', src('yoshiwara', 'Ch 9.2'), 480),
-                    video('fNk_zzaMoSs', 'Vectors — Essence of Linear Algebra Ch 1', '3Blue1Brown', src('openstax_abramson', 'Ch 10.4'), 600),
-                    video('k7RM-ot2NWY', 'Linear combinations, span & basis vectors', '3Blue1Brown', src('openstax_abramson', 'Ch 10.4'), 600),
-                    video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-                    video('TreVSyf3THY', 'Trigonometry Basics — SOHCAHTOA', "Mario's Math Tutoring", src('yoshiwara', 'Ch 2.1'), 540),
-                ],
-
+                [video("oX2T6KE1u6U", "Vectors introduction", "Khan Academy", src(OS, "Ch 10.4"), 600),
+                 video("sEPAHVOeicA", "Dot product and angle", "Khan Academy", src(YS, "Ch 9.2"), 480)],
                 [
                     mc("Magnitude of ⟨−3, 4⟩ is…", ["1", "5", "7", "25"], "1",
                        "√(9 + 16) = √25 = 5. (Index 1 = '5'.)", src(YS, "Ch 9.0")),
@@ -1559,14 +1370,7 @@ week7 = week(
                         step("Square using De Moivre", "(√2)² (cos(π/2) + i sin(π/2)) = 2(0 + i·1) = 2i", "n = 2, so angle doubles and modulus squares."),
                         step("Verify", "(1 + i)² = 1 + 2i + i² = 1 + 2i − 1 = 2i", "By direct expansion too.")] ,
                     src(OS, "Ch 2.4"))],
-                [
-                    video('TjYH0Fz5RMc', 'Complex numbers in polar form', 'Khan Academy', src('openstax_abramson', 'Ch 2.4'), 600),
-                    video('fNk_zzaMoSs', 'Vectors — Essence of Linear Algebra Ch 1', '3Blue1Brown', src('openstax_abramson', 'Ch 10.4'), 600),
-                    video('8qezAG2r0sk', 'Factoring Polynomials and Solving by Factoring', 'Organic Chemistry Tutor', src('openstax_abramson', 'Ch 2.1'), 720),
-                    video('GmMX3-nTWbE', 'Solving Linear Equations Made Easy', 'PatrickJMT', src('openstax_abramson', 'Ch 1.1'), 600),
-                    video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-                ],
-
+                [video("TjYH0Fz5RMc", "Complex numbers in polar form", "Khan Academy", src(OS, "Ch 2.4"), 600)],
                 [
                     mc("Polar form of 1 + i√3 has θ = ?", ["π/6", "π/3", "π/4", "π/2"], "1",
                        "tan θ = √3, in Q I → θ = π/3. (Index 1 = 'π/3'.)", src(OS, "Ch 2.4")),
@@ -1601,14 +1405,7 @@ week7 = week(
                         step("Compute θ", "tan θ = 4/3, in Q I → θ = arctan(4/3) ≈ 53.13°", "Both coordinates positive, so Q I."),
                         step("Polar form", "(5, 53.13°) or (5, 0.9273 rad)", "Two equivalent notations.")] ,
                     src(OS, "Ch 10.5"))],
-                [
-                    video('J9LmF2NLweY', 'Polar coordinates', 'Khan Academy', src('openstax_abramson', 'Ch 10.5'), 540),
-                    video('97pe-QlSGqA', 'Parametric Equations Introduction', 'Organic Chemistry Tutor', src('openstax_abramson', 'Ch 10.4'), 720),
-                    video('fNk_zzaMoSs', 'Vectors — Essence of Linear Algebra Ch 1', '3Blue1Brown', src('openstax_abramson', 'Ch 10.4'), 600),
-                    video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-                    video('sCRB6hMsC4', 'Introduction to Graph Transformations', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.5'), 720),
-                ],
-
+                [video("J9LmF2NLweY", "Polar coordinates", "Khan Academy", src(OS, "Ch 10.5"), 540)],
                 [
                     mc("In polar coordinates, the equation r = 4 is a…", ["line", "circle of radius 4", "point", "ray"], "1",
                        "All points exactly 4 units from the origin — a circle.", src(OS, "Ch 10.5")),
@@ -1642,14 +1439,7 @@ week7 = week(
                         step("Solve for t", "t = x − 1", "From the first equation."),
                         step("Substitute", "y = (x − 1)²", "Replace t in y = t².")] ,
                     src(OS, "Ch 10.4"))],
-                [
-                    video('f3QtV2TTxk', 'Parametric equations intro', 'Khan Academy', src('openstax_abramson', 'Ch 10.4'), 480),
-                    video('97pe-QlSGqA', 'Parametric Equations Introduction', 'Organic Chemistry Tutor', src('openstax_abramson', 'Ch 10.4'), 720),
-                    video('fNk_zzaMoSs', 'Vectors — Essence of Linear Algebra Ch 1', '3Blue1Brown', src('openstax_abramson', 'Ch 10.4'), 600),
-                    video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-                    video('sCRB6hMsC4', 'Introduction to Graph Transformations', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.5'), 720),
-                ],
-
+                [video("f3QtV2TTxk", "Parametric equations intro", "Khan Academy", src(OS, "Ch 10.4"), 480)],
                 [
                     mc("x = cos t, y = sin t is the parametric form of…", ["a line", "a parabola", "the unit circle", "a hyperbola"], "2",
                        "Eliminate t with cos² + sin² = 1.", src(OS, "Ch 10.4")),
@@ -1709,15 +1499,8 @@ conic_sections = topic(
                 step("Identify features", "Major axis along x-axis (a > b). Vertices at (±3, 0). Co-vertices at (0, ±2).", "Major axis along the axis of the larger a."),
             ],
             src(OS, "Ch 12.2"))],
-        [
-            video('Dru6Fs9Acz4', 'Conic sections overview', 'Khan Academy', src('openstax_abramson', 'Ch 12.1'), 540),
-            video('XO8i8AjhcL8', 'Conic sections — circles, ellipses, hyperbolas', 'Khan Academy', src('openstax_abramson', 'Ch 12.2'), 600),
-            video('Q8BbbZxkZSA', 'Rational Functions and Conic Sections', 'Organic Chemistry Tutor', src('openstax_abramson', 'Ch 12.1'), 720),
-            video('fNk_zzaMoSs', 'Vectors — Essence of Linear Algebra Ch 1', '3Blue1Brown', src('openstax_abramson', 'Ch 10.4'), 600),
-            video('sCRB6hMsC4', 'Introduction to Graph Transformations', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.5'), 720),
-            video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-        ],
-
+        [video("Dru6Fs9Acz4", "Conic sections overview", "Khan Academy", src(OS, "Ch 12.1"), 540),
+         video("XO8i8AjhcL8", "Conic sections — circles, ellipses, hyperbolas", "Khan Academy", src(OS, "Ch 12.2"), 600)],
         PQ.CONIC_SECTIONS_QUESTIONS,
     ),
 )
@@ -1760,15 +1543,8 @@ sequences_and_series = topic(
                 step("Apply sum formula", "S_12 = 12/2 · (5 + 38) = 6 · 43 = 258.", "S_n = n/2 · (a₁ + a_n)."),
             ],
             src(OS, "Ch 13.1"))],
-        [
-            video('cIEoP-IVNyk', 'Arithmetic sequences', 'Khan Academy', src('openstax_abramson', 'Ch 13.1'), 600),
-            video('D1Q3RquaO-4', 'D1Q3RquaO-4', 'Khan Academy', src('openstax_abramson', 'Ch 1'), 540),
-            video('9SOQS5jb4f4', 'Precalculus in One Day', 'Brian McLogan', src('openstax_abramson', 'Ch 3'), 600),
-            video('FkUEsP9efFg', 'Introduction to Functions', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.1'), 720),
-            video('sCRB6hMsC4', 'Introduction to Graph Transformations', 'Professor Leonard', src('lippman_rasmussen', 'Ch 1.5'), 720),
-            video('TreVSyf3THY', 'Trigonometry Basics — SOHCAHTOA', "Mario's Math Tutoring", src('yoshiwara', 'Ch 2.1'), 540),
-        ],
-
+        [video("cIEoP-IVNyk", "Arithmetic sequences", "Khan Academy", src(OS, "Ch 13.1"), 600),
+         video("D1Q3RquaO-4", "Geometric series", "Khan Academy", src(OS, "Ch 13.2"), 600)],
         PQ.SEQUENCES_QUESTIONS,
     ),
 )

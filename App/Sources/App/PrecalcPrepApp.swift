@@ -35,7 +35,7 @@ struct RootView: View {
                 .tag(AppTab.tools)
 
             TutorView()
-                .tabItem { Label("AI Tutor", systemImage: "bubble.left.and.bubble.right.fill") }
+                .tabItem { Label(TutorPersona.callToAction, systemImage: "bubble.left.and.bubble.right.fill") }
                 .tag(AppTab.tutor)
 
             SettingsView()

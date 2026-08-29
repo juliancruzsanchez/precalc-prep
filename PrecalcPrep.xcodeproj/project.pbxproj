@@ -34,6 +34,7 @@
 		34090F54B52431476AF9F3A4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF6838E66840E3B7FA11545 /* Theme.swift */; };
 		3734E6914F3E20CA73D44D84 /* bSM7RNSbWhM.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A099ED0DC369F17351BEF0D6 /* bSM7RNSbWhM.mp4 */; };
 		375EEE421F72EB3B605FB2FD /* 7Uos1ED3KHI.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DA35D9E5C0D831A5A0F53044 /* 7Uos1ED3KHI.mp4 */; };
+		3ADD0226A29D60FA46899729 /* TutorPersona.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661CB8CF1DA7B609B01715DB /* TutorPersona.swift */; };
 		3D2C6EB9B6A0D8FB718D9ACB /* PrecalcPrepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3ED27C436464BD5A46A850 /* PrecalcPrepApp.swift */; };
 		45E87E79F78DBBEDA105255E /* F8dq2QdqDv0.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CC5017C2EFCE74A15591DFA4 /* F8dq2QdqDv0.mp4 */; };
 		4D35B227CD68803A8A194477 /* GmMX3-nTWbE.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 791610B77DE496FC5B62F3F1 /* GmMX3-nTWbE.mp4 */; };
@@ -142,6 +143,7 @@
 		518DF2507B7775DC9DC70BC7 /* a5WQlcFTXyk.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = a5WQlcFTXyk.mp4; sourceTree = "<group>"; };
 		556ED245234393C4C2480025 /* TopicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsView.swift; sourceTree = "<group>"; };
 		616C08CC6DBA408C46BA72E1 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		661CB8CF1DA7B609B01715DB /* TutorPersona.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorPersona.swift; sourceTree = "<group>"; };
 		678ED658DD6C00D17A312BA0 /* hOf2UFyL_QE.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hOf2UFyL_QE.mp4; sourceTree = "<group>"; };
 		696D5ABC45E71A1830CB308C /* KDHuWxy53uM.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = KDHuWxy53uM.mp4; sourceTree = "<group>"; };
 		6A01C8CD0BC3B59A8DA56572 /* O3jvUZ8wvZs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = O3jvUZ8wvZs.mp4; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				616C08CC6DBA408C46BA72E1 /* KeychainService.swift */,
 				B973A5F70379FB10A1473A1D /* ProgressService.swift */,
 				A5BBF3158B0717C262723555 /* SettingsService.swift */,
+				661CB8CF1DA7B609B01715DB /* TutorPersona.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				34090F54B52431476AF9F3A4 /* Theme.swift in Sources */,
 				BC9A9F85431B98E9A90410C0 /* ToolsView.swift in Sources */,
 				D7A342436FEC5952063EFFFF /* TopicsView.swift in Sources */,
+				3ADD0226A29D60FA46899729 /* TutorPersona.swift in Sources */,
 				148E8535FBA5428C4CCB64AA /* TutorView.swift in Sources */,
 				F7E01B509DAC2A20FCAD99CE /* YouTubePlayer.swift in Sources */,
 			);

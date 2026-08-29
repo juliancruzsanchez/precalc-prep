@@ -15,7 +15,7 @@ enum GroqError: LocalizedError {
 
     var errorDescription: String? {
         switch self {
-        case .missingAPIKey: return "Add your Groq API key in Settings → AI Tutor."
+        case .missingAPIKey: return "Add your Groq API key in Settings → \(TutorPersona.displayName)."
         case .http(let code): return "Groq returned HTTP \(code)."
         case .decoding(let msg): return "Could not parse Groq response: \(msg)"
         case .empty: return "Groq returned an empty response."

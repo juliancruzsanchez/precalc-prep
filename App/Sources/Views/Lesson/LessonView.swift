@@ -11,6 +11,7 @@ struct LessonView: View {
     @State private var videoPage = 0
     @State private var showingTutor = false
     @State private var walkthroughHeight: CGFloat = 360
+    @State private var videoPagerHeight: CGFloat = VideoCard.minCardHeight
 
     var body: some View {
         ScrollView {
@@ -32,6 +33,7 @@ struct LessonView: View {
                                 domainY: yr,
                                 note: plot.note
                             )
+                            .frame(maxWidth: .infinity)
                         }
                     }
                 }
@@ -40,6 +42,7 @@ struct LessonView: View {
                     SectionHeader(title: "Worked examples", systemImage: "list.bullet.rectangle")
                     ForEach(topic.lesson.examples, id: \.title) { ex in
                         WorkedExampleView(example: ex)
+                            .frame(maxWidth: .infinity)
                     }
                 }
 
@@ -54,27 +57,24 @@ struct LessonView: View {
                                     .foregroundStyle(.secondary)
                             }
                         }
-                        // Pager. The TabView height grows with the tallest page so
-                        // content is never clipped and the card keeps its rounded
-                        // corners. We measure each page's intrinsic height via
-                        // `PageContentHeightKey` (see ContentBlocks).
+                        // Pager with fixed height to ensure proper swipe behavior
                         TabView(selection: $walkthroughPage) {
                             ForEach(Array(topic.lesson.stepByStep.enumerated()), id: \.element.title) { idx, prob in
-                                StepByStepView(problem: prob)
-                                    .padding(.horizontal, 2)
+                                StepByStepCard(problem: prob)
                                     .tag(idx)
                             }
                         }
-                        .tabViewStyle(.page(indexDisplayMode: .always))
-                        .frame(height: walkthroughHeight)
-                        .onPreferenceChange(PageContentHeightKey.self) { height in
-                            // `height` already includes the bottom padding
-                            // StepByStepView reserves for the page indicator,
-                            // so the TabView grows to fit content + indicator
-                            // without overlap.
-                            walkthroughHeight = max(height, 320)
+                        .tabViewStyle(.page(indexDisplayMode: .never))
+                        .frame(height: 380)
+                        // Custom dots for navigation feedback
+                        .overlay(alignment: .bottom) {
+                            if topic.lesson.stepByStep.count > 1 {
+                                PageIndicator(count: topic.lesson.stepByStep.count, current: walkthroughPage)
+                                    .padding(.bottom, 12)
+                            }
                         }
                     }
+                    .frame(maxWidth: .infinity)
                 }
 
                 if !topic.lesson.videos.isEmpty {
@@ -88,19 +88,32 @@ struct LessonView: View {
                                     .foregroundStyle(.secondary)
                             }
                         }
-                        // Pager. Explicit height so each page (and the video inside)
-                        // gets the room it needs — without this the paged TabView
-                        // collapses the card to its content's natural size, which
-                        // is too small to show the video.
+                        // Pager. Height follows the tallest card (measured via
+                        // `PageContentHeightKey`) so the attribution card always
+                        // sits above the reserved page-indicator strip instead of
+                        // spilling underneath the dots.
                         TabView(selection: $videoPage) {
                             ForEach(Array(topic.lesson.videos.enumerated()), id: \.element.youtubeId) { idx, v in
                                 VideoCard(video: v, topicSlug: topic.slug)
                                     .tag(idx)
                             }
                         }
-                        .tabViewStyle(.page(indexDisplayMode: .always))
-                        .frame(height: VideoCard.cardHeight)
+                        .tabViewStyle(.page(indexDisplayMode: .never))
+                        .frame(height: videoPagerHeight)
+                        // Custom dots instead of the system indicator, which is
+                        // invisible over light backgrounds.
+                        .overlay(alignment: .bottom) {
+                            if topic.lesson.videos.count > 1 {
+                                PageIndicator(count: topic.lesson.videos.count, current: videoPage)
+                                    .padding(.bottom, 10)
+                                    .allowsHitTesting(false)
+                            }
+                        }
+                        .onPreferenceChange(PageContentHeightKey.self) { height in
+                            videoPagerHeight = max(height, VideoCard.minCardHeight)
+                        }
                     }
+                    .frame(maxWidth: .infinity)
                 }
 
                 practiceCard
@@ -112,29 +125,55 @@ struct LessonView: View {
         .navigationTitle(topic.title)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            // AI chat button on the right of the navigation bar. Translucent
-            // tinted capsule — visible but quiet, doesn't compete with the
-            // page content for attention.
+            // Liquid-glass chat circle in the navigation bar. Tapping opens
+            // Ms. Kaya (the AI tutor) for the current lesson. The shape is a
+            // plain circle — no text, no capsule — so it reads as an icon
+            // affordance rather than a call-to-action pill. `.ultraThinMaterial`
+            // gives it the frosted glass look; the soft white stroke + inner
+            // highlight sell the "liquid glass" edge.
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     showingTutor = true
                 } label: {
-                    Label("Ask AI", systemImage: "bubble.left.and.bubble.right.fill")
-                        .labelStyle(.titleAndIcon)
-                        .font(.footnote.weight(.semibold))
+                    Image(systemName: "bubble.left.and.bubble.right.fill")
+                        .font(.system(size: 16, weight: .semibold))
                         .foregroundStyle(Theme.accent)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 5)
+                        .frame(width: 36, height: 36)
                         .background(
-                            Capsule()
-                                .fill(Theme.accent.opacity(0.12))
+                            Circle()
+                                .fill(.ultraThinMaterial)
                         )
+                        .overlay(
+                            Circle()
+                                .stroke(Color.white.opacity(0.55), lineWidth: 0.7)
+                        )
+                        .overlay(
+                            // Subtle inner highlight along the top — the
+                            // "liquid" cue: a thin arc that catches light.
+                            Circle()
+                                .stroke(
+                                    LinearGradient(
+                                        colors: [
+                                            Color.white.opacity(0.55),
+                                            Color.white.opacity(0.0)
+                                        ],
+                                        startPoint: .top,
+                                        endPoint: .center
+                                    ),
+                                    lineWidth: 0.7
+                                )
+                                .blendMode(.plusLighter)
+                        )
+                        .shadow(color: Color.black.opacity(0.08), radius: 4, x: 0, y: 2)
                 }
                 .buttonStyle(.plain)
-                .controlSize(.small)
+                .accessibilityLabel(TutorPersona.callToAction)
             }
         }
         .onAppear { settings.lastLessonSlug = topic.slug }
+        .onReceive(NotificationCenter.default.publisher(for: .dismissTutorView)) { _ in
+            showingTutor = false
+        }
         .sheet(isPresented: $showingQuiz) {
             NavigationStack {
                 QuizView(topicSlug: topic.slug, questions: topic.lesson.practice)
@@ -182,6 +221,7 @@ struct LessonView: View {
                 }
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .cardStyle()
     }
 
@@ -203,13 +243,16 @@ struct LessonView: View {
             }
             .buttonStyle(.borderedProminent)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .cardStyle()
     }
 }
 
 /// Video card: video plays full width (edge-to-edge inside the card), the
-/// title / channel / source sit underneath. The page indicator from the parent
-/// `TabView` sits below this card, so it can never overlap the video itself.
+/// title / channel / source sit underneath. The card sizes to its content and
+/// reports its natural height through `PageContentHeightKey` so the parent
+/// pager grows to fit (video + text + the strip reserved for the page dots) —
+/// which keeps the page indicator from ever overlapping the attribution card.
 struct VideoCard: View {
     let video: VideoResource
     let topicSlug: String
@@ -221,14 +264,11 @@ struct VideoCard: View {
     /// visible and not squeezed. Hard-coded instead of `.aspectRatio` /
     /// GeometryReader because both kept collapsing inside the paged TabView.
     static let videoHeight: CGFloat = 240
-    static let textHeight: CGFloat = 110
     /// Space reserved at the bottom of the card for the TabView page dots.
     static let pageIndicatorPadding: CGFloat = 36
-    /// Total card height. Exposed so the parent TabView can size each page
-    /// to fit — without an explicit TabView frame, the paged TabView
-    /// collapses the card down to its content's intrinsic size, which is
-    /// too small to actually show the video.
-    static let cardHeight: CGFloat = videoHeight + textHeight + pageIndicatorPadding
+    /// Fallback minimum card height in case the preference measurement hasn't
+    /// arrived yet — never lets the pager collapse the video away.
+    static let minCardHeight: CGFloat = videoHeight + 120 + pageIndicatorPadding
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -240,6 +280,9 @@ struct VideoCard: View {
                 .frame(height: Self.videoHeight)
                 .clipped()
 
+            // Text + attribution. Sizes to its content (titles and citation
+            // labels wrap freely) instead of a fixed height, so the citation
+            // card can never overflow into the page-indicator strip below.
             VStack(alignment: .leading, spacing: 6) {
                 Text(video.title)
                     .font(.subheadline.weight(.semibold))
@@ -251,25 +294,26 @@ struct VideoCard: View {
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
                 if let source = video.source {
-                    // Attribution lives inside the card so it scrolls with
-                    // the video and never gets hidden behind the page dots.
                     SourceCitationView(citation: source, compact: true)
                 }
-                Spacer(minLength: 0)
             }
             .padding(14)
-            // Fixed text-section height so every card in the pager is the
-            // same total height, regardless of how long the title is.
-            .frame(height: Self.textHeight, alignment: .topLeading)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            // Reserve room for the page dots at the bottom of the pager.
+            .padding(.bottom, Self.pageIndicatorPadding)
+            .fixedSize(horizontal: false, vertical: true)
         }
-        .frame(height: Self.cardHeight)
         .background(Theme.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: 16, style: .continuous)
                 .stroke(Color.primary.opacity(0.05), lineWidth: 1)
         )
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        // Report our natural height so the parent TabView can size to fit.
+        .background(
+            GeometryReader { proxy in
+                Color.clear.preference(key: PageContentHeightKey.self, value: proxy.size.height)
+            }
+        )
         .onAppear {
             if !didCount {
                 progress.incrementVideo(slug: topicSlug)
