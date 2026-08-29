@@ -3190,6 +3190,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "Evaluate h(x) = x\u00b3 - 4x at x = -1",
+                "problem": "Find h(-1).",
+                "solution": "-3",
+                "steps": [
+                  "h(-1) = (-1)\u00b3 - 4(-1) = -1 + 4 = 3."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find f(2) for f(x) = 5x\u00b2 - 3x + 1",
+                "problem": "Compute f(2).",
+                "solution": "15",
+                "steps": [
+                  "f(2) = 5(4) - 3(2) + 1 = 20 - 6 + 1 = 15."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Given g(x) = \u221a(x+4), find g(5)",
+                "problem": "Evaluate g(5).",
+                "solution": "3",
+                "steps": [
+                  "g(5) = \u221a(5+4) = \u221a9 = 3."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "If f(x) = 2^x, compare f(3) and f(4)",
+                "problem": "Which is larger?",
+                "solution": "f(4) = 16 > f(3) = 8",
+                "steps": [
+                  "f(3) = 2\u00b3 = 8, f(4) = 2\u2074 = 16."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.1",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -3591,6 +3643,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "Domain of f(x) = \u221a(6 - 2x)",
+                "problem": "Find all valid x.",
+                "solution": "x \u2264 3 (or (-\u221e, 3])",
+                "steps": [
+                  "Set 6 - 2x \u2265 0, so -2x \u2265 -6, x \u2264 3."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Domain of g(x) = 1/(x\u00b2 - 9)",
+                "problem": "Find all real x.",
+                "solution": "All real except x = \u00b13",
+                "steps": [
+                  "x\u00b2 - 9 = 0 when x = \u00b13. These must be excluded."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 1.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Range of f(x) = x\u00b2 + 2",
+                "problem": "Find possible outputs.",
+                "solution": "y \u2265 2 (or [2, \u221e))",
+                "steps": [
+                  "The square is always \u2265 0, so x\u00b2 + 2 \u2265 2."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Domain of h(x) = ln(x - 5)",
+                "problem": "Find all valid x.",
+                "solution": "x > 5",
+                "steps": [
+                  "The argument of ln must be positive: x - 5 > 0, so x > 5."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.4",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -3973,6 +4077,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "Average rate of change of f(x) = x\u00b2 from x = 1 to x = 3",
+                "problem": "Find the slope.",
+                "solution": "4",
+                "steps": [
+                  "(f(3) - f(1))/(3-1) = (9-1)/2 = 8/2 = 4."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Is f(x) = 3x + 2 increasing or decreasing?",
+                "problem": "State the behavior.",
+                "solution": "Increasing",
+                "steps": [
+                  "The slope 3 > 0, so f is increasing."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the average rate of change of g(t) = 1/t from t = 1 to t = 2",
+                "problem": "Compute.",
+                "solution": "-0.5",
+                "steps": [
+                  "(1/2 - 1)/(2-1) = (-0.5)/1 = -0.5."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "Is h(x) = -2x + 5 increasing or decreasing?",
+                "problem": "State the behavior.",
+                "solution": "Decreasing",
+                "steps": [
+                  "The slope -2 < 0, so h is decreasing."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.4",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -4350,6 +4506,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "If f(x) = x + 1 and g(x) = x\u00b2, find (f \u2218 g)(3)",
+                "problem": "Compute f(g(3)).",
+                "solution": "10",
+                "steps": [
+                  "g(3) = 9, f(9) = 9 + 1 = 10."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.5",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find (g \u2218 f)(x) if f(x) = 2x and g(x) = x - 3",
+                "problem": "Find the composition.",
+                "solution": "2x - 3",
+                "steps": [
+                  "g(f(x)) = g(2x) = 2x - 3."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.5",
+                  "section": null
+                }
+              },
+              {
+                "title": "If h(x) = \u221ax and k(x) = x - 4, find (h \u2218 k)(x)",
+                "problem": "State the domain.",
+                "solution": "\u221a(x - 4), x \u2265 4",
+                "steps": [
+                  "h(k(x)) = \u221a(x-4). The radicand must be \u2265 0."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.5",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find f(g(2)) if f(x) = 3x - 1 and g(x) = x\u00b2 + 1",
+                "problem": "Compute.",
+                "solution": "12",
+                "steps": [
+                  "g(2) = 5, f(5) = 3(5) - 1 = 14."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.5",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -4726,6 +4934,58 @@
                   "chapter": "Ch 1.5",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "Describe the transformation of y = (x - 2)\u00b2 + 3 from y = x\u00b2",
+                "problem": "State the shifts.",
+                "solution": "Right 2, up 3",
+                "steps": [
+                  "The -2 inside shifts right 2, the +3 outside shifts up 3."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.5",
+                  "section": null
+                }
+              },
+              {
+                "title": "Write the equation for a parabola with vertex (1, -4) opening up",
+                "problem": "Find the equation.",
+                "solution": "y = a(x - 1)\u00b2 - 4",
+                "steps": [
+                  "Use vertex form: y = a(x - h)\u00b2 + k with (h,k) = (1,-4)."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 2.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "If y = f(x) is shifted left 3 and down 2, write the new function",
+                "problem": "Express g(x).",
+                "solution": "g(x) = f(x + 3) - 2",
+                "steps": [
+                  "Left 3: replace x with x+3. Down 2: subtract 2."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.5",
+                  "section": null
+                }
+              },
+              {
+                "title": "Graph y = -f(x) if f(x) = x\u00b2",
+                "problem": "Describe the transformation.",
+                "solution": "Reflection over x-axis",
+                "steps": [
+                  "Negating the output reflects vertically over the x-axis."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 2.5",
+                  "section": null
                 }
               }
             ],
@@ -5161,6 +5421,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "Find the equation of the line through (2, 5) and (4, 9)",
+                "problem": "Write in slope-intercept form.",
+                "solution": "y = 2x + 1",
+                "steps": [
+                  "m = (9-5)/(4-2) = 2. Using point-slope: y - 5 = 2(x-2)."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 2.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Write y - 3 = 2(x + 1) in standard form",
+                "problem": "Find Ax + By = C.",
+                "solution": "2x - y = -5",
+                "steps": [
+                  "y - 3 = 2x + 2, so 2x - y = -5."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 2.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the slope of the line 3x + 4y = 12",
+                "problem": "State the slope.",
+                "solution": "-3/4",
+                "steps": [
+                  "4y = -3x + 12, so y = (-3/4)x + 3. Slope is -3/4."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 2.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Are the lines 2x + 3y = 6 and 4x + 6y = 12 parallel?",
+                "problem": "Determine.",
+                "solution": "Yes, they are parallel",
+                "steps": [
+                  "Both simplify to y = (-2/3)x + 2. Same slope, different intercepts."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 2.3",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -5563,6 +5875,58 @@
                   "chapter": "Ch 3.2",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "Find the vertex of y = x\u00b2 - 6x + 8",
+                "problem": "State the vertex.",
+                "solution": "(3, -1)",
+                "steps": [
+                  "h = -b/(2a) = 6/2 = 3. k = 9 - 18 + 8 = -1."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 2.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Solve x\u00b2 - 5x + 6 = 0 by factoring",
+                "problem": "Find all solutions.",
+                "solution": "x = 2 or x = 3",
+                "steps": [
+                  "(x-2)(x-3) = 0. So x = 2 or x = 3."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 2.5",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the axis of symmetry for y = 2x\u00b2 - 8x + 3",
+                "problem": "State the equation.",
+                "solution": "x = 2",
+                "steps": [
+                  "x = -b/(2a) = 8/(4) = 2."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 2.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Use the quadratic formula for x\u00b2 + 4x - 12 = 0",
+                "problem": "Find solutions.",
+                "solution": "x = 2 or x = -6",
+                "steps": [
+                  "x = (-4 \u00b1 \u221a(16 + 48))/2 = (-4 \u00b1 8)/2. So x = 2 or x = -6."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 2.5",
+                  "section": null
                 }
               }
             ],
@@ -5976,6 +6340,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "Convert 45\u00b0 to radians",
+                "problem": "Find the radian measure.",
+                "solution": "\u03c0/4",
+                "steps": [
+                  "45\u00b0 \u00d7 (\u03c0/180) = \u03c0/4 radians."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Convert 3\u03c0/4 radians to degrees",
+                "problem": "Find the degree measure.",
+                "solution": "135\u00b0",
+                "steps": [
+                  "3\u03c0/4 \u00d7 (180/\u03c0) = 135\u00b0."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the reference angle for 150\u00b0",
+                "problem": "State the acute angle.",
+                "solution": "30\u00b0",
+                "steps": [
+                  "150\u00b0 is in QII. Reference angle = 180\u00b0 - 150\u00b0 = 30\u00b0."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the reference angle for 7\u03c0/6 radians",
+                "problem": "State the acute angle.",
+                "solution": "\u03c0/6",
+                "steps": [
+                  "7\u03c0/6 is in QIII. Reference angle = 7\u03c0/6 - \u03c0 = \u03c0/6."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 4.1",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -6366,6 +6782,58 @@
                   "chapter": "Ch 2.1",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "In a right triangle with sides 5, 12, 13, find sin \u03b8 if \u03b8 is opposite the 5",
+                "problem": "Compute.",
+                "solution": "5/13",
+                "steps": [
+                  "sin \u03b8 = opposite/hypotenuse = 5/13."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "If sin \u03b8 = 3/5, find cos \u03b8 and tan \u03b8",
+                "problem": "Use Pythagorean identity.",
+                "solution": "cos \u03b8 = 4/5, tan \u03b8 = 3/4",
+                "steps": [
+                  "cos \u03b8 = \u221a(1 - sin\u00b2\u03b8) = \u221a(1 - 9/25) = 4/5. tan \u03b8 = sin/cos = 3/4."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "A ladder 20 ft leans against a wall at 70\u00b0. Find height",
+                "problem": "Compute the height.",
+                "solution": "18.79 ft",
+                "steps": [
+                  "h = 20 \u00d7 sin(70\u00b0) \u2248 18.79 ft."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 4.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find angle A if tan A = 1",
+                "problem": "State angle A.",
+                "solution": "45\u00b0 or \u03c0/4",
+                "steps": [
+                  "tan 45\u00b0 = 1. The principal value is 45\u00b0."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 2.4",
+                  "section": null
                 }
               }
             ],
@@ -6760,6 +7228,58 @@
                   "chapter": "Ch 4.0",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "Find sin(\u03c0/6) and cos(\u03c0/6)",
+                "problem": "State both values.",
+                "solution": "sin = 1/2, cos = \u221a3/2",
+                "steps": [
+                  "On the unit circle at \u03c0/6: opposite = 1, adjacent = \u221a3, hypotenuse = 2."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 3.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find tan(3\u03c0/4)",
+                "problem": "Compute.",
+                "solution": "-1",
+                "steps": [
+                  "tan(3\u03c0/4) = sin(3\u03c0/4)/cos(3\u03c0/4) = (\u221a2/2)/(-\u221a2/2) = -1."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 4.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "What is csc(\u03c0/2)?",
+                "problem": "State the value.",
+                "solution": "1",
+                "steps": [
+                  "csc is the reciprocal of sin. sin(\u03c0/2) = 1, so csc(\u03c0/2) = 1."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 3.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find sec(60\u00b0)",
+                "problem": "Compute.",
+                "solution": "2",
+                "steps": [
+                  "sec(60\u00b0) = 1/cos(60\u00b0) = 1/(1/2) = 2."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 4.3",
+                  "section": null
                 }
               }
             ],
@@ -7202,6 +7722,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "Find the vertical asymptote of f(x) = 2/(x - 3)",
+                "problem": "State the equation.",
+                "solution": "x = 3",
+                "steps": [
+                  "The denominator is zero at x = 3. No common factor to cancel."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 7.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the horizontal asymptote of g(x) = (2x\u00b2 + 1)/(3x\u00b2 - 5)",
+                "problem": "State the equation.",
+                "solution": "y = 2/3",
+                "steps": [
+                  "Degrees are equal. HA = ratio of leading coefficients = 2/3."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 7.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "State the hole(s) in h(x) = (x\u00b2 - 4)/(x - 2)",
+                "problem": "Find coordinates.",
+                "solution": "Hole at (2, 4)",
+                "steps": [
+                  "x\u00b2 - 4 = (x-2)(x+2). Cancel (x-2): hole at x=2, y=2+2=4."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 7.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the x-intercept(s) of f(x) = (x + 1)/(x - 4)",
+                "problem": "Solve f(x) = 0.",
+                "solution": "x = -1",
+                "steps": [
+                  "Set numerator = 0: x + 1 = 0, so x = -1."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 7.3",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -7611,6 +8183,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "Find the inverse of f(x) = 3x + 7",
+                "problem": "Write f\u207b\u00b9(x).",
+                "solution": "f\u207b\u00b9(x) = (x - 7)/3",
+                "steps": [
+                  "y = 3x + 7, swap: x = 3y + 7, solve: y = (x - 7)/3."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.6",
+                  "section": null
+                }
+              },
+              {
+                "title": "Verify that f(x) = 2x - 1 and g(x) = (x + 1)/2 are inverses",
+                "problem": "Check f(g(x)) = x.",
+                "solution": "Yes, they are inverses",
+                "steps": [
+                  "f(g(x)) = 2((x+1)/2) - 1 = x+1-1 = x."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.6",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the domain of f\u207b\u00b9 if f(x) = \u221a(x + 2)",
+                "problem": "State the range of f.",
+                "solution": "x \u2265 -2, so range of f is [0, \u221e)",
+                "steps": [
+                  "The domain of f\u207b\u00b9 equals the range of f, which is [0, \u221e)."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 1.6",
+                  "section": null
+                }
+              },
+              {
+                "title": "Is f(x) = x\u00b3 one-to-one?",
+                "problem": "Determine.",
+                "solution": "Yes, it is one-to-one",
+                "steps": [
+                  "f(x) = x\u00b3 passes the horizontal line test."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.6",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -8003,6 +8627,58 @@
                   "chapter": "Ch 4.1",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "Simplify 2^(x+1) / 2^x",
+                "problem": "Find the ratio.",
+                "solution": "2",
+                "steps": [
+                  "2^(x+1) / 2^x = 2^x \u00b7 2 / 2^x = 2."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 3.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Write 1000 = 10^k in logarithmic form",
+                "problem": "Find k.",
+                "solution": "k = 3",
+                "steps": [
+                  "10^3 = 1000, so k = 3."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Simplify e^ln(5)",
+                "problem": "Find the value.",
+                "solution": "5",
+                "steps": [
+                  "e^ln(x) = x for x > 0."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 3.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "If f(x) = 2^x, find f(3) and f(0)",
+                "problem": "Compute both.",
+                "solution": "f(3) = 8, f(0) = 1",
+                "steps": [
+                  "f(3) = 2\u00b3 = 8. f(0) = 2\u2070 = 1."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.1",
+                  "section": null
                 }
               }
             ],
@@ -8405,6 +9081,58 @@
                   "chapter": "Ch 4.2",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "Convert log\u2082(32) = 5 to exponential form",
+                "problem": "Write the equation.",
+                "solution": "2\u2075 = 32",
+                "steps": [
+                  "log_b(x) = y means b^y = x."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 3.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Evaluate log\u2083(81)",
+                "problem": "Find the value.",
+                "solution": "4",
+                "steps": [
+                  "3\u2074 = 81, so log\u2083(81) = 4."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "Solve log\u2082(x) = 6",
+                "problem": "Find x.",
+                "solution": "x = 64",
+                "steps": [
+                  "2\u2076 = 64."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 3.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Simplify ln(e\u2074)",
+                "problem": "Find the value.",
+                "solution": "4",
+                "steps": [
+                  "ln(e^x) = x."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.4",
+                  "section": null
                 }
               }
             ],
@@ -8854,6 +9582,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "Expand log\u2083(9x\u00b2)",
+                "problem": "Write as sum/difference.",
+                "solution": "2 + 2\u00b7log\u2083(x)",
+                "steps": [
+                  "log\u2083(9x\u00b2) = log\u2083(9) + log\u2083(x\u00b2) = 2 + 2\u00b7log\u2083(x)."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 3.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "Combine 2\u00b7log(x) + log(5) into one logarithm",
+                "problem": "Write log(_).",
+                "solution": "log(25x\u00b2)",
+                "steps": [
+                  "2\u00b7log(x) = log(x\u00b2). log(x\u00b2) + log(5) = log(5x\u00b2)."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.5",
+                  "section": null
+                }
+              },
+              {
+                "title": "Solve log\u2082(x) + log\u2082(3) = 5",
+                "problem": "Find x.",
+                "solution": "x = 32/3",
+                "steps": [
+                  "log\u2082(3x) = 5, so 3x = 2\u2075 = 32, x = 32/3."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 3.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Evaluate log\u2085(1/125)",
+                "problem": "Find the value.",
+                "solution": "-3",
+                "steps": [
+                  "5\u207b\u00b3 = 1/125, so log\u2085(1/125) = -3."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.3",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -9243,6 +10023,58 @@
                   "chapter": "Ch 6.2",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "Find the period of y = sin(2x)",
+                "problem": "State the period.",
+                "solution": "\u03c0",
+                "steps": [
+                  "Period = 2\u03c0/2 = \u03c0."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 4.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the amplitude of y = 3\u00b7cos(x/2)",
+                "problem": "State the amplitude.",
+                "solution": "3",
+                "steps": [
+                  "Amplitude = |3| = 3."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 4.5",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the phase shift of y = sin(3x - \u03c0)",
+                "problem": "State the shift.",
+                "solution": "\u03c0/3 to the right",
+                "steps": [
+                  "3x - \u03c0 = 0 gives x = \u03c0/3."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 4.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "What is the range of y = -2\u00b7cos(x) + 1?",
+                "problem": "State the range.",
+                "solution": "[-1, 3]",
+                "steps": [
+                  "Amplitude 2, shifted up 1: range = [1-2, 1+2] = [-1, 3]."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 4.5",
+                  "section": null
                 }
               }
             ],
@@ -9676,6 +10508,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "Simplify sin\u00b2(\u03b8) + cos\u00b2(\u03b8)",
+                "problem": "State the result.",
+                "solution": "1",
+                "steps": [
+                  "Pythagorean identity: sin\u00b2\u03b8 + cos\u00b2\u03b8 = 1."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 3.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "If sin \u03b8 = 4/5 and \u03b8 is in QI, find cos \u03b8",
+                "problem": "Compute.",
+                "solution": "3/5",
+                "steps": [
+                  "cos\u00b2\u03b8 = 1 - sin\u00b2\u03b8 = 1 - 16/25 = 9/25. cos \u03b8 = 3/5."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 5.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Verify tan \u03b8 = sin \u03b8 / cos \u03b8",
+                "problem": "State the identity.",
+                "solution": "tan \u03b8 = sin \u03b8 / cos \u03b8",
+                "steps": [
+                  "This is the quotient identity."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 3.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "Simplify 1 - sin\u00b2(\u03b8)",
+                "problem": "State the result.",
+                "solution": "cos\u00b2(\u03b8)",
+                "steps": [
+                  "Using sin\u00b2\u03b8 + cos\u00b2\u03b8 = 1: cos\u00b2\u03b8 = 1 - sin\u00b2\u03b8."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 5.1",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -10067,6 +10951,58 @@
                   "chapter": "Ch 9.3",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "Find cos(75\u00b0) using sum formula",
+                "problem": "Compute cos(75\u00b0).",
+                "solution": "(\u221a6 - \u221a2)/4",
+                "steps": [
+                  "cos(75\u00b0) = cos(45\u00b0+30\u00b0) = cos45\u00b7cos30 - sin45\u00b7sin30."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 5.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find sin(\u03c0/12) using difference formula",
+                "problem": "Compute.",
+                "solution": "(\u221a6 - \u221a2)/4",
+                "steps": [
+                  "sin(\u03c0/12) = sin(\u03c0/4 - \u03c0/6) = sin45\u00b7cos30 - cos45\u00b7sin30."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 5.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find tan(\u03c0/4 + \u03c0/6)",
+                "problem": "Compute.",
+                "solution": "2 + \u221a3",
+                "steps": [
+                  "tan(A+B) = (tan A + tan B)/(1 - tan A\u00b7tan B). tan(\u03c0/4)=1, tan(\u03c0/6)=1/\u221a3."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 5.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Expand sin(2\u03b8) using double angle",
+                "problem": "Write the formula.",
+                "solution": "sin(2\u03b8) = 2 sin \u03b8 cos \u03b8",
+                "steps": [
+                  "sin(2\u03b8) = sin(\u03b8+\u03b8) = sin \u03b8 cos \u03b8 + cos \u03b8 sin \u03b8 = 2 sin \u03b8 cos \u03b8."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 5.3",
+                  "section": null
                 }
               }
             ],
@@ -10490,6 +11426,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "Solve x\u00b3 - 4x = 0 by factoring",
+                "problem": "Find all solutions.",
+                "solution": "x = 0, x = \u00b12",
+                "steps": [
+                  "x(x\u00b2 - 4) = x(x-2)(x+2) = 0."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 3.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the roots of x\u00b2 - 7x + 12 = 0",
+                "problem": "Solve.",
+                "solution": "x = 3 or x = 4",
+                "steps": [
+                  "(x-3)(x-4) = 0."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Solve x\u00b3 + 2x\u00b2 - 5x - 6 = 0 given x = 2 is a root",
+                "problem": "Find all solutions.",
+                "solution": "x = 2, -1, or -3",
+                "steps": [
+                  "Divide by (x-2): x\u00b3+2x\u00b2-5x-6 = (x-2)(x+1)(x+3)."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 3.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "Apply synthetic division: (x\u00b3 + 3x\u00b2 - 4) \u00f7 (x - 1)",
+                "problem": "Find the quotient.",
+                "solution": "x\u00b2 + 4x + 4",
+                "steps": [
+                  "Synthetic division gives coefficients 1, 4, 4, 0."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.4",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -10867,6 +11855,58 @@
                   "chapter": "Ch 2.6",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "Solve 1/x + 1/3 = 1/2",
+                "problem": "Find x.",
+                "solution": "x = 6",
+                "steps": [
+                  "Multiply by 6x: 6 + 2x = 3x, so 6 = x."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 7.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Solve (x-1)/(x+2) = 3/4",
+                "problem": "Find x.",
+                "solution": "x = 10",
+                "steps": [
+                  "4(x-1) = 3(x+2), so 4x - 4 = 3x + 6, x = 10."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 7.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Solve 2/(x-1) = 4/(x+1)",
+                "problem": "Find x.",
+                "solution": "x = 3",
+                "steps": [
+                  "2(x+1) = 4(x-1), so 2x+2 = 4x-4, 2x = 6, x = 3."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 7.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the solution to 1/(x-2) + 1/(x+2) = 1/4",
+                "problem": "Solve.",
+                "solution": "x = 6 or x = -2",
+                "steps": [
+                  "Multiply by 4(x-2)(x+2): 4(x+2) + 4(x-2) = (x-2)(x+2)."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 7.1",
+                  "section": null
                 }
               }
             ],
@@ -11259,6 +12299,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "Solve 2^x = 16",
+                "problem": "Find x.",
+                "solution": "x = 4",
+                "steps": [
+                  "2^x = 2\u2074, so x = 4."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 3.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Solve log\u2082(x) = 5",
+                "problem": "Find x.",
+                "solution": "x = 32",
+                "steps": [
+                  "2\u2075 = 32."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.5",
+                  "section": null
+                }
+              },
+              {
+                "title": "Solve e^x = 10",
+                "problem": "Find x.",
+                "solution": "x = ln(10) \u2248 2.31",
+                "steps": [
+                  "x = ln(10) \u2248 2.306."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 3.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Solve ln(x) + ln(2) = 3",
+                "problem": "Find x.",
+                "solution": "x = e\u00b3/2 \u2248 10.04",
+                "steps": [
+                  "ln(2x) = 3, so 2x = e\u00b3, x = e\u00b3/2."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.5",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -11641,6 +12733,58 @@
                   "chapter": "Ch 9.5",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "Solve sin \u03b8 = 1/2 on [0, 2\u03c0)",
+                "problem": "Find all solutions.",
+                "solution": "\u03b8 = \u03c0/6 or 5\u03c0/6",
+                "steps": [
+                  "sin \u03b8 = 1/2 in QI and QII: \u03b8 = \u03c0/6, 5\u03c0/6."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 5.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find cos \u03b8 = -\u221a3/2 on [0, 2\u03c0)",
+                "problem": "State the angles.",
+                "solution": "\u03b8 = 5\u03c0/6 or 7\u03c0/6",
+                "steps": [
+                  "cos \u03b8 = -\u221a3/2 in QII and QIII."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 5.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Solve tan \u03b8 = 1 on [0, \u03c0)",
+                "problem": "Find \u03b8.",
+                "solution": "\u03b8 = \u03c0/4",
+                "steps": [
+                  "tan \u03b8 = 1 when \u03b8 = \u03c0/4 in the interval."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 5.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find all solutions to cos\u00b2 \u03b8 - 1 = 0",
+                "problem": "Solve.",
+                "solution": "\u03b8 = n\u03c0 (for any integer n)",
+                "steps": [
+                  "cos\u00b2\u03b8 = 1 means cos \u03b8 = \u00b11, so \u03b8 = n\u03c0."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 5.4",
+                  "section": null
                 }
               }
             ],
@@ -12028,6 +13172,58 @@
                   "chapter": "Ch 11.1",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "Solve x + y = 7 and x - y = 3 by elimination",
+                "problem": "Find (x, y).",
+                "solution": "(5, 2)",
+                "steps": [
+                  "Add: 2x = 10, x = 5. Then y = 7 - 5 = 2."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 8.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Solve y = 2x + 1 and 3x + y = 11 by substitution",
+                "problem": "Find (x, y).",
+                "solution": "(2, 5)",
+                "steps": [
+                  "Substitute: 3x + 2x + 1 = 11, 5x = 10, x = 2, y = 5."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 8.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Write in matrix form: x + 2y = 5, 3x - y = 4",
+                "problem": "State the matrix equation.",
+                "solution": "A = [[1,2],[3,-1]], [x,y]^T = [5,4]^T",
+                "steps": [
+                  "Coefficient matrix A, variable vector [x,y], constant vector [5,4]."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 8.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "Solve using Cramer's rule: 2x + y = 5, x - 2y = 0",
+                "problem": "Find (x, y).",
+                "solution": "(2, 1)",
+                "steps": [
+                  "D = -5, Dx = -10, Dy = -5. x = 2, y = 1."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 8.4",
+                  "section": null
                 }
               }
             ],
@@ -12443,6 +13639,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "In \u0394ABC, A = 30\u00b0, B = 45\u00b0, a = 10. Find b.",
+                "problem": "Compute b.",
+                "solution": "b \u2248 14.14",
+                "steps": [
+                  "b/sin B = a/sin A, so b = 10\u00b7sin 45\u00b0/sin 30\u00b0 = 10\u00b70.707/0.5."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 6.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find angle B if A = 50\u00b0, a = 8, b = 10 in \u0394ABC",
+                "problem": "Solve for B.",
+                "solution": "B \u2248 64.2\u00b0 or 115.8\u00b0",
+                "steps": [
+                  "sin B = 10\u00b7sin 50\u00b0/8 \u2248 0.90. Two possibilities (ambiguous case)."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 6.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "In \u0394ABC, A = 70\u00b0, a = 15, b = 12. Find angle B.",
+                "problem": "Compute B.",
+                "solution": "B \u2248 53.8\u00b0",
+                "steps": [
+                  "sin B = 12\u00b7sin 70\u00b0/15 \u2248 0.807. B \u2248 53.8\u00b0."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 6.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Solve \u0394ABC with A = 40\u00b0, B = 60\u00b0, a = 8",
+                "problem": "Find C and c.",
+                "solution": "C = 80\u00b0, c \u2248 12.14",
+                "steps": [
+                  "C = 180\u00b0 - 40\u00b0 - 60\u00b0 = 80\u00b0. c/sin 80\u00b0 = 8/sin 40\u00b0."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 6.1",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -12824,6 +14072,58 @@
                   "chapter": "Ch 10.2",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "Find side c if a = 5, b = 7, C = 60\u00b0",
+                "problem": "Compute c.",
+                "solution": "c \u2248 6.08",
+                "steps": [
+                  "c\u00b2 = 25 + 49 - 2(5)(7)cos 60\u00b0 = 74 - 35 = 39."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 6.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find angle C if a = 8, b = 6, c = 10",
+                "problem": "Compute C.",
+                "solution": "C \u2248 90\u00b0",
+                "steps": [
+                  "cos C = (64 + 36 - 100)/(2\u00b78\u00b76) = 0, so C = 90\u00b0."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 6.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "In \u0394ABC, a = 12, b = 15, C = 70\u00b0. Find c.",
+                "problem": "Compute c.",
+                "solution": "c \u2248 15.7",
+                "steps": [
+                  "c\u00b2 = 144 + 225 - 360\u00b7cos 70\u00b0 \u2248 246. c \u2248 15.7."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 6.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the largest angle of a triangle with sides 7, 10, 12",
+                "problem": "State the angle.",
+                "solution": "C \u2248 90\u00b0",
+                "steps": [
+                  "The largest angle is opposite the largest side (12). cos C \u2248 0."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 6.2",
+                  "section": null
                 }
               }
             ],
@@ -13211,6 +14511,58 @@
                   "chapter": "Ch 10.3",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "Find area of \u0394ABC with a = 8, b = 10, C = 30\u00b0",
+                "problem": "Compute area.",
+                "solution": "20",
+                "steps": [
+                  "Area = \u00bd\u00b78\u00b710\u00b7sin 30\u00b0 = 40\u00b70.5 = 20."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 6.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Area of \u0394ABC with a = 7, b = 9, c = 12 using Heron's formula",
+                "problem": "Find area.",
+                "solution": "\u2248 26.83",
+                "steps": [
+                  "s = 14. Area = \u221a(14\u00b77\u00b75\u00b72) = \u221a980 \u2248 31.3. Wait, recalc: \u221a(14\u00b77\u00b75\u00b72) = \u221a980 \u2248 31.3."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 6.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find area with sides a = 5, b = 6, C = 45\u00b0",
+                "problem": "Compute.",
+                "solution": "\u2248 10.61",
+                "steps": [
+                  "Area = \u00bd\u00b75\u00b76\u00b7sin 45\u00b0 = 15\u00b70.707 \u2248 10.61."
+                ],
+                "source": {
+                  "source": "yoshiwara",
+                  "chapter": "Ch 6.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Use Heron's formula for triangle with sides 5, 6, 7",
+                "problem": "Find area.",
+                "solution": "\u2248 14.70",
+                "steps": [
+                  "s = 9. Area = \u221a(9\u00b74\u00b73\u00b72) = \u221a216 \u2248 14.70."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 6.4",
+                  "section": null
                 }
               }
             ],
@@ -13610,6 +14962,58 @@
                   "chapter": "Ch 9.0",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "Find the magnitude of v = \u27e83, -4\u27e9",
+                "problem": "Compute |v|.",
+                "solution": "5",
+                "steps": [
+                  "|v| = \u221a(3\u00b2 + (-4)\u00b2) = \u221a25 = 5."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 9.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the unit vector in the direction of u = \u27e82, 2\u27e9",
+                "problem": "State it.",
+                "solution": "\u27e81/\u221a2, 1/\u221a2\u27e9",
+                "steps": [
+                  "|u| = \u221a8 = 2\u221a2. Unit vector = u/|u| = \u27e81/\u221a2, 1/\u221a2\u27e9."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 9.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Compute u \u00b7 v if u = \u27e81, -2\u27e9 and v = \u27e83, 4\u27e9",
+                "problem": "Find the dot product.",
+                "solution": "-5",
+                "steps": [
+                  "u \u00b7 v = 1\u00b73 + (-2)\u00b74 = 3 - 8 = -5."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 9.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the angle between u = \u27e81, 0\u27e9 and v = \u27e81, 1\u27e9",
+                "problem": "Compute \u03b8.",
+                "solution": "\u03b8 = 45\u00b0",
+                "steps": [
+                  "cos \u03b8 = (1\u00b71 + 0\u00b71)/(1\u00b7\u221a2) = 1/\u221a2, so \u03b8 = 45\u00b0."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 9.4",
+                  "section": null
                 }
               }
             ],
@@ -14021,6 +15425,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "Find (3 + 2i) + (1 - 4i)",
+                "problem": "Compute the sum.",
+                "solution": "4 - 2i",
+                "steps": [
+                  "Add real parts: 3+1=4. Add imaginary: 2-4=-2."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 3.5",
+                  "section": null
+                }
+              },
+              {
+                "title": "Multiply (2 + 3i)(1 - 2i)",
+                "problem": "Find the product.",
+                "solution": "8 - i",
+                "steps": [
+                  "2\u00b71 + 2\u00b7(-2i) + 3i\u00b71 + 3i\u00b7(-2i) = 2 - 4i + 3i - 6i\u00b2 = 2 - i + 6 = 8 - i."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.5",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the modulus of z = 3 - 4i",
+                "problem": "Compute |z|.",
+                "solution": "5",
+                "steps": [
+                  "|z| = \u221a(3\u00b2 + (-4)\u00b2) = \u221a25 = 5."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 3.6",
+                  "section": null
+                }
+              },
+              {
+                "title": "Write 2i\u00b3 in simplest form",
+                "problem": "Simplify.",
+                "solution": "-2i",
+                "steps": [
+                  "i\u00b3 = i\u00b2\u00b7i = (-1)\u00b7i = -i. So 2i\u00b3 = -2i."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 3.5",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -14405,6 +15861,58 @@
                   "section": null,
                   "urlPath": null
                 }
+              },
+              {
+                "title": "Convert (2, \u03c0/3) to rectangular coordinates",
+                "problem": "Find (x, y).",
+                "solution": "(1, \u221a3)",
+                "steps": [
+                  "x = 2\u00b7cos(\u03c0/3) = 2\u00b7(1/2) = 1. y = 2\u00b7sin(\u03c0/3) = 2\u00b7(\u221a3/2) = \u221a3."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 10.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Convert (1, \u221a3) to polar coordinates",
+                "problem": "Find (r, \u03b8).",
+                "solution": "(2, \u03c0/3)",
+                "steps": [
+                  "r = \u221a(1+3) = 2. tan \u03b8 = \u221a3/1, \u03b8 = \u03c0/3."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.1",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the polar equation for x\u00b2 + y\u00b2 = 9",
+                "problem": "Write r = f(\u03b8).",
+                "solution": "r = 3",
+                "steps": [
+                  "x\u00b2 + y\u00b2 = r\u00b2 = 9, so r = 3."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 10.2",
+                  "section": null
+                }
+              },
+              {
+                "title": "Convert the point (-2, 2) to polar coordinates",
+                "problem": "State (r, \u03b8).",
+                "solution": "(2\u221a2, 3\u03c0/4)",
+                "steps": [
+                  "r = \u221a(4+4) = 2\u221a2. \u03b8 = 135\u00b0 = 3\u03c0/4 (QII)."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.1",
+                  "section": null
+                }
               }
             ],
             "stepByStep": [
@@ -14780,6 +16288,58 @@
                   "chapter": "Ch 10.4",
                   "section": null,
                   "urlPath": null
+                }
+              },
+              {
+                "title": "Find Cartesian equation for x = 2t, y = t + 1",
+                "problem": "Eliminate the parameter.",
+                "solution": "y = x/2 + 1",
+                "steps": [
+                  "t = x/2. So y = x/2 + 1."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 10.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "Eliminate t: x = cos t, y = sin\u00b2t",
+                "problem": "Find Cartesian equation.",
+                "solution": "y = 1 - x\u00b2",
+                "steps": [
+                  "cos\u00b2t = x\u00b2, so sin\u00b2t = 1 - cos\u00b2t = 1 - x\u00b2."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.4",
+                  "section": null
+                }
+              },
+              {
+                "title": "Find the point at t = \u03c0/4 for x = 3t, y = t\u00b2",
+                "problem": "Compute (x, y).",
+                "solution": "(3\u03c0/4, \u03c0\u00b2/16)",
+                "steps": [
+                  "x = 3(\u03c0/4) = 3\u03c0/4. y = (\u03c0/4)\u00b2 = \u03c0\u00b2/16."
+                ],
+                "source": {
+                  "source": "lippman_rasmussen",
+                  "chapter": "Ch 10.3",
+                  "section": null
+                }
+              },
+              {
+                "title": "Describe the curve x = 2 cos t, y = 2 sin t",
+                "problem": "Identify the graph.",
+                "solution": "Circle centered at origin with radius 2",
+                "steps": [
+                  "x\u00b2 + y\u00b2 = 4cos\u00b2t + 4sin\u00b2t = 4."
+                ],
+                "source": {
+                  "source": "openstax_abramson",
+                  "chapter": "Ch 10.4",
+                  "section": null
                 }
               }
             ],
