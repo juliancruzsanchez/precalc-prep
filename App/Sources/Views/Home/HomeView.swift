@@ -55,16 +55,24 @@ struct HomeView: View {
                     NavigationLink {
                         LessonView(topic: topic)
                     } label: {
-                        Label("Continue: \(topic.title)", systemImage: "play.circle.fill")
+                        Label(topic.title, systemImage: "play.circle.fill")
+                            .lineLimit(1)
+                            .truncationMode(.tail)
+                            .frame(maxWidth: .infinity, alignment: .center)
                     }
                     .buttonStyle(.borderedProminent)
+                    .controlSize(.regular)
                 } else {
                     NavigationLink {
                         TopicsView()
                     } label: {
                         Label("Start the course", systemImage: "play.circle.fill")
+                            .lineLimit(1)
+                            .truncationMode(.tail)
+                            .frame(maxWidth: .infinity, alignment: .center)
                     }
                     .buttonStyle(.borderedProminent)
+                    .controlSize(.regular)
                 }
             }
         }

@@ -68,9 +68,11 @@ struct LessonView: View {
                         .tabViewStyle(.page(indexDisplayMode: .always))
                         .frame(height: walkthroughHeight)
                         .onPreferenceChange(PageContentHeightKey.self) { height in
-                            // Add a little breathing room so the page indicator
-                            // and bottom padding don't crowd the last step.
-                            walkthroughHeight = max(height + 8, 320)
+                            // `height` already includes the bottom padding
+                            // StepByStepView reserves for the page indicator,
+                            // so the TabView grows to fit content + indicator
+                            // without overlap.
+                            walkthroughHeight = max(height, 320)
                         }
                     }
                 }
@@ -86,8 +88,10 @@ struct LessonView: View {
                                     .foregroundStyle(.secondary)
                             }
                         }
-                        // Pager. The TabView height grows with the tallest page so
-                        // content is never clipped.
+                        // Pager. Explicit height so each page (and the video inside)
+                        // gets the room it needs — without this the paged TabView
+                        // collapses the card to its content's natural size, which
+                        // is too small to show the video.
                         TabView(selection: $videoPage) {
                             ForEach(Array(topic.lesson.videos.enumerated()), id: \.element.youtubeId) { idx, v in
                                 VideoCard(video: v, topicSlug: topic.slug)
@@ -95,6 +99,7 @@ struct LessonView: View {
                             }
                         }
                         .tabViewStyle(.page(indexDisplayMode: .always))
+                        .frame(height: VideoCard.cardHeight)
                     }
                 }
 
@@ -107,16 +112,25 @@ struct LessonView: View {
         .navigationTitle(topic.title)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            // AI chat button on the right of the navigation bar.
+            // AI chat button on the right of the navigation bar. Translucent
+            // tinted capsule — visible but quiet, doesn't compete with the
+            // page content for attention.
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     showingTutor = true
                 } label: {
                     Label("Ask AI", systemImage: "bubble.left.and.bubble.right.fill")
                         .labelStyle(.titleAndIcon)
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(Theme.accent)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 5)
+                        .background(
+                            Capsule()
+                                .fill(Theme.accent.opacity(0.12))
+                        )
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(Theme.accent)
+                .buttonStyle(.plain)
                 .controlSize(.small)
             }
         }
@@ -202,26 +216,54 @@ struct VideoCard: View {
     @EnvironmentObject private var progress: ProgressService
     @State private var didCount = false
 
+    /// Minimum video height. At ~390pt wide (iPhone portrait) the natural
+    /// 16:9 height is ~219pt; we round up to 240 so the video is clearly
+    /// visible and not squeezed. Hard-coded instead of `.aspectRatio` /
+    /// GeometryReader because both kept collapsing inside the paged TabView.
+    static let videoHeight: CGFloat = 240
+    static let textHeight: CGFloat = 110
+    /// Space reserved at the bottom of the card for the TabView page dots.
+    static let pageIndicatorPadding: CGFloat = 36
+    /// Total card height. Exposed so the parent TabView can size each page
+    /// to fit — without an explicit TabView frame, the paged TabView
+    /// collapses the card down to its content's intrinsic size, which is
+    /// too small to actually show the video.
+    static let cardHeight: CGFloat = videoHeight + textHeight + pageIndicatorPadding
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // Full-width video, no padding, no on-video overlay.
+            // Full-width video, explicit height. No aspect-ratio modifier,
+            // no GeometryReader — just a fixed frame so the AVPlayerLayer
+            // always has a real, non-zero size to fill.
             YouTubeEmbed(videoID: video.youtubeId)
                 .frame(maxWidth: .infinity)
+                .frame(height: Self.videoHeight)
+                .clipped()
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 6) {
                 Text(video.title)
                     .font(.subheadline.weight(.semibold))
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
                 Text(video.channel)
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                    .lineLimit(1)
                 if let source = video.source {
+                    // Attribution lives inside the card so it scrolls with
+                    // the video and never gets hidden behind the page dots.
                     SourceCitationView(citation: source, compact: true)
                 }
+                Spacer(minLength: 0)
             }
             .padding(14)
+            // Fixed text-section height so every card in the pager is the
+            // same total height, regardless of how long the title is.
+            .frame(height: Self.textHeight, alignment: .topLeading)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .frame(height: Self.cardHeight)
         .background(Theme.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: 16, style: .continuous)
