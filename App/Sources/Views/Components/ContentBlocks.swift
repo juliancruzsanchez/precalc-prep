@@ -9,6 +9,26 @@ struct PageContentHeightKey: PreferenceKey {
     }
 }
 
+/// Custom dot-style page indicator. Replaces the system `.page` indicator,
+/// which renders as white-on-white (invisible) over light backgrounds and can
+/// sit on top of card content. The current page is tinted with the accent
+/// color so it's clearly visible in both light and dark mode.
+struct PageIndicator: View {
+    let count: Int
+    let current: Int
+
+    var body: some View {
+        HStack(spacing: 6) {
+            ForEach(0..<max(count, 1), id: \.self) { i in
+                Capsule()
+                    .fill(i == current ? Theme.accent : Color.secondary.opacity(0.35))
+                    .frame(width: i == current ? 20 : 7, height: 7)
+            }
+        }
+        .animation(.easeInOut(duration: 0.2), value: current)
+    }
+}
+
 /// A serif-styled, well-spaced block used to display math expressions.
 /// Uses the system "New York" serif at math-appropriate sizing so equations
 /// read as math, not body text. LaTeX rendering is intentionally a future
@@ -151,53 +171,127 @@ struct StepByStepView: View {
     @State private var revealedCount: Int = 0
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            // Title + step counter — title wraps freely so the equation is never truncated.
-            VStack(alignment: .leading, spacing: 6) {
-                HStack(alignment: .firstTextBaseline) {
+        VStack(alignment: .leading, spacing: 10) {
+            // Title + step counter
+            VStack(alignment: .leading, spacing: 4) {
+                Text(problem.title)
+                    .font(Theme.mathFont(compact: true).weight(.semibold))
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+                Text(problem.prompt)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(2)
+            }
+
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .leading, spacing: 8) {
+                    ForEach(Array(problem.steps.prefix(3).enumerated()), id: \.offset) { idx, step in
+                        let isRevealed = idx < revealedCount
+                        HStack(alignment: .top, spacing: 8) {
+                            Circle()
+                                .fill(isRevealed ? Theme.accent : Color.secondary.opacity(0.2))
+                                .frame(width: 22, height: 22)
+                                .overlay(
+                                    Text("\(idx + 1)")
+                                        .font(.caption2.weight(.bold))
+                                        .foregroundStyle(.white)
+                                )
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(step.label)
+                                    .font(.caption.weight(.semibold))
+                                if isRevealed {
+                                    MathBlock(text: step.math, compact: true)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            HStack {
+                Button {
+                    if revealedCount > 0 { revealedCount -= 1 }
+                } label: {
+                    Image(systemName: "chevron.left")
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.small)
+                .disabled(revealedCount == 0)
+                Spacer()
+                Text("\(revealedCount)/\(problem.steps.count)")
+                    .font(.caption2.monospacedDigit())
+                    .foregroundStyle(.secondary)
+                Spacer()
+                Button {
+                    if revealedCount < problem.steps.count { revealedCount += 1 }
+                } label: {
+                    Image(systemName: revealedCount == problem.steps.count ? "checkmark" : "chevron.right")
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.small)
+                .disabled(revealedCount == problem.steps.count)
+            }
+        }
+        .padding(12)
+        .background(Theme.card, in: RoundedRectangle(cornerRadius: 16))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(Color.primary.opacity(0.05), lineWidth: 1)
+        )
+    }
+}
+
+struct StepByStepCard: View {
+    let problem: StepByStepProblem
+    @State private var revealedCount: Int = 0
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            // Title + step counter
+            VStack(alignment: .leading, spacing: 4) {
+                HStack {
                     Text(problem.title)
                         .font(Theme.mathFont(compact: false).weight(.semibold))
-                        .lineLimit(nil)
+                        .lineLimit(2)
                         .multilineTextAlignment(.leading)
-                        .fixedSize(horizontal: false, vertical: true)
-                    Spacer(minLength: 8)
-                    Text("\(revealedCount)/\(problem.steps.count) steps")
+                    Spacer()
+                    Text("\(revealedCount)/\(problem.steps.count)")
                         .font(.caption.monospacedDigit())
                         .foregroundStyle(.secondary)
                 }
                 Text(problem.prompt)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
-                    .lineLimit(nil)
-                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(2)
             }
 
-            VStack(alignment: .leading, spacing: 10) {
-                ForEach(Array(problem.steps.enumerated()), id: \.offset) { idx, step in
-                    let isRevealed = idx < revealedCount
-                    HStack(alignment: .top, spacing: 10) {
-                        ZStack {
-                            Circle()
-                                .fill(isRevealed ? Theme.accent : Color.secondary.opacity(0.2))
-                                .frame(width: 26, height: 26)
-                            Text("\(idx + 1)")
-                                .font(.caption.weight(.bold))
-                                .foregroundStyle(.white)
-                        }
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(step.label)
-                                .font(.subheadline.weight(.semibold))
-                                .fixedSize(horizontal: false, vertical: true)
-                            if isRevealed {
-                                MathBlock(text: step.math, compact: true)
-                                Text(step.explanation)
-                                    .font(.footnote)
-                                    .foregroundStyle(.secondary)
-                                    .fixedSize(horizontal: false, vertical: true)
-                            } else {
-                                Text("Tap 'Next step' to reveal")
-                                    .font(.footnote)
-                                    .foregroundStyle(.tertiary)
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .leading, spacing: 8) {
+                    ForEach(Array(problem.steps.enumerated()), id: \.offset) { idx, step in
+                        let isRevealed = idx < revealedCount
+                        HStack(alignment: .top, spacing: 10) {
+                            ZStack {
+                                Circle()
+                                    .fill(isRevealed ? Theme.accent : Color.secondary.opacity(0.2))
+                                    .frame(width: 26, height: 26)
+                                Text("\(idx + 1)")
+                                    .font(.caption.weight(.bold))
+                                    .foregroundStyle(.white)
+                            }
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(step.label)
+                                    .font(.subheadline.weight(.semibold))
+                                if isRevealed {
+                                    MathBlock(text: step.math, compact: true)
+                                    Text(step.explanation)
+                                        .font(.footnote)
+                                        .foregroundStyle(.secondary)
+                                } else {
+                                    Text("Tap 'Next step' to reveal")
+                                        .font(.footnote)
+                                        .foregroundStyle(.tertiary)
+                                }
                             }
                         }
                     }
@@ -211,6 +305,7 @@ struct StepByStepView: View {
                     Label("Previous", systemImage: "chevron.left")
                 }
                 .buttonStyle(.bordered)
+                .controlSize(.small)
                 .disabled(revealedCount == 0)
                 Spacer()
                 Button {
@@ -220,22 +315,17 @@ struct StepByStepView: View {
                         .labelStyle(.titleAndIcon)
                 }
                 .buttonStyle(.borderedProminent)
+                .controlSize(.small)
                 .disabled(revealedCount == problem.steps.count)
             }
 
             SourceCitationView(citation: problem.source, compact: true)
         }
-        // Bottom padding reserves space for the TabView page indicator so it
-        // never overlaps the last step. Reported in the height preference so
-        // the parent TabView grows to fit content + indicator.
-        .padding(.bottom, 36)
-        // Allow the card to grow with its content (no fixed height clipping).
-        .fixedSize(horizontal: false, vertical: true)
-        // Report our natural height to the parent so the paged TabView can size to fit.
-        .background(
-            GeometryReader { proxy in
-                Color.clear.preference(key: PageContentHeightKey.self, value: proxy.size.height)
-            }
+        .padding(12)
+        .background(Theme.card, in: RoundedRectangle(cornerRadius: 16))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(Color.primary.opacity(0.05), lineWidth: 1)
         )
     }
 }

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ToolsView: View {
     @State private var selected: Tool = .plotter
+    @State private var initialExpression: String? = nil
 
     var body: some View {
         NavigationStack {
@@ -20,7 +21,10 @@ struct ToolsView: View {
                 Group {
                     switch selected {
                     case .plotter:
-                        GraphingPlaygroundView()
+                        GraphingPlaygroundView(initialExpression: initialExpression)
+                            .onChange(of: selected) { _, _ in
+                                initialExpression = nil
+                            }
                     case .unitCircle:
                         UnitCircleView()
                     case .formulas:
@@ -29,6 +33,12 @@ struct ToolsView: View {
                 }
             }
             .navigationTitle("Tools")
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .switchToPlotterWithExpression)) { notification in
+            if let expr = notification.object as? String {
+                selected = .plotter
+                initialExpression = expr
+            }
         }
     }
 
@@ -51,18 +61,32 @@ struct GraphingPlaygroundView: View {
     @State private var xMax: Double = 10
     @State private var yMin: Double = -5
     @State private var yMax: Double = 5
+    @State private var customPoints: [(x: Double, y: Double)] = []
+    @State private var newPointX: String = ""
+    @State private var newPointY: String = ""
+
+    var initialExpression: String? = nil
 
     private var parsed: Bool { (try? Expr.parse(expression)) != nil }
+
+    init(initialExpression: String? = nil) {
+        _initialExpression = State(initialValue: initialExpression)
+    }
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Expression").font(.caption.weight(.semibold))
-                    TextField("e.g. sin(x), x^2 - 4, exp(-x)", text: $expression)
-                        .textFieldStyle(.roundedBorder)
-                        .autocorrectionDisabled()
-                        .font(.system(.body, design: .monospaced))
+                    HStack(spacing: 4) {
+                        Text("y =")
+                            .font(.system(.body, design: .monospaced))
+                            .foregroundStyle(.secondary)
+                        TextField("e.g. sin(x), x^2 - 4, exp(-x)", text: $expression)
+                            .textFieldStyle(.roundedBorder)
+                            .autocorrectionDisabled()
+                            .font(.system(.body, design: .monospaced))
+                    }
                     if !parsed {
                         Text("Couldn't parse this expression.")
                             .font(.caption)
@@ -75,27 +99,141 @@ struct GraphingPlaygroundView: View {
                         expression: expression,
                         domainX: xMin...xMax,
                         domainY: yMin...yMax,
-                        note: "Functions: sin, cos, tan, exp, ln, log, sqrt, abs, floor, ceil, pow(x, n)"
+                        note: "Functions: sin, cos, tan, exp, ln, log, sqrt, abs, floor, ceil, pow(x, n)",
+                        customPoints: customPoints
                     )
                 }
                 domainControls
+                valueTableSection
+                customPointsSection
             }
             .padding()
         }
+        .onAppear {
+            if let expr = initialExpression, !expr.isEmpty {
+                expression = expr
+                initialExpression = nil
+            }
+        }
+    }
+
+    private var valueTableSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Value Table").font(.caption.weight(.semibold))
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 0) {
+                    ForEach([-3, -2, -1, 0, 1, 2, 3], id: \.self) { xVal in
+                        VStack(spacing: 4) {
+                            Text("x = \(xVal)")
+                                .font(.caption2.weight(.semibold))
+                                .foregroundStyle(Theme.accent)
+                            let yVal = evaluateAt(xVal)
+                            Text("y = \(formatNumber(yVal))")
+                                .font(.caption.monospacedDigit())
+                                .foregroundStyle(.secondary)
+                        }
+                        .frame(width: 70)
+                        .padding(.vertical, 8)
+                        .background(
+                            xVal == 0 ? Color.accentColor.opacity(0.08) : Color.clear,
+                            in: RoundedRectangle(cornerRadius: 8)
+                        )
+                        .overlay(
+                            Rectangle()
+                                .fill(Color.primary.opacity(0.08))
+                                .frame(width: 1),
+                            alignment: .trailing
+                        )
+                    }
+                }
+            }
+            .padding(.horizontal, 8)
+            .background(Theme.card, in: RoundedRectangle(cornerRadius: 12))
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.primary.opacity(0.05), lineWidth: 1)
+            )
+        }
+        .cardStyle()
+    }
+
+    private var customPointsSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Text("Custom Points").font(.caption.weight(.semibold))
+                Spacer()
+                Button {
+                    if let x = Double(newPointX), let y = Double(newPointY) {
+                        customPoints.append((x: x, y: y))
+                        newPointX = ""
+                        newPointY = ""
+                    }
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                        .foregroundStyle(Theme.accent)
+                }
+                .disabled(newPointX.isEmpty || newPointY.isEmpty)
+            }
+            HStack(spacing: 8) {
+                TextField("x", text: $newPointX)
+                    .keyboardType(.numbersAndPunctuation)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(width: 60)
+                TextField("y", text: $newPointY)
+                    .keyboardType(.numbersAndPunctuation)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(width: 60)
+            }
+            if !customPoints.isEmpty {
+                VStack(alignment: .leading, spacing: 4) {
+                    ForEach(Array(customPoints.enumerated()), id: \.offset) { idx, point in
+                        HStack {
+                            Text("(\(formatNumber(point.x)), \(formatNumber(point.y)))")
+                                .font(.caption.monospacedDigit())
+                            Spacer()
+                            Button {
+                                customPoints.remove(at: idx)
+                            } label: {
+                                Image(systemName: "xmark.circle.fill")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                        .padding(.vertical, 4)
+                        .padding(.horizontal, 8)
+                        .background(Theme.accentSoft, in: RoundedRectangle(cornerRadius: 6))
+                    }
+                }
+            }
+        }
+        .cardStyle()
+    }
+
+    private func evaluateAt(_ x: Double) -> Double? {
+        guard let expr = try? Expr.parse(expression) else { return nil }
+        return try? expr.evaluate(at: x)
+    }
+
+    private func formatNumber(_ value: Double) -> String {
+        if value == value.rounded() { return String(format: "%.0f", value) }
+        return String(format: "%.2f", value)
     }
 
     private var domainControls: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Domain").font(.caption.weight(.semibold))
-            HStack {
+            HStack(spacing: 16) {
                 stepper("x min", value: $xMin)
                 stepper("x max", value: $xMax)
+                Spacer()
             }
-            HStack {
+            HStack(spacing: 16) {
                 stepper("y min", value: $yMin)
                 stepper("y max", value: $yMax)
+                Spacer()
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .cardStyle()
     }
 
@@ -210,6 +348,9 @@ struct UnitCircleView: View {
 }
 
 struct FormulaReferenceView: View {
+    @State private var selectedExpression: String = ""
+    @State private var showingPlotter: Bool = false
+    
     private let groups: [(String, [(String, String)])] = [
         ("Algebra", [
             ("Quadratic formula", "x = (-b ± √(b² - 4ac)) / 2a"),
@@ -251,15 +392,53 @@ struct FormulaReferenceView: View {
             ForEach(groups, id: \.0) { group in
                 Section(group.0) {
                     ForEach(group.1, id: \.0) { item in
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(item.0).font(.subheadline.weight(.semibold))
-                            MathBlock(text: item.1, compact: true)
+                        Button {
+                            // Extract expression part after "=" for graphing
+                            if let eqIndex = item.1.firstIndex(of: "=") {
+                                let expr = String(item.1[item.1.index(after: eqIndex)...])
+                                    .replacingOccurrences(of: " ", "")
+                                    .replacingOccurrences(of: "²", "^2")
+                                    .replacingOccurrences(of: "³", "^3")
+                                    .replacingOccurrences(of: "√", "sqrt")
+                                    .replacingOccurrences(of: "π", "pi")
+                                    .replacingOccurrences(of: "θ", "x")
+                                    .replacingOccurrences(of: "×", "*")
+                                    .replacingOccurrences(of: "÷", "/")
+                                    .replacingOccurrences(of: "·", "*")
+                                selectedExpression = expr
+                                showingPlotter = true
+                            }
+                        } label: {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(item.0).font(.subheadline.weight(.semibold))
+                                HStack {
+                                    MathBlock(text: item.1, compact: true)
+                                    Spacer()
+                                    Image(systemName: "chart.line.uptrend.xyaxis")
+                                        .font(.caption)
+                                        .foregroundStyle(Theme.accent)
+                                }
+                            }
+                            .padding(.vertical, 4)
                         }
-                        .padding(.vertical, 4)
+                        .buttonStyle(.plain)
                     }
                 }
             }
         }
         .listStyle(.insetGrouped)
+        .onChange(of: showingPlotter) { _, newValue in
+            if newValue && !selectedExpression.isEmpty {
+                // Post notification to switch to plotter tab with expression
+                NotificationCenter.default.post(
+                    name: .switchToPlotterWithExpression,
+                    object: selectedExpression
+                )
+            }
+        }
     }
+}
+
+extension Notification.Name {
+    static let switchToPlotterWithExpression = Notification.Name("switchToPlotterWithExpression")
 }

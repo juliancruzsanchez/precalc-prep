@@ -55,8 +55,8 @@ struct TutorView: View {
     @State private var isSending = false
     @State private var error: String?
     @State private var keyPresent: Bool = KeychainService.loadGroqKey() != nil
-
-    @FocusState private var inputFocused: Bool
+    @State private var showingSettings = false
+    @State private var inputFocused = false
 
     private let groq = GroqService()
 
@@ -65,8 +65,10 @@ struct TutorView: View {
             VStack(spacing: 0) {
                 if let context {
                     contextBanner(context)
-                }
-                if !keyPresent {
+                    if !keyPresent {
+                        missingKeyBanner
+                    }
+                } else if !keyPresent {
                     missingKeyBanner
                 }
                 ScrollViewReader { proxy in
@@ -96,10 +98,9 @@ struct TutorView: View {
                     }
                 }
 
-                Divider()
                 inputBar
             }
-            .navigationTitle(context?.title ?? "AI Tutor")
+            .navigationTitle(context == nil ? TutorPersona.callToAction : context!.title)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -108,12 +109,38 @@ struct TutorView: View {
                             messages.removeAll()
                             error = nil
                         }
+                        Button {
+                            showingSettings = true
+                        } label: {
+                            Label("Settings", systemImage: "gear")
+                        }
                     } label: {
                         Image(systemName: "ellipsis.circle")
                     }
                 }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        dismissChat()
+                    } label: {
+                        HStack(spacing: 4) {
+                            Image(systemName: "chevron.left")
+                            Text("Back")
+                        }
+                    }
+                }
+            }
+            .sheet(isPresented: $showingSettings) {
+                NavigationStack {
+                    SettingsView()
+                }
             }
         }
+    }
+
+    private func dismissChat() {
+        // Dismiss the sheet or pop navigation
+        // This will be handled by the parent view
+        NotificationCenter.default.post(name: .dismissTutorView, object: nil)
     }
 
     // MARK: - Context banner
@@ -127,7 +154,7 @@ struct TutorView: View {
                     .background(Theme.accent, in: Circle())
                 VStack(alignment: .leading, spacing: 2) {
                     HStack(spacing: 6) {
-                        Text("Asking about")
+                        Text("\(TutorPersona.displayName) is helping with")
                             .font(.caption2.weight(.bold))
                             .tracking(0.6)
                             .foregroundStyle(.secondary)
@@ -185,18 +212,22 @@ struct TutorView: View {
 
     private var emptyState: some View {
         VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .top, spacing: 10) {
+                Image(systemName: "graduationcap.fill")
+                    .foregroundStyle(.white)
+                    .padding(8)
+                    .background(Theme.accent, in: Circle())
+                Text(TutorPersona.emptyGreeting(topicTitle: context?.title))
+                    .font(.headline)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
             Text(context == nil
-                 ? "Ask anything about precalculus."
-                 : "Ask anything about \(context!.title).")
-                .font(.headline)
-                .fixedSize(horizontal: false, vertical: true)
-            Text(context == nil
-                 ? "I can walk you through a step-by-step solution, give you another worked example, or quiz you on a topic. Add your Groq API key in Settings to start chatting."
-                 : "I'll keep every answer grounded in this unit's objectives. Add your Groq API key in Settings if you haven't yet.")
+                 ? "I can walk you through a step-by-step solution, give you another worked example, or quiz you on a topic. Add your Groq API key in Settings → \(TutorPersona.displayName) to start chatting."
+                 : "I'll keep every answer grounded in this unit's objectives. Add your Groq API key in Settings → \(TutorPersona.displayName) if you haven't yet.")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
-            Text("Suggested prompts:")
+            Text("Try a prompt:")
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(.secondary)
             ForEach(currentSuggestedPrompts, id: \.self) { p in
@@ -233,45 +264,70 @@ struct TutorView: View {
     ]
 
     private var missingKeyBanner: some View {
-        HStack(alignment: .top, spacing: 8) {
-            Image(systemName: "exclamationmark.triangle.fill")
-                .foregroundStyle(Theme.warning)
-            VStack(alignment: .leading, spacing: 2) {
-                Text("Add your Groq API key")
-                    .font(.subheadline.weight(.semibold))
-                Text("In Settings → AI Tutor, paste a key from console.groq.com. It's stored securely in the iOS Keychain.")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
+        Button {
+            showingSettings = true
+        } label: {
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(alignment: .top, spacing: 8) {
+                    Image(systemName: "key.fill")
+                        .foregroundStyle(.white)
+                        .padding(8)
+                        .background(Theme.warning, in: Circle())
+                    VStack(alignment: .leading, spacing: 2) {
+                        HStack {
+                            Text("Add your Groq API key")
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(.primary)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                        Text(TutorPersona.keyPromptInstruction())
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
             }
+            .padding(12)
+            .background(Theme.warning.opacity(0.12), in: RoundedRectangle(cornerRadius: 12))
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Theme.warning.opacity(0.3), lineWidth: 1)
+            )
         }
-        .padding(10)
-        .background(Theme.warning.opacity(0.12))
+        .buttonStyle(.plain)
+        .padding(.horizontal)
+        .padding(.top, 8)
     }
 
     private var inputBar: some View {
-        HStack(alignment: .bottom, spacing: 8) {
-            TextField("Ask a precalculus question…", text: $input, axis: .vertical)
-                .lineLimit(1...4)
-                .textFieldStyle(.plain)
-                .focused($inputFocused)
-                .padding(.horizontal, 12)
-                .padding(.vertical, 8)
-                .background(Theme.card, in: RoundedRectangle(cornerRadius: 18))
-            Button {
-                send()
-            } label: {
-                if isSending {
-                    ProgressView().padding(8)
-                } else {
-                    Image(systemName: "arrow.up.circle.fill")
-                        .font(.system(size: 30))
-                        .foregroundStyle(canSend ? Theme.accent : Color.secondary.opacity(0.5))
+        VStack(spacing: 0) {
+            Divider()
+            HStack(alignment: .bottom, spacing: 8) {
+                TextField(TutorPersona.inputPlaceholder, text: $input, axis: .vertical)
+                    .lineLimit(1...4)
+                    .textFieldStyle(.plain)
+                    .focused($inputFocused)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .background(Theme.card, in: RoundedRectangle(cornerRadius: 18))
+                Button {
+                    send()
+                } label: {
+                    if isSending {
+                        ProgressView().padding(8)
+                    } else {
+                        Image(systemName: "arrow.up.circle.fill")
+                            .font(.system(size: 30))
+                            .foregroundStyle(canSend ? Theme.accent : Color.secondary.opacity(0.5))
+                    }
                 }
+                .disabled(!canSend)
             }
-            .disabled(!canSend)
+            .padding(8)
         }
-        .padding(8)
     }
 
     private var canSend: Bool { !isSending && !input.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && keyPresent }
@@ -286,16 +342,7 @@ struct TutorView: View {
         isSending = true
         Task {
             do {
-                var systemPrompt = """
-                You are a patient, accurate precalculus tutor. Follow these rules:
-                - Solve step by step. Show every algebraic step.
-                - Use proper mathematical notation.
-                - Cite which topic the answer relates to (functions, trig, logs, etc.).
-                - If the user is confused, re-explain the underlying concept before solving.
-                - Never invent theorems or formulas. If you're unsure, say so.
-                - Encourage the user; remind them they're rebuilding a strong foundation.
-                - Keep answers focused and not too long. Use LaTeX-style notation like \\(x^2 + 1\\).
-                """
+                var systemPrompt = TutorPersona.systemPrompt
                 if let context {
                     systemPrompt += "\n\n" + context.systemContextBlock
                 }
@@ -313,6 +360,10 @@ struct TutorView: View {
     }
 }
 
+extension Notification.Name {
+    static let dismissTutorView = Notification.Name("dismissTutorView")
+}
+
 struct MessageBubble: View {
     let message: ChatMessage
 
@@ -322,12 +373,18 @@ struct MessageBubble: View {
         HStack(alignment: .top, spacing: 8) {
             if isUser { Spacer(minLength: 40) }
             if !isUser {
-                Image(systemName: "sparkles")
+                Image(systemName: "graduationcap.fill")
                     .foregroundStyle(.white)
                     .padding(8)
                     .background(Theme.accent, in: Circle())
             }
             VStack(alignment: isUser ? .trailing : .leading, spacing: 2) {
+                if !isUser {
+                    Text(TutorPersona.displayName)
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .padding(.leading, 4)
+                }
                 Text(message.content)
                     .font(.body)
                     .padding(12)

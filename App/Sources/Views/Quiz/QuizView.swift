@@ -54,7 +54,7 @@ struct QuizView: View {
                         choiceButton(idx: idx, text: choice, question: q)
                     }
                 } else {
-                    Text("Free-response answers are checked by the AI tutor or against the provided solution.")
+                    Text(TutorPersona.quizFreeResponseNote)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }

@@ -38,13 +38,13 @@ struct SettingsView: View {
                     if let s = keyStatus {
                         Text(s).font(.caption).foregroundStyle(.secondary)
                     }
-                    Text("Get a free key at console.groq.com. It is stored only in the iOS Keychain on this device, and only sent to api.groq.com when you chat.")
+                    Text(TutorPersona.settingsHint())
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 } header: {
-                    Text("AI Tutor (Groq API key)")
+                    Text(TutorPersona.settingsHeader)
                 } footer: {
-                    Text("The app uses llama-3.1-8b-instant by default for fast, low-cost answers.")
+                    Text("The app uses llama-3.1-8b-instant by default for fast, low-cost answers from \(TutorPersona.displayName).")
                 }
 
                 Section("About") {
